@@ -1,0 +1,3 @@
+Делаем из папки build!
+Чтобы создать скелет нового уровня (meta-ksuhdw):
+$ bitbake-layers create-layer ../meta-ksuhdw

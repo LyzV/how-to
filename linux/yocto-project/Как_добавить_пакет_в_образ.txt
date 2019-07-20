@@ -1,0 +1,10 @@
+Чтобы добавить пакет (strace) в образ:
+1) Добавить строку
+IMAGE_INSTALL_append = " strace"
+в файл poky/build/conf/local.conf
+2) В строке " strace" обязателен пробел перед строкой strace!
+3) Пересобрать образ:
+$ bitbacke core-image-sato
+4) Запустить симуляцию в QEMI:
+5) Запустить терминал и в нём проверить наличие команды strace:
+$ starace uname

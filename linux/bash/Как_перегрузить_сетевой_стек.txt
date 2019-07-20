@@ -1,0 +1,2 @@
+Как перегрузить сетевой стек:
+$ sudo service network-manager restart

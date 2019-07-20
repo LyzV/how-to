@@ -1,0 +1,4 @@
+#! /bin/bash
+
+echo "grep -inr $1"
+grep -inr $1

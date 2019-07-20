@@ -1,0 +1,3 @@
+Делаем из папки build!
+Чтобы добавить уровень:
+$ bitbake-layers add-layer ../meta-ksuhwd/

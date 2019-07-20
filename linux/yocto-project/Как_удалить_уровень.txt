@@ -1,0 +1,3 @@
+Делаем из папки build!
+Чтобы удалить (уже добавленный) уровень:
+$ bitbake-layers remove-layer ../meta-ksuhwd/
