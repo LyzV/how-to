@@ -10,3 +10,6 @@ $ mkdir /media/usb
 SUBSYSTEM=="block", KERNEL=="sd*", ACTION=="add", RUN+="/bin/mount /media/usb"
 SUBSYSTEM=="block", KERNEL=="sd*", ACTION=="remove", RUN+="/bin/umount /media/usb"
 Первое для монтирования, второе для размонтирования.
+
+4) Дать команду udev перечитать правила:
+$ udevadm control --reload-rules
