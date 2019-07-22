@@ -1,0 +1,12 @@
+Всё делаем на целевой плате!
+1) Создать папку для монтирования флешки:
+$ mkdir /media/usb
+
+2) Создать запись в /etc/fstab для удобства монтирования:
+/dev/sda1       /media/usb      vfat    noauto,ro,sync  0 0
+Обязательно noauto! Потому, что контроллер изначе зависает!
+
+3) Для udev создать 2 правила в файле /etc/udev/rules.d/10-usb.rules
+SUBSYSTEM=="block", KERNEL=="sd*", ACTION=="add", RUN+="/bin/mount /media/usb"
+SUBSYSTEM=="block", KERNEL=="sd*", ACTION=="remove", RUN+="/bin/umount /media/usb"
+Первое для монтирования, второе для размонтирования.
