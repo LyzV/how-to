@@ -1,0 +1,3 @@
+1) Запустить Dconf Editor
+2) В папке /org/gnome/desktop/input-sources/xkb-options
+   необходимо убрать scroll
