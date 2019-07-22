@@ -1,0 +1,4 @@
+Как смонтировать флешку:
+
+sudo mount /dev/sdc1 /home/phyvm/work/tmp/sdc1
+sudo mount /dev/sdc2 /home/phyvm/work/tmp/sdc2

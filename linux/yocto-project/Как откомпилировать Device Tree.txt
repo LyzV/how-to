@@ -1,0 +1,1 @@
+http://variwiki.com/index.php?title=VAR-SOM-AM33_Yocto_Daisy_GS#Building_the_VAR-SOM-AM33_device_tree

@@ -1,0 +1,9 @@
+fetch
+unpack
+patch
+configure
+compile
+
+получить весь перечень задач:
+bitbake phytec-qt5demo-image -c listtasks
+

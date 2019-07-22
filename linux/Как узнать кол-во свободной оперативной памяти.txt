@@ -1,0 +1,6 @@
+Как узнать кол-во свободной оперативной памяти:
+
+#include <sys/sysinfo.h>
+...
+struct sysinfo info;
+sysinfo(&info);

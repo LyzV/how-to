@@ -1,0 +1,5 @@
+Как указать Yocto Project включать в SDK исходники ядра линукс (include & lib - files) для дальнейшей разработки драйверов
+1. Открыть файл ~/work/bsp/bsp_pd17.1.0/build/conf/local.conf
+2. Добавить в конец строки:
+#Add kernel source to SDK
+TOOLCHAIN_TARGET_TASK_append = " kernel-devsrc"

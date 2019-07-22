@@ -1,0 +1,44 @@
+Как сделать образ на SD-flash:
+1. Пусть требуется сделать образ версии PD17.2.0. Идём на FTP-сервер:
+ftp://ftp.phytec.de/pub/Software/Linux/BSP-Yocto-i.MX6/BSP-Yocto-phyBOARD-Segin-PD17.2.0/images/phyboard-segin-imx6ul-2/
+2. Скачиваем файл
+phytec-qt5demo-image-phyboard-segin-imx6ul-2.sdcard
+Это бинарный образ того, что будет размещено на SD-карте.
+3. Кладём этот файл в разделяемую с виртуальной машиной папку.
+4. В настройках виртуальной машины включаем фильт на поддержку USB.
+5. Загружаем виртуальную машину.
+6. Открываем терминал переходим в su.
+7. Вставляем SD-card в Card-reader, а его в USB.
+8. Проверяем подключение USB к linux. Для этого в командной строке:
+# fdisk -l
+Должно появиться устройство /dev/sdc
+9. С помощью утилиты dd копируем файл phytec-qt5demo-image-phyboard-segin-imx6ul-2.sdcard
+   на SD-card:
+# sudo dd if=deploy/images/phyboard-segin-imx6ul-2/phytec-qt5demo-image-phyboard-segin-imx6ul-2.sdcard of=/dev/sdc bs=1MB conv=fsync
+10. SD-card ещё не готова. На карте есть загрузчик и файл системы Device Tree (DT).
+    Последний файл необходимо подправить для включения дисплея с ёмкостным сенсорным экраном.
+	Этот файл правится с помощью самого загрузчика (который на SD-card).
+11. Вставляем SD-card в разъём на целевой плате.
+12. Подключаем целевую плату по COM-порту. 
+13. Включаем целевую плату и останавливаем загрузчик - нажимаем пробел.
+    Прение для команд.
+14. Редактируем файл /env/config-expansions. Для этого в командной строке набираем:
+# edit /env/config-expansions
+15. Раскоментариваем строки:
+. /env/expansions/imx6il-phytec-segin-peb-av-02
+of_display_timings -S /soc/aips-bus@02100000/lcdif@021c8000/display@di0/display-timings/ETM0700G0EDH6
+16. Выходим с сохранением: Ctrl+d
+17. Сохраняем окружение:
+# saveenv
+18. Всё, перезагружаем целевую плату.
+
+19. Можно ещё выключить демо-приложение.
+target# systemctl stop phytec-qtdemo
+target# systemctl disable phytec-qtdemo
+
+20. Ещё можно перед записью флешку стереть так:
+dd if=/dev/zero of=/dev/sdс bs=512 count=1
+
+21. Перед записью в SD-flash надо примонтировать диски /dev/sdc1 и /dev/sdc2
+sudo mount /dev/sdc1 /home/phyvm/work/tmp/sdc1
+sudo mount /dev/sdc2 /home/phyvm/work/tmp/sdc2

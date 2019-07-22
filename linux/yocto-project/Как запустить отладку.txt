@@ -1,0 +1,33 @@
+Инструкция на сайте содержит ошибки.
+Для запуска отладки проекта необходимо выполнить следующие шаги:
+1.	Установить соединения с целевой платой через COM и Ethernet.
+2.	Открыть Putty на COM-порту.
+3.	Открыть Eclipse. Сделать через меню:
+	•	Project->Clean...
+	•	Project->Build All
+4.	Исполняемый файл myHelloWorld скомпилируется и будет размещён на целевой плате.
+5.	В терминале целевой платы перейти в папку, содержащую исполняемый файл. Запустить GDB-сервер: gdbserver 192.168.11:2345 myHelloWorld. Сервер стартует и ждёт взаимодействие с клиентом.
+6.	В папке проекта /opt/prj_workspace/Eclipse/myHelloWorld создаём файл .gdbinit. Он должен содержать: set sysroot /opt/phytec‐yogurt/AM335x‐PD16.2.0/sysroots/cortexa8hf‐neon‐phytec‐linux‐gnueabi/
+7.	В Eclipse нажимаем правой кнопкой мыши на проекте myHelloWorld. 
+8.	Далее переходим по контекстному меню: Debug As -> Debug Configurations. Открывается окно настройки отладки Debug Configurations.
+9.	Наступаем на C/C++ Remote Application.
+10.	Наступаем на myHelloWorld Debug.
+11.	Внизу окна левее кнопок Revert и Apply устанавливаем Using GDB(DSF) Manual Remote Debuggin Lancher!
+12.	Заполняем поля:
+	•	Project: myHelloWorld
+	•	C/C++ Application: Debug/myHelloWorld
+	•	Build Configuration: Select Automatically
+13.	Переходим на вкладку Debugger и подвкладку Main.
+14.	Заполняем поля:
+	•	Stop on startup at: main
+	•	GDB debugger: arm-phytec-linux-gnueabi-gdb
+	•	GDB command file: .gdbinit
+	•	Tracepoint mode: Normal
+15.	Переходим на вкладку Debugger и подвкладку Connection.
+16.	Заполняем поля:
+	•	Type: TCP
+	•	Host name or IP address: 192.168.3.10
+	•	Port: 2345
+17.	Нажимаем кнопку Aply.
+18.	Нажимаем клавишу Debug.
+

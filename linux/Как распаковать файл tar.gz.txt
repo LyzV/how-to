@@ -1,0 +1,3 @@
+Как распаковать файл *tar.gz
+
+tar -xvzf archive.tar.gz

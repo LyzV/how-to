@@ -1,0 +1,10 @@
+Порядок действия:
+
+$ bitbake matchbox-desktop
+               .
+               .
+make some changes to the source code in the work directory
+               .
+               .
+$ bitbake matchbox-desktop -c compile -f
+$ bitbake matchbox-desktop

@@ -1,0 +1,55 @@
+Как создать проект на основе autotools
+
+1. В каталоге проектов создать папку проекта:
+	mkdir ncurses_prj
+2. Создаём папку с исходниками, размещаем там наш main.c:
+	mkdir src
+	touch src/main.c
+3. Пишем программу в main.c
+4. Создаём Makefile.am в папке с исходниками для automake:
+	touch Makefile.am
+	Вот его содиржимое:
+	bin_PROGRAMS=ncurses_tst
+	ncurses_tst_SOURCES=main.c
+5. Создаём Makefile.am в папке дистрибутива:
+	cd ..
+	touch Makefile.am
+	Вот его содержимое:
+	AUTOMAKE_OPTIONS=subdir-objects
+	SUBDIRS=src
+6. Теперь создаём файл configure.ac для autoconf:
+	autoscan
+	mv configure.scan configure.ac
+	vi configure.ac
+	Вот содержимое configure.ac:
+	AC_PREREQ([2.69])
+	AC_INIT([ncurses_tst], [1.0], [lyzv@yandex.ru])
+	AC_CONFIG_SRCDIR([src/main.c])
+	AC_CONFIG_HEADERS([config.h])
+	AC_PROG_CC
+	AC_CONFIG_FILES([Makefile src/Makefile])
+	AC_OUTPUT
+7.	Добавляем в этот файл ещё строчку AM_INIT_AUTOMAKE сразу после AC_INIT
+8. Добавляем файлы:
+	touch INSTALL README NEWS AUTHORS ChangeLog
+9. Вызываем autoreconf:
+	autoreconf --install
+10. Всё, структура исходников дистрибутива autotools создана.
+11. Теперь пробуем сделать дистрибутив:
+	mkdir build
+	cd build
+	../configure
+	make
+	make check
+	make dist
+	make distcheck
+12. Остаётся допилить файл configure.ac для проверки библиотеки ncurses.
+	Добавляем проверку наличия файла ncurses.h и работоспособности библиотеки:
+	AC_CHECK_HEADERS([ncurses.h])
+	AC_CHECK_LIB([ncurses], [initscr])
+	И добавляем в файл src/Makefile.ac:
+	AM_LDFLAGS = -lncurses
+	
+	
+	
+	

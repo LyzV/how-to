@@ -1,0 +1,13 @@
+Вместе с компиляцией ядра будет и компиляция dts-файлов.
+
+bitbake -c compile -f virtual/kernel 
+bitbake -c deploy -f virtual/kernel
+
+После этих команд будут построены только:
+1. Кернел
+3. Файл DeviceTree
+
+Для построения образов потом надо ещё:
+bitbake phytec-qt5demo-image
+
+

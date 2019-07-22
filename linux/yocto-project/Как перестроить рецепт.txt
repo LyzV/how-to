@@ -1,0 +1,2 @@
+$ bitbake matchbox-desktop -c clean
+$ bitbake matchbox-desktop
