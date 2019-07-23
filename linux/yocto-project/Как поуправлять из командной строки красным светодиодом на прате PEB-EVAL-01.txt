@@ -1,0 +1,6 @@
+Чтобы поуправлять светодиодами на плате PEB-EVAL-01:
+1. Перейти в каталог /sys/devices/platform/user_ledd
+2. Набрать команду: echo 1 > brightness
+3. Набрать команду: echo 0 > brightness
+
+Смотри документ L793e_0_Expansion_Board.pdf, 3.5.1, страница 8.

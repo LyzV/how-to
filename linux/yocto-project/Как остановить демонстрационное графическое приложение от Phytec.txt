@@ -1,0 +1,10 @@
+Просто останоить исполнение:
+target$ systemctl stop phytec-qtdemo.service
+
+Чтобы больше не запускалось:
+target$ systemctl disable phytec-qtdemo.service
+
+Документ 
+http://www.phytec.eu/documents/l-813e-6-yocto-reference-manual/
+Раздел
+How to disable the Qt Demo

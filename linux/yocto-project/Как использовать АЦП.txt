@@ -1,0 +1,24 @@
+Как использовать АЦП
+
+root@phyboard-segin-imx6ul-2:~# cd /sys/bus/iio/devices/iio:device0
+root@phyboard-segin-imx6ul-2:/sys/bus/iio/devices/iio:device0# ls -la
+drwxr-xr-x    3 root     root             0 Apr 24 11:57 .
+drwxr-xr-x    4 root     root             0 Apr 24 11:57 ..
+-r--r--r--    1 root     root          4096 Apr 24 12:00 dev
+-rw-r--r--    1 root     root          4096 Apr 24 12:00 in_voltage0_raw
+-rw-r--r--    1 root     root          4096 Apr 24 12:00 in_voltage1_raw
+-rw-r--r--    1 root     root          4096 Apr 24 12:00 in_voltage2_raw
+-rw-r--r--    1 root     root          4096 Apr 24 12:00 in_voltage3_raw
+-rw-r--r--    1 root     root          4096 Apr 24 12:00 in_voltage_sampling_frequency
+-rw-r--r--    1 root     root          4096 Apr 24 12:00 in_voltage_scale
+-r--r--r--    1 root     root          4096 Apr 24 12:00 name
+lrwxrwxrwx    1 root     root             0 Apr 24 12:00 of_node -> ../../../../../../firmware/devicetree/base/soc/aips-bus@02100000/adc@02198000
+drwxr-xr-x    2 root     root             0 Apr 24 12:00 power
+-r--r--r--    1 root     root          4096 Apr 24 12:00 sampling_frequency_available
+lrwxrwxrwx    1 root     root             0 Apr 24 11:57 subsystem -> ../../../../../../bus/iio
+-rw-r--r--    1 root     root          4096 Apr 24 11:57 uevent
+root@phyboard-segin-imx6ul-2:/sys/bus/iio/devices/iio:device0# cat in_voltage0_raw 
+4088
+root@phyboard-segin-imx6ul-2:/sys/bus/iio/devices/iio:device0# cat in_voltage3_raw 
+143
+root@phyboard-segin-imx6ul-2:/sys/bus/iio/devices/iio:device0#

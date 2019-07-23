@@ -1,0 +1,30 @@
+Всё делаем на целевой плате!
+1) Создать папку для монтирования флешки:
+$ mkdir /media/usb
+
+2) Создать запись в /etc/fstab для удобства монтирования:
+/dev/sda1       /media/usb      vfat    noauto,ro,sync  0 0
+Обязательно noauto! Потому, что контроллер изначе зависает!
+
+3) Для udev создать 2 правила в файле /etc/udev/rules.d/10-usb.rules
+SUBSYSTEM=="block", KERNEL=="sd*", ACTION=="add", RUN+="/bin/mount /media/usb"
+SUBSYSTEM=="block", KERNEL=="sd*", ACTION=="remove", RUN+="/bin/umount /media/usb"
+Первое для монтирования, второе для размонтирования.
+
+4) Дать команду udev перечитать правила:
+$ udevadm control --reload-rules
+
+
+//////////////////////////////////////////////////////////
+А лучше вот так:
+1) Удалить строку монтирования из /etc/fstab
+2) Все действия выполнять в правилах файла /etc/udev/rules.d/10-usb.rules
+
+SUBSYSTEM=="block", KERNEL=="sd[a-z][0-9]", ACTION=="add", RUN+="/bin/mkdir -p /media/usb-%k"
+SUBSYSTEM=="block", KERNEL=="sd[a-z][0-9]", ACTION=="add", RUN+="/bin/mount -t vfat -o ro,sync /dev/%k /media/usb-%k"
+SUBSYSTEM=="block", KERNEL=="sd[a-z][0-9]", ACTION=="remove", RUN+="/bin/umount /media/usb-%k/"
+SUBSYSTEM=="block", KERNEL=="sd[a-z][0-9]", ACTION=="remove", RUN+="/bin/rm -r /media/usb-%k/"
+
+
+Ну и для отладки подключения флешки можно использовать монитор событий udev:
+$ udevadm monitor --property --kernel --udev

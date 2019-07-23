@@ -1,0 +1,5 @@
+1. Перейти в папку проекта:
+cd yocto/build
+2. Удалить папки tmp и sstate-cache:
+rm -Rf tmp sstate-cache
+

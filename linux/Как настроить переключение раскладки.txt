@@ -1,0 +1,6 @@
+
+$ sudo apt-get install gnome-tweak-tool
+$ gnome-tweaks
+Переходим в раздел:
+Keyboard & Mouse / Additional Layout Options
+и там назначаем комбинацию.

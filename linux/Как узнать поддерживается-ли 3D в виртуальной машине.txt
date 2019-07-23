@@ -1,0 +1,2 @@
+/usr/lib/nux/unity_support_test -p
+Все строки должны быть yes!

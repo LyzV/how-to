@@ -1,0 +1,31 @@
+Установка проходит в 2 стадии:
+1. Установка системного времени.
+2. Перенос системного времени в микросхему RTC.
+
+Стадия 1:
+1. Прочитать время:
+root@phyboard-segin-imx6ul-2:~# date
+Fri Jul  6 11:10:53 UTC 2018
+
+2. Задать системную дату:
+root@phyboard-segin-imx6ul-2:~# date +%Y-%m-%d -s "2017-01-07"
+2017-01-07
+Это 7-е января 2017г.
+
+3. Задать системное время:
+root@phyboard-segin-imx6ul-2:~# date +%H:%M:%S -s "09:10:11"
+09:10:11
+Это 9 часов 10 минут 11 секунд
+
+4. Перенос в микросхему RTC:
+root@phyboard-segin-imx6ul-2:~# hwclock --systohc
+root@phyboard-segin-imx6ul-2:~#
+
+5. Прочесть время из микросхемы RTC:
+root@phyboard-segin-imx6ul-2:~# hwclock -r
+Sat Jan  7 09:11:33 2017  0.000000 seconds
+
+6. Перенос времени из микросхемы в систему:
+root@phyboard-segin-imx6ul-2:~# hwclock --hctosys
+root@phyboard-segin-imx6ul-2:~# date
+Sat Jan  7 09:20:12 UTC 2017

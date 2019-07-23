@@ -1,0 +1,23 @@
+Для  того, чтобы добавить/удалить драйвер необходимо выполнить следующие шаги:
+1. Отредактировать файлы:
+	- imx6ul-phytec-phyboard-segin-ff-rdk.dts
+	- imx6ul-phytec-phyboard-segin.dtsi
+	- imx6ul-phytec-phycore-som.dtsi
+	- imx6ul-phytec-segin-peb-eval-01.dtsi
+	- imx6ul-phytec-segin-peb-av-02.dtsi
+	- imx6ul.dtsi
+   Файлы располагаются по пути:
+   build/tmp/work-shared/phyboard-segin-imx6ul-2/kernel-source/arch/arm/boot/dts
+2. Выполнить команды:
+bitbake -c compile -f virtual/kernel 
+bitbake -c deploy -f virtual/kernel 
+3. Сделать SD-флеш с размещённым на ней linux. Как это сделать - смотри документ "Как сделать образ на SD-flash.txt".
+   Образ содержит два раздела, допустим /dev/sdc1 и /dev/sdc2. 
+4. Монтируем раздел /dev/sdc1
+sudo mount /dev/sdc1 /home/phyvm/work/tmp/sdc1
+5. В этом разделе размещены 2 файла: ядро - zImage; Device Tree - oftree. Заменяем из на файлы соответственно:
+	- zImage-zImage-linux-imx-4.1.15-phy2-r0.0-phyboard-segin-imx6ul-2-20180522143803.bin
+	- zImage-zImage-linux-imx-4.1.15-phy2-r0.0-imx6ul-phytec-phyboard-segin-ff-rdk-20180522143803.dtb
+   Файлы располагаются по пути:
+   build/deploy/images/phyboard-segin-imx6ul-2
+6. Всё, флешка готова.

@@ -1,0 +1,42 @@
+Как остановить службу getty@tty1.service
+
+1. Консольный терминал является службой linux. Её и нужно остановить.
+2. Для управления службами используется утилита systemctl.
+3. Сначала необходимо определить точное название службы:
+# systemctl list-units -t service
+
+  Будет высвечен весь список служб. Например вот так:
+   avahi-daemon.service                              loaded active running Avahi mDNS/DNS-SD Stack
+  can0.service                                      loaded active exited  can0 interface setup
+  dbus.service                                      loaded active running D-Bus System Message Bus
+  
+                                  loaded active running Getty on tty1
+[[0;1;31m●[[0m [[0;1;31mrc-local.service                                 [[0m loaded [[0;1;31mfailed failed [[0m /etc/rc.local Compatibility
+  serial-getty@ttymxc0.service                      loaded active running Serial Getty on ttymxc0
+  sshd@0-192.168.3.11:22-192.168.3.13:48048.service loaded active running OpenSSH Per-Connection Daemon (192.168.3.13:48048)
+  systemd-fsck-root.service                         loaded active exited  File System Check on Root Device
+  systemd-journal-flush.service                     loaded active exited  Flush Journal to Persistent Storage
+  systemd-journald.service                          loaded active running Journal Service
+  systemd-networkd.service                          loaded active running Network Service
+  systemd-remount-fs.service                        loaded active exited  Remount Root and Kernel File Systems
+  systemd-resolved.service                          loaded active running Network Name Resolution
+  systemd-sysctl.service                            loaded active exited  Apply Kernel Variables
+  systemd-tmpfiles-setup-dev.service                loaded active exited  Create Static Device Nodes in /dev
+  systemd-tmpfiles-setup.service                    loaded active exited  Create Volatile Files and Directories
+  systemd-udev-trigger.service                      loaded active exited  udev Coldplug all Devices
+  systemd-udevd.service                             loaded active running udev Kernel Device Manager
+  systemd-vconsole-setup.service                    loaded active exited  Setup Virtual Console
+
+
+Нас интересует служба с названием getty@tty1.service
+4. Останавливаем её:
+# systemctl stop  getty@tty1.service
+
+5. Вуаля! Чёрный экран.
+
+6. Для запрета запуска сервиса:
+# systemctl disable getty@tty1.service
+
+7. Для разрешения и запуска сервиса:
+# systemctl enable getty@tty1.service
+# systemctl start getty@tty1.service

@@ -1,0 +1,2 @@
+Для того, чтобы настроить linux-ядро надо выдать следующую команду:
+bitbake linux-imx -c menuconfig
