@@ -1,0 +1,1 @@
+/opt/phytec-yogurt-vendor/BSP-Yocto-Vendor-phyBOARD-Segin-PD17.1.0/sysroots/cortexa7hf-neon-vfpv4-phytec-linux-gnueabi/usr/lib/qt5/mkspecs/
