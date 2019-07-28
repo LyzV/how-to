@@ -1,0 +1,3 @@
+
+$ bitbake -c fetchall phytec-headless-image
+$ bitbake phytec-headless-image

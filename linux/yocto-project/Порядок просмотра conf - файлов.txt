@@ -1,0 +1,21 @@
+Порядок просмотра *.conf - файлов:
+- conf/bblayers.conf : This file is used to find all the configured layers
+	Этот файл BitBake использует для определения всех уровней
+
+- conf/layer.conf : This file is used on each configured layer
+	Этот файл испоьльзуется для настройки каждого уровня
+
+- meta/conf/bitbake.conf : This file is used for its own configuration
+	Этот файл используется для настройки самого BitBake-а
+
+- conf/local.conf : This file is used for any other configuration the user may have
+	for the current build
+	Этот файл используется для любой другой конфигурации, которая необходима пользователю
+	для текущей сборки
+
+- conf/machine/<machine>.conf : This file is the machine configuration
+	Этот файл используется для конфигурации конкретной выбранной машины. В нашем случае - ARM.
+
+- conf/distro/<distro>.conf : This file is the distribution policy; by default, this is
+	the poky.conf file
+	Этот файл используется для настройки политик распространения.

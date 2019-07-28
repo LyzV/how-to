@@ -1,0 +1,2 @@
+$ oe-init-build-env
+$ runqemu qemuarm core-image-minimal
