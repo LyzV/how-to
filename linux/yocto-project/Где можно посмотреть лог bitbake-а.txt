@@ -1,0 +1,2 @@
+build/tmp/log/cooker/<machine>
+build/tmp/log/cooker/phyboard-segin-imx6ul-2/console-latest.log
