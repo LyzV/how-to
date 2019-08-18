@@ -1,2 +1,6 @@
 Для того, чтобы настроить linux-ядро надо выдать следующую команду:
 bitbake linux-imx -c menuconfig
+
+https://community.nxp.com/docs/DOC-100847
+
+

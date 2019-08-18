@@ -1,0 +1,4 @@
+1. In local.conf set variables  SDKMACHINE
+bitbake image -c populate_sdk
+bitbake image -c populate_sdk_ext
+
