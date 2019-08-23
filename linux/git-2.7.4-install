@@ -1,0 +1,6 @@
+#! /bin/bash
+
+sudo apt-get install libcurl4-openssl-dev 
+
+
+./configure --prefix=/usr/local/stow/git-2.7.4
