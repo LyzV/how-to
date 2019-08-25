@@ -1,0 +1,23 @@
+0) Установить заголовки ядра
+$ sudo apt install linux-headers-$(uname -r) dkms
+
+1) Узнать Codename дистрибутива 
+$ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 16.04.6 LTS
+Release:	16.04
+Codename:	xenial
+
+2) Добавить в конец файла /etc/apt/sources.list APT-строку репозитория. Использовать Codename "xenial" в строке!
+deb https://download.virtualbox.org/virtualbox/debian xenial contrib
+
+3) Чтобы пакетный менеджер не ругался добавить ключ репозитория
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add - 
+        
+4) Установить VirtualBox
+sudo apt-get update
+sudo apt-get install virtualbox-6.0
+
+5) Установить Extention Pack. Загрузить его со страницы https://www.virtualbox.org/wiki/Downloads
+   Открыть файл из браузера, выбрать программу для загрузки VirtualBox.
