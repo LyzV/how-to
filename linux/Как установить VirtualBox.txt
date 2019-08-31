@@ -21,3 +21,6 @@ sudo apt-get install virtualbox-6.0
 
 5) Установить Extention Pack. Загрузить его со страницы https://www.virtualbox.org/wiki/Downloads
    Открыть файл из браузера, выбрать программу для загрузки VirtualBox.
+
+6) Добавить пользователя в группу vboxusers:
+sudo adduser $USER vboxusers
