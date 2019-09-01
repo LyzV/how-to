@@ -1,0 +1,2 @@
+
+$ bitbake -g phytec-qt5demo-image && cat pn-depends.dot | grep -v -e '-native' | grep -v digraph | grep -v -e '-image' | awk '{print $1}' | sort | uniq

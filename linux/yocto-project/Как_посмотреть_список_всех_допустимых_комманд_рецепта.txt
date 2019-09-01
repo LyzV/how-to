@@ -1,0 +1,3 @@
+
+$ . sourses/poky/oe...
+$ bitbake phytec-qt5demo-image -c listtasks

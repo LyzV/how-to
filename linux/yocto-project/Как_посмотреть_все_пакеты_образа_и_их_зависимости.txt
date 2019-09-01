@@ -1,0 +1,2 @@
+
+$ bitbake phytec-qt5demo-image -g -u depexp

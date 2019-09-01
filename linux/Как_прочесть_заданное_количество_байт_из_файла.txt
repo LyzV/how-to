@@ -1,0 +1,3 @@
+
+$ dd if=image.sdcard of=file.bin iflag=count_bytes count=10000
+Прочли 10000 байт из файла image.sdcard в файл file.bin
