@@ -1,0 +1,3 @@
+#! /bin/bash
+
+cp conf/local.conf ~/work/prj/how-to/linux/yocto-project/PD17.1.2/
