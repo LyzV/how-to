@@ -1,0 +1,56 @@
+#! /bin/bash
+
+flash_disk=/dev/sdc
+sd_image=phytec-qt5demo-image-phyboard-segin-imx6ul-2.sdcard
+accept=no
+
+echo 'Show disks:'
+ls /dev/sd[c-z]
+
+echo 'Enter flash-disk:'
+read flash_disk
+
+echo 'Check disk:'
+ls -la $flash_disk
+
+echo 'Show image:'
+ls deploy/images/phyboard-segin-imx6ul-2/*.sdcard
+
+echo 'Enter image name:'
+read sd_image
+
+echo 'Check image:'
+ls -la $sd_image
+
+#echo 'Write image? (yes/no):'
+#read accept
+#echo "Your ansver: $accept"
+
+#if [ $accept != yes ]; then
+#   echo 'Exit...'
+#   exit 
+#fi
+
+file_size=$(wc -c <"$sd_image")
+echo "Image size: $file_size"
+
+echo "flash-disk: $flash_disk"
+echo "image: $sd_image"
+
+echo "Write image to flash-disk..."
+sudo dd if=${sd_image} of=${flash_disk} bs=1MB conv=fsync
+
+echo "Read sd-flash to image.bin..."
+dd if=${sd_image} of=image.bin iflag=count_bytes count=${file_size}
+
+echo "Verify image..."
+diff image.bin ${sd_image} || echo "FAIL!!!"
+
+rm image.bin
+
+#sudo dd if=${sd_image} bs=1MB | pv | sudo dd of=${flash_disk} bs=1MB conv=fsync
+#pv -n ${sd_image} -s ${file_size} | sudo dd of=${flash_disk} bs=1MB conv=fsync
+#sudo dd if=$sd_image of=$flash_disk bs=1MB conv=fsync status=progress
+#sudo dd if=${sd_image} | pv | sudo dd of=${flash_disk} bs=1MB conv=fsync
+
+

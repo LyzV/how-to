@@ -1,0 +1,8 @@
+
+$ bitbake -e virtual/kernel | grep "^S="
+
+Показывает путь к исходникам ядра
+
+$ bitbake -e qtserialport | grep "^S="
+
+Показывает где лежат исходники рецепта qtserialport
