@@ -1,0 +1,4 @@
+. sources/poky/oe...
+
+Пусть я хочу найти в каком пакете есть sqlite3
+$ oe-pkgdata-util find-path "*sqlite3*"
