@@ -15,6 +15,9 @@ phytec-qt5demo-image-phyboard-segin-imx6ul-2.sdcard
 9. С помощью утилиты dd копируем файл phytec-qt5demo-image-phyboard-segin-imx6ul-2.sdcard
    на SD-card:
 # sudo dd if=deploy/images/phyboard-segin-imx6ul-2/phytec-qt5demo-image-phyboard-segin-imx6ul-2.sdcard of=/dev/sdc bs=1MB conv=fsync
+или 
+# sudo dd if=deploy/images/phyboard-segin-imx6ul-2/phytec-qt5demo-image-phyboard-segin-imx6ul-2.sdcard of=/dev/sdc bs=1MB && sync
+
 10. SD-card ещё не готова. На карте есть загрузчик и файл системы Device Tree (DT).
     Последний файл необходимо подправить для включения дисплея с ёмкостным сенсорным экраном.
 	Этот файл правится с помощью самого загрузчика (который на SD-card).
