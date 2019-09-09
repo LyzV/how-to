@@ -1,0 +1,27 @@
+#! /bin/bash
+
+flash_disk=/dev/sdb
+
+echo 'Show disks:'
+ls /dev/sd[b-z]
+
+echo 'Enter flash-disk:'
+read flash_disk
+
+echo 'Check disk:'
+ls -la $flash_disk
+
+echo "Unmount partition 2 and 1"
+sudo umount ${flash_disk}[1-9]
+
+echo "Format disk ..."
+sudo dd if=/dev/zero of=/dev/sdb bs=512 count=2 && echo "Success!"
+
+
+echo "Make primari partition FAT32 (LBA)"
+sudo sfdisk ${flash_disk} <<EOF
+16384,600M,c
+EOF
+
+echo "Format partition"
+sudo mkfs.vfat ${flash_disk}1 && echo "Success!"

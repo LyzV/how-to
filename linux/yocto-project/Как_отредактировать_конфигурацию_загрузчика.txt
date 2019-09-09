@@ -1,0 +1,6 @@
+
+
+1) Отредактировать файл:
+/home/lyzv/work/bsp/pd17.1.2/build/tmp/work/phyboard_segin_imx6ul_2-phytec-linux-gnueabi/barebox/2017.04.0-phy3-r7.0/git/.env-extra/config-expansions
+2) Пересобрать всё:
+$ bitbake phytec-qt5demo-image

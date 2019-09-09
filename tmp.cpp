@@ -1,3 +1,16 @@
+логин: vladimir.lyz
+пароль: IntelCoreI27
+///////////////////////////////////////////////////////////////
+
+Отчёт за 2-6 сентября 2019г
+1. Восстановление рабочего окружения linux - 100%. Затрачено 2*8=16 часов.
+2. Восстановление рабочего окружения windows - 10%. -
+3. Разработка скриптов "восстановления/установки системного ПО на внутреннюю память SoM" - 90%.
+   Затрачено 3*8=24 часа.
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
 /opt/SDK-PD17.2-rc2/environment-setup-cortexa7hf-neon-vfpv4-phytec-linux-gnueabi
 
 Prolific Technology, Inc. PL2303 Serial Port adapter
@@ -156,3 +169,59 @@ SUBSYSTEM=="block", KERNEL=="sd[a-z][0-9]", ACTION=="remove", RUN+="/bin/rm -r /
 
 Ну и для отладки подключения флешки можно использовать монитор событий udev:
 $ udevadm monitor --property --kernel --udev
+
+//////////////////////////////////////////////////////////////////////
+Директории
+
+echo "FORMAT NAND-memory ..."
+ubiformat /dev/nand0.root
+ubiattach /dev/nand0.root
+echo "MAKE PARTITIONS ..."
+ubimkvol -t static /dev/nand0.root.ubi kernel 8M
+ubimkvol -t static /dev/nand0.root.ubi oftree 1M
+ubimkvol -t dynamic /dev/nand0.root.ubi root 0
+
+echo "COPY KERNEL & OFFTREE ..."
+cp /mnt/tftp/zImage .
+cp /mnt/tftp/oftree .
+ubiupdatevol /dev/nand0.root.ubi.kernel zImage
+ubiupdatevol /dev/nand0.root.ubi.oftree oftree
+
+echo "COPY ROOTFS ..."
+bootloader$ cp -v /mnt/tftp/root.ubifs /dev/nand0.root.ubi.root
+
+echo "THAT IS ALL!"
+
+////////////////////////////////////////////////////////////////////////////
+barebox@Phytec phyCORE-i.MX6 Ultra Lite SOM:/ sh /mnt/mmc/script  
+FORMAT NAND-memory ...
+ubi0: detaching mtd0 from ubi0
+ubi0: removing nand0.root.ubi
+ubi0: mtd0 is detached
+ubiformat: nand0.root (nand), size 531628032 bytes (507 MiB), 4056 eraseblocks of 131072 bytes (128 KiB), min. I/O size 2048 bytes
+libscan: scanning eraseblock 4055 -- 100 % complete  
+ubiformat: 4052 eraseblocks have valid erase counter, mean value is 12
+ubiformat: 4 bad eraseblocks found, numbers: 4052, 4053, 4054, 4055
+ubiformat: formatting eraseblock 4055 -- 100 % complete  
+ubi0: scanning is finished
+ubi0: registering /dev/nand0.root.ubi
+ubi0: attached mtd0 (name "nand0.root", size 507 MiB) to ubi0
+ubi0: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+ubi0: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+ubi0: VID header offset: 2048 (aligned 2048), data offset: 4096
+ubi0: good PEBs: 4052, bad PEBs: 4, corrupted PEBs: 0
+ubi0: user volume: 0, internal volumes: 1, max. volumes count: 128
+ubi0: max/mean erase counter: 23/13, WL threshold: 4096, image sequence number: 8765
+ubi0: available PEBs: 3970, total reserved PEBs: 82, PEBs reserved for bad PEB handling: 76
+failed to attach: File exists
+MAKE PARTITIONS ...
+ubi0: registering kernel as /dev/nand0.root.ubi.kernel
+ubi0: registering oftree as /dev/nand0.root.ubi.oftree
+ubi0: registering root as /dev/nand0.root.ubi.root
+COPY KERNEL & OFFTREE ...
+COPY ROOTFS ...
+bootloader$: No such file or directory
+THAT IS ALL!
+barebox@Phytec phyCORE-i.MX6 Ultra Lite SOM:/
+
+/home/lyzv/work/bsp/pd17.1.2/build/tmp/work/phyboard_segin_imx6ul_2-phytec-linux-gnueabi/barebox/2017.04.0-phy3-r7.0/git/.env-extra/config-expansions

@@ -65,3 +65,7 @@ ROOT_HOME="/home/root"
 
 pd17.1.2/build/ - корень каталога сборки 
              `tmp/ - здесь выполняет всю свою работу OpenEmbedded - TMPDIR
+
+
+
+./barebox/2017.04.0-phy3-r7.0/git/arch/arm/dts/imx6ull-phytec-phycore-som.dts
