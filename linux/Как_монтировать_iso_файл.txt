@@ -1,0 +1,10 @@
+
+1) Загружаем модуль loop:
+$ sudo modprobe loop
+
+2) Монтируем:
+$ sudo mount file.iso /media/iso/ -t iso9660 -o loop
+
+3) Потом используем...
+4) и размонтируем:
+$ umount /media/iso/
