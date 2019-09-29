@@ -1,0 +1,18 @@
+
+$ ls -la /dev/sd[a-z]
+
+$ lsusb
+
+$ df -h
+
+$ lsblk
+
+$ findmnt
+
+$ less /proc/mounts
+
+$ lsinput
+Программа устанавливается так:
+$ sudo apt install input-utils
+
+$ dmesg
