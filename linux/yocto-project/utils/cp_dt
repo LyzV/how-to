@@ -1,0 +1,35 @@
+
+#! /bin/bash
+
+ksu_DT_dir=~/work/prj/qt/ksu/DEVICE_TREE/
+kernel_dts_dir=tmp/work-shared/phyboard-segin-imx6ul-2/kernel-source/arch/arm/boot/dts
+accept=yes
+
+echo "Check ksu/DEVICE_TREE/ directory:"
+ls -la $ksu_DT_dir
+
+echo "Check kernel dts directory:"
+ls ${kernel_dts_dir}/imx6ul-phytec-*.dts*
+
+echo "Continue (yes/no, default - yes):"
+read accept
+
+if [ -z $accept ]; then
+	echo "Coping..."
+else
+	if [ $accept != yes ]; then
+		echo 'Exit...'
+   		exit 
+   	fi	
+   	echo "Coping..."
+fi
+
+cp -f ${ksu_DT_dir}/imx6ul-phytec-phyboard-segin-ff-rdk.dts ${kernel_dts_dir}/
+cp -f ${ksu_DT_dir}/imx6ul-phytec-phyboard-segin.dtsi 		${kernel_dts_dir}/
+cp -f ${ksu_DT_dir}/imx6ul-phytec-phycore-som.dtsi 			${kernel_dts_dir}/
+cp -f ${ksu_DT_dir}/imx6ul-phytec-phycore-som.dtsi 			${kernel_dts_dir}/
+cp -f ${ksu_DT_dir}/imx6ul-phytec-phycore-som.dtsi 			${kernel_dts_dir}/
+
+
+echo "Check kernel dts directory:"
+ls ${kernel_dts_dir}/imx6ul-phytec-*.dts*

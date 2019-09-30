@@ -1,0 +1,103 @@
+#! /bin/bash
+
+flash_disk=/dev/sdb
+barebox=barebox.bin
+kernel=zImage
+dt=oftree
+rootfs=rootfs.ubifs
+accept=no
+
+# echo 'Show disks:'
+# ls /dev/sd[b-z]
+
+# echo 'Enter flash-disk:'
+# read flash_disk
+/usr/bin/python3 ${HOME}/work/prj/python/python-learn/find_usb_device.py
+
+echo 'Input full disk name: '
+read flash_disk
+
+echo 'Check disk:'
+ls -la $flash_disk
+
+echo "Burn the disk? (yes/no):"
+read accept
+
+if [[ -z $accept ]]; then
+	echo "Exit..."
+	exit
+fi
+
+if [ $accept == no ]; then
+   echo "Exit ..."
+   exit
+fi
+
+if [ $accept == yes ]; then
+	accept=1
+else 
+	echo "Exit ..."
+	exit	
+fi
+
+echo "Unmount partition 2 and 1"
+sudo umount ${flash_disk}[1-9]
+
+echo "Format disk ..."
+sudo dd if=/dev/zero of=/dev/sdb bs=512 count=4 && echo "Success!"
+
+
+echo "Make primari partition FAT32 (LBA)"
+sudo sfdisk ${flash_disk} <<EOF
+18432,600M,c
+EOF
+
+echo "Format partition"
+sudo mkfs.vfat ${flash_disk}1 && echo "Success!"
+
+echo 'List of images:'
+ls deploy/images/phyboard-segin-imx6ul-2/barebox*.bin
+
+echo 'Enter BAREBOX image names:'
+read barebox
+
+echo 'List of kernels:'
+ls deploy/images/phyboard-segin-imx6ul-2/zImage*.bin
+echo 'Enter KERNEL image name:'
+read kernel
+
+echo 'List DEVICE TREE image names:'
+ls deploy/images/phyboard-segin-imx6ul-2/*.dtb
+
+echo 'Enter DEVICE TREE image name:'
+read dt
+
+echo 'List ROOTFS image names:'
+ls deploy/images/phyboard-segin-imx6ul-2/*.ubifs
+
+echo 'Enter ROOTFS image name:'
+read rootfs
+
+echo "Copy kernel, device tree and rootfs..."
+sudo mount -o rw,nosuid,nodev,relatime,uid=1000,gid=1000 ${flash_disk}1 mnt
+sudo cp ${kernel} 	mnt/zImage
+sudo cp ${dt} 		mnt/oftree
+sudo cp ${rootfs} 	mnt/root.ubifs
+sudo cp ${barebox} 	mnt/barebox.bin
+sudo cp sd-to-nand	mnt/
+sync
+
+
+echo "Write barebox ..."
+sudo umount ${flash_disk}
+sudo dd if=${barebox} of=${flash_disk} bs=512 skip=2 seek=2 && sync
+
+echo "Check disk: "
+ls -la mnt/
+
+sudo umount mnt/
+
+
+
+echo "!!!!!!!"
+
