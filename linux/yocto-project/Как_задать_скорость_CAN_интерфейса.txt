@@ -1,0 +1,2 @@
+Отредактировать файл:
+../sources/meta-yogurt/recipes-core/systemd/systemd-machine-units/can0.service
