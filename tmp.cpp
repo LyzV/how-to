@@ -1,5 +1,7 @@
 логин: vladimir.lyz
 пароль: IntelCoreI27
+пароль: IntelCoreI28
+пароль: IntelCoreI29
 ///////////////////////////////////////////////////////////////
 
 Отчёт за 2-6 сентября 2019г
@@ -7,6 +9,10 @@
 2. Восстановление рабочего окружения windows - 10%. -
 3. Разработка скриптов "восстановления/установки системного ПО на внутреннюю память SoM" - 90%.
    Затрачено 3*8=24 часа.
+
+Замечания к ПО КСУ:
+1. При аварии по высокому напряжению сети (в КИ) в аварийный контекст укладываются 3 фазных напряжения.
+   Римера показывает напряжения Uab, Ubc, Uca.
 
 
 
@@ -324,3 +330,89 @@ ProtopopovDA@samng.ru
    исправить приём на технические атмосферы. Уточните у производителя этого иммитатора в каких единицах работают 1) их иммитатор, 2) их телеметрия? 
 
 
+*/
+*/
+/***********************************************************************************/
+Ошибка в режиме по программе!
+При включенном управлении недогрузом алгоритм по факту не управляет.
+
+/*****************************************************************************************/
+1) Предусмотрена стабилизация выходного напряжения при эксплуатации от нестабильной питающей сети.
+2) Кроме того должна быть обеспечена возможность считывания информации портативным компьютером, 
+   блоком съема информации или передаче в стандарте RS-232 или RS-485. ????
+3) Другая MODBUS-карата телемеханики. Непонятные параметры: "Цифровые входа" (адр. 499-496), "Релейные 
+   выхода" (адр. 344-347).
+
+
+   GKI_Flag=MNT_CREATED;
+   GKI_Flag=MNT_TICK;//Задача жива
+
+_PARAM_VIEW_(Index_RtcDate, SysDateSetView),
+_PARAM_VIEW_(Index_RtcTime, SysTimeSetView),
+
+FRM_DATE_TIME
+FRM_RTC
+FRM_DATE_TIME_CALIBRATE
+
+
+PowerWorker
+
+
+reg_can1_en
+
+
+speed 115200 baud;
+stty: /dev/ttymxc5
+ line = 0;
+intr = ^C; 
+quit = ^\; 
+erase = ^?; 
+kill = ^U; 
+eof = ^D; 
+eol = <undef>; 
+eol2 = <undef>; 
+swtch = <undef>; 
+start = ^Q; 
+stop = ^S; 
+susp = ^Z; 
+rprnt = ^R; 
+werase = ^W; 
+lnext = ^V; 
+flush = ^O; 
+min = 1; 
+time = 0;
+
+-parenb -parodd cs8 hupcl -cstopb cread clocal -crtscts
+-ignbrk -brkint -ignpar -parmrk -inpck -istrip -inlcr -igncr icrnl ixon ixoff -iuclc -ixany -imaxbel iutf8
+opost -olcuc -ocrnl onlcr -onocr -onlret -ofill -ofdel nl0 cr0 tab0 bs0 vt0 ff0
+isig icanon -iexten echo echoe echok -echonl -noflsh -xcase -tostop -echoprt echoctl echoke
+
+
+speed 115200 baud;
+stty: /dev/ttymxc2
+ line = 0;
+intr = ^C; 
+quit = ^\; 
+erase = ^?; 
+kill = ^U; 
+eof = ^D; 
+eol = <undef>; 
+eol2 = <undef>; 
+swtch = <undef>; 
+start = ^Q; 
+stop = ^S; 
+susp = ^Z; 
+rprnt = ^R; 
+werase = ^W; 
+lnext = ^V; 
+flush = ^O; 
+min = 1; 
+time = 0;
+
+-parenb -parodd cs8 hupcl -cstopb cread clocal -crtscts
+-ignbrk -brkint -ignpar -parmrk -inpck -istrip -inlcr -igncr icrnl ixon ixoff -iuclc -ixany -imaxbel iutf8
+opost -olcuc -ocrnl onlcr -onocr -onlret -ofill -ofdel nl0 cr0 tab0 bs0 vt0 ff0
+isig icanon -iexten echo echoe echok -echonl -noflsh -xcase -tostop -echoprt echoctl echoke
+
+
+ProtopopovDA@samng.ru

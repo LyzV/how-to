@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)https://community.nxp.com/thread/486379 -->
+<html lang="ru" style=""><!----><!--[endif]----><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>How to set WDOG_B timeout period for i.MX6ULL? | NXP Community</title><meta name="description" content="Hi,  I attempted to change the setting of the timeout period of WDOG, depending on the device tree of i.MX6ULL.  I set it as below in the devicetree, but"><meta name="keywords" content="devicetree, imx6_wdt time out, imx6ull, wdt, yocto imx"><meta name="viewport" content="user-scalable=0, initial-scale=1.0"><link rel="canonical" href="https://community.nxp.com/thread/486379">
+<script src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/nr-1130.min.js"></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1130.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script><link rel="stylesheet" href="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/jive-font-face.css" type="text/css" media="all"><!--[if IE]><link rel="stylesheet" href="https://assets2.jiveon.com/core/2018.19.0.0.9ff2aa7/styles/jive.ie.css" type="text/css" media="all"/><![endif]--><!--[if !IE]> --><link rel="stylesheet" href="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/jive.css" type="text/css" media="all"><!-- <![endif]--><link rel="stylesheet" href="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/jive-visor.css" type="text/css" media="all"><!--[if IE]><link rel="stylesheet" href="https://assets2.jiveon.com/core/2018.19.0.0.9ff2aa7/styles/jive_content_redesign.ie.css" type="text/css" media="all"/><![endif]--><!--[if !IE]> --><link rel="stylesheet" href="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/jive_content_redesign.css" type="text/css" media="all"><!-- <![endif]--><!--[if IE]><link rel="stylesheet" href="https://assets2.jiveon.com/core/2018.19.0.0.9ff2aa7/styles/tiny_mce4/themes/advanced/skins/default/content.ie.css" type="text/css" media="all"/><![endif]--><!--[if !IE]> --><link rel="stylesheet" href="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/content.css" type="text/css" media="all"><!-- <![endif]--><link rel="search" href="https://community.nxp.com/opensearch.xml" title="NXP Community" type="application/opensearchdescription+xml"><link rel="shortcut icon" type="image/x-icon" href="https://community.nxp.com/resources/images/palette-1034/faviconImage-1549658967702-favicon.ico"><!--[if lt IE 9]><script src="https://assets2.jiveon.com/core/2018.19.0.0.9ff2aa7/resources/scripts/vendor/html5shiv/html5shiv.js"></script><![endif]--><!--[if IE]><script>
+            // Avoid 'console' errors in browsers that lack a console.
+            (function() {
+               var method;
+               var noop = function () {};
+               var methods = [
+                   'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
+                   'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
+                   'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
+                   'timeStamp', 'trace', 'warn'
+               ];
+               var length = methods.length;
+               var console = (window.console = window.console || {});
+
+               while (length--) {
+                   method = methods[length];
+
+                   // Only stub undefined methods.
+                   if (!console[method]) {
+                       console[method] = noop;
+                   }
+               }
+            }());
+        </script><![endif]--><script>(function() {var prepareUrl = function(url) {if (url.indexOf(";") > 0) {url = url.substring(0, url.indexOf(";"));}if (url.charAt(url.length - 1) == '/') {url = url.substring(0, url.length - 1);}return url;}; if (typeof(window._jive_base_url) == "undefined") {window._jive_base_url = prepareUrl("\/")}if (typeof(window._jive_base_absolute_url) == "undefined") {window._jive_base_absolute_url = prepareUrl("https:\/\/community.nxp.com")}if (typeof(window._jive_resource_url) == "undefined") {window._jive_resource_url = prepareUrl("https:\/\/assets2.jiveon.com\/core\/2018.19.0.0.9ff2aa7\/")}if (typeof(window._jive_theme_url) == "undefined") {window._jive_theme_url = prepareUrl("\/themes\/\/")}if (typeof(window._jive_current_user) == "undefined") {window._jive_current_user = {anonymous: true, partner: false, visible: true, username: 'ANONYMOUS', ID: '-1', enabled: true, avatarID: '29594', displayName: 'ANONYMOUS'};}})(); var _jive_effective_user_id = "-1"; var _jive_auth_token ="no-user"; var _jive_locale = "ru_RU"; var _jive_translation_language = "ru"; var _jive_display_language = "ru"; var _jive_browser_event = {"providers":["activityStream.poll","appAlert.create","inboxCount.poll"],"since":1571734892312}; var _jive_browser_event_polling_delay =  300000.0 ; var _jive_socket_events = {"socketEvents":["activityStream.push","tiledata.push"]}; var _jive_realtime_push_enabled =  false ; var _jive_allstream_counts_enabled =  false ; var _jive_playbox_enabled =  true ;var _jive_timezoneoffset =  -7.0 ; var _jive_server_timezoneoffset =  -7.0 ; var _jive_timezone_id = 'America\/Phoenix'; var _jive_enable_browserdb =  false ; var _jive_nitro_call_delay =  0.0 ; var jive = jive || {}; jive.global = jive.global || {}; jive.global.instanceID = '52391d11-e1e0-4c7e-aeb6-a255e3c17340'; jive.global.containerType = '14'; jive.global.containerID = '2004';jive.global.containerBrowseId = '1114';jive.global.subdomain = {}; jive.global.subdomain.mode = 'single'; jive.global.subdomain.template = 'https:\/\/app-community.nxp.com%path%'; jive.global.extensions = {"8116bcf8-061b-4f31-9b9a-0fcd2228b769":"7b10402577","13780580-b4f8-4bcd-8189-a5d48414cb5d":"62c518a21c","185191ef-772a-4541-8b5a-411108dda0fa":"52416ce682"}; jive.global.galaEnabled =  false ; window.SPELL_LANGS = "English (Canada)\x3den_ca,English (United Kingdom)\x3den_gb,+English (United States)\x3den_us,French\x3dfr,French (Canada)\x3dfr_ca,German\x3dde,Italian\x3dit,Spanish\x3des"; window.CS_BASE_URL = ""; window.CS_RESOURCE_BASE_URL = "https:\/\/assets2.jiveon.com\/core\/2018.19.0.0.9ff2aa7"; window.CS_ABSOLUTE_RESOURCE_BASE_URL = "https:\/\/community.nxp.com\/2018.19.0.9ff2aa7\/"; window.tinyMCEPreInit = {suffix : "", base : CS_BASE_URL + "/resources/scripts/vendor/tinymce"}; if (typeof(_jive_project_i18n) == "undefined") {var _jive_project_i18n = new Array(); _jive_project_i18n['project.calendar.task'] = "Задача"; _jive_project_i18n['project.calendar.tasks'] = "Задачи"; _jive_project_i18n['project.calendar.checkpoint'] = "Контрольная точка"; _jive_project_i18n['project.calendar.checkpoints'] = "Контрольные точки"; _jive_project_i18n['global.edit'] = "Изменить"; _jive_project_i18n['global.delete'] = "Удалить"; _jive_project_i18n['project.task.mark.complete'] = "Пометить как завершенное"; _jive_project_i18n['project.task.assign.to.me'] = "Назначить мне"; _jive_project_i18n['task.incomplete.link'] = "Незавершенное"; _jive_project_i18n['project.checkPoint.create.link'] = "3 Создать веху"; _jive_project_i18n['project.task.create.link'] = "Создать задачу";}</script><script src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/main.js"></script><script>requirejs.config({baseUrl: 'https://assets2.jiveon.com/core/2018.19.0.0.9ff2aa7/resources/scripts/', paths: {'jiveCoreApiV3': '/resources/scripts/gen/v3/9281705ea2202ee527130b869d17a2fc','shindig': '/gadgets/js/jive-core-container:container:core:rpc:open-views:selection:actions.js?c=1&container=default', 'plugins': 'https://community.nxp.com/2018.19.0.9ff2aa7/plugins', 'dwr/interface' : 'https://community.nxp.com/2018.19.0.9ff2aa7/dwr/interface', 'dwr'    : 'https://community.nxp.com/2018.19.0.9ff2aa7/resources/scripts/dwr', 'tinyMCE': 'vendor/tinymce/tinymce'},bundles: {'gen/soy/eae/common': [ 'soy!jive.eae.common.activityAuthor', 'soy!jive.eae.common.activityAuthorAndOnBehalfOfNoVerb', 'soy!jive.eae.common.activityAuthorNoVerb', 'soy!jive.eae.common.activityContainer', 'soy!jive.eae.common.activityContainerJoSubject', 'soy!jive.eae.common.activityContentCommon', 'soy!jive.eae.common.activityContentText', 'soy!jive.eae.common.activityHeadingHref', 'soy!jive.eae.common.activityHeadingHrefWithReferringUser', 'soy!jive.eae.common.activityHelpfulCounts', 'soy!jive.eae.common.activityNavActions', 'soy!jive.eae.common.collapsedExcerptText', 'soy!jive.eae.common.contentTypeClassName', 'soy!jive.eae.common.contentTypeDisplayName', 'soy!jive.eae.common.contentTypeParentPreviewStylingClassName', 'soy!jive.eae.common.currentCountText', 'soy!jive.eae.common.digestSubItem', 'soy!jive.eae.common.displayParentAuthor', 'soy!jive.eae.common.embeddedPreview', 'soy!jive.eae.common.entryRepost', 'soy!jive.eae.common.formatMediaLinkUrl', 'soy!jive.eae.common.formatMediaLinkUrl__C2bf6', 'soy!jive.eae.common.generateUserMetaData', 'soy!jive.eae.common.groupedUsers', 'soy!jive.eae.common.jsI18nHelper', 'soy!jive.eae.common.loadingSpinner', 'soy!jive.eae.common.microRTEContainer', 'soy!jive.eae.common.parentPreviewLinks', 'soy!jive.eae.common.parentPreviewLinksInline', 'soy!jive.eae.common.readingPaneBottomReplyLinkKey', 'soy!jive.eae.common.renderStreamAttachments', 'soy!jive.eae.common.repliedToIcon', 'soy!jive.eae.common.replyCountText', 'soy!jive.eae.common.replyingToText', 'soy!jive.eae.common.repostModal', 'soy!jive.eae.common.repostModalSuccess', 'soy!jive.eae.common.rtePanel', 'soy!jive.eae.common.rteTextArea', 'soy!jive.eae.common.sharedVia', 'soy!jive.eae.common.streamImage', 'soy!jive.eae.common.subactivity' ]},urlArgs: 'salt=' + '1556532331',locale: 'ru_RU', config: {'l10n': {locale: 'ru_RU'}, 'soy': {baseUrl: 'https://community.nxp.com/2018.19.0.9ff2aa7/resources/scripts/'}}});requirejs.config({paths: {'jiveCoreApiV3': 'https://community.nxp.com/resources/scripts/gen/v3/9281705ea2202ee527130b869d17a2fc','shindig': 'https://community.nxp.com/gadgets/js/jive-core-container:container:core:rpc:open-views:selection:actions.js?c=1&container=default', 'gen/soy': 'https://community.nxp.com/2018.19.0.9ff2aa7/resources/scripts/gen/soy', 'tinymce/i18n': 'https://community.nxp.com/2018.19.0.9ff2aa7/resources/scripts/tinymce/i18n'}});</script><script>requirejs.config({config: {'application/config': {'allStreamCountsEnabled':  false , 'anyAppsEnabled':  false , 'appsAvailable':  false , 'appsRteActionsAvailble':  false , 'authToken': 'no-user', 'browserDbEnabled':  false , 'browserEventQuery': JSON.parse('{\x22providers\x22:[\x22activityStream.poll\x22,\x22appAlert.create\x22,\x22inboxCount.poll\x22],\x22since\x22:1571734892312}'), 'browserEventsPollingDelay': '300000', 'containerBrowseId': '1114', 'communityName': 'NXP Community', 'containerId': '2004', 'containerType': '14', 'currentUser': JSON.parse('{\x22type\x22:3,\x22link\x22:\x22\/people\/ANONYMOUS\x22,\x22subject\x22:\x22ANONYMOUS\x22,\x22iconCss\x22:\x22jive-icon-profile\x22,\x22archetype\x22:\x22people\x22,\x22thumbnailTemplate\x22:\x22jive.browse.user.thumbnailUserItem\x22,\x22detailTemplate\x22:\x22jive.browse.user.detailUserItem\x22,\x22objectTypeName\x22:null,\x22objectTypeFeatureName\x22:null,\x22displayExternallyVisibleVisualCue\x22:false,\x22prop\x22:{\x22isVisibleToPartner\x22:false,\x22search\x22:{\x22defaultEnabled\x22:true},\x22avatarID\x22:\x2229594\x22,\x22profile\x22:{\x22department\x22:null,\x22lastLoggedInDate\x22:null,\x22biography\x22:null,\x22mobilePhoneNumber\x22:null,\x22primaryPhoneNumber\x22:null,\x22joinDate\x22:null,\x22company\x22:null,\x22primaryEmailAddress\x22:null,\x22primaryEmailAddressVisible\x22:false,\x22alternateEmailAddress\x22:null,\x22pagerNumber\x22:null,\x22faxNumber\x22:null,\x22homePhoneNumber\x22:null,\x22alternatePhoneNumber\x22:null,\x22hireOrJoinDate\x22:null,\x22expertise\x22:null,\x22occupation\x22:null,\x22primaryURL\x22:null,\x22homeAddress\x22:null,\x22strictJoinDate\x22:null,\x22address\x22:null,\x22location\x22:null,\x22url\x22:null,\x22timeZone\x22:null,\x22title\x22:null,\x22initialLoginDate\x22:null},\x22profileImage\x22:{\x22url\x22:\x22\/people\/ANONYMOUS\/avatar\/200.png?a\x3d29594\x22,\x22highDensityURL\x22:\x22\/people\/ANONYMOUS\/avatar\/400.png?a\x3d29594\x22,\x22viewingSelf\x22:false,\x22profileEvolution\x22:true,\x22default\x22:false},\x22presence\x22:{\x22userExternalID\x22:null,\x22online\x22:false,\x22jsObject\x22:\x22null\x22}},\x22username\x22:\x22ANONYMOUS\x22,\x22displayName\x22:\x22ANONYMOUS\x22,\x22initialLoginDate\x22:null,\x22anonymous\x22:true,\x22enabled\x22:true,\x22external\x22:false,\x22partner\x22:false,\x22email\x22:null,\x22entitled\x22:true,\x22visible\x22:true,\x22avatarID\x22:\x2229594\x22,\x22id\x22:\x22-1\x22,\x22objectType\x22:3,\x22modificationTime\x22:null,\x22unmodified\x22:true,\x22creationTime\x22:null,\x22creationDate\x22:null,\x22modificationDate\x22:null}'), 'galaEnabled':  false , 'galaURL': '', 'instanceId': '52391d11-e1e0-4c7e-aeb6-a255e3c17340', 'jqueryNoConflict':  true , 'locale': 'ru_RU', 'onboardingEnabled':  false , 'realtimeCommunicationsEnabled':  false , 'realtimeEnabled':  false , 'realtimePushEnabled':  false , 'realtimeStatsEnabled':  false , 'serverTimeZoneOffset':  -7.0 , 'socketEvents': JSON.parse('{\x22socketEvents\x22:[\x22activityStream.push\x22,\x22tiledata.push\x22]}'), 'timezoneId': 'America\/Phoenix', 'timezoneOffset':  -7.0 , 'translationLanguage': 'ru', 'integrationTranslationLanguage': 'ru-RU', 'groupMembershipEvolutionEnabled':  false , 'workGroupsEnabled':  false , 'playboxEnabled':  true , 'playboxChallengeEnabled':  true , 'playboxChallengeTauntEnabled':  true , 'userPanelEnabled':  true , 'userBadgesEnabled':  true ,'jsPageController': 'page/content/controller','pageConfig': JSON.parse('{\x22containerId\x22:2004,\x22containerType\x22:14}'),'baseUrl': '/', 'absoluteBaseUrl': 'https://community.nxp.com/', 'resourceUrl': 'https://assets2.jiveon.com/core/2018.19.0.0.9ff2aa7/', 'originResourceUrl': 'https://community.nxp.com/2018.19.0.9ff2aa7/', 'themeUrl': '/themes/', 'cssUrl': 'https://assets2.jiveon.com/core/2018.19.0.0.9ff2aa7/styles/'}}});</script><script>require(['main']);</script><script>require(['apps/tips/main', 'domReady!'], function() {var tipsApp = new jive.Tips.Main({tipGroups:[], skippedTipGroupIDs: []});});</script><link rel="stylesheet" href="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/jive-responsive.css" type="text/css" media="all"><link rel="stylesheet" href="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/n4jive.concat.css" type="text/css" media="all"><link class="j-custom-theme" rel="stylesheet" href="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/1565715651946.css" type="text/css" media="all"><link rel="stylesheet" href="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/jive-exobjects-icons.css" type="text/css" media="all"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="apps/tips/main" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/app.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="antivirus" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/antivirus.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jive/rate" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/rate.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jive/rte/defaultStyles" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/tinymce4.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jive/bundles/zapatec" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/zapatec.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="breadcrumb" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/breadcrumb.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jive/contentplace_relationship" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/contentplace_relationship.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="sso/google-oidc-login" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/google-oidc-login.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="apps/tile/html_tile_connector" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/html_tile_connector.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jive/rte/externalLinkModal" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/externalLinkModal.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="shindig" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/jive-core-container_container_core_rpc_open-views_selection_actions.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="gen/soy/jive/integration/tiles/view/render" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/render.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="gen/soy/jive/skin/template/cookieConsent/cookieBanner" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/cookieBanner.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="gen/soy/jive/rate/soy/renderRating" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/renderRating.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="gen/soy/jive/rate/soy/renderUserRating" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/renderUserRating.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="zapatec/zpcal/lang/calendar-ru" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/calendar-ru.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="gen/soy/jive/shared/breadcrumb/placeLinkPopoverResults" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/placeLinkPopoverResults.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="gen/soy/jive/shared/breadcrumb/placeLinkRemoveConfirm" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/placeLinkRemoveConfirm.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="gen/soy/jive/shared/breadcrumb/breadcrumbIntroText" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/breadcrumbIntroText.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="moment-l10n/ru" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/ru.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jiveCoreApiV3" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/9281705ea2202ee527130b869d17a2fc.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="gen/soy/jive/shared/breadcrumb/placeLinkPopover" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/placeLinkPopover.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="gen/soy/jive/DiscussionApp/soy/rteMsgQuote" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/rteMsgQuote.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="gen/soy/jive/shared/breadcrumb/placeLinkBreadcrumb" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/placeLinkBreadcrumb.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jive/app/core_container/mock" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/mock.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jive/app/core_container/tile_app" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/tile_app.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="apps/content/questions/correct_view" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/correct_view.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="apps/content/questions/assumed" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/assumed.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="apps/outcomes/v2_badge_view" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/v2_badge_view.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="apps/outcomes/helpfulView" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/helpfulView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="apps/outcomes/v2_badge_toplevel_view" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/v2_badge_toplevel_view.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="apps/outcomes/helpfulMain" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/helpfulMain.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="gen/soy/jive/question/view/correctAnswer" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/correctAnswer.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="apps/outcomes/helpfulModel" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/helpfulModel.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="gen/soy/jive/unified/content/view/outdatedWarning" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/outdatedWarning.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="gen/soy/jive/unified/content/view/badge" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/badge.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="gen/soy/jive/unified/content/view/headerBadgeByline" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/headerBadgeByline.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="gen/soy/jive/unified/content/view/badges" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/badges.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="gen/soy/jive/unified/content/view/headerBadgePopup" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/headerBadgePopup.js"></script></head><body class="jive-body-content j-design-latest j-content-question j-header-mode-custom j-simple-homepage j-tinymce4-enabled j-responsive-md" style="width: 1120px; padding-right: 0px;"><div id="j-search-visor" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="j-visor-search-input" aria-hidden="true" aria-busy="false" style="top: 128px; right: 0px; max-height: 470px;" aria-activedescendant="" class="current-view-blank"><div class="j-search-visor-inner"><div class="j-visor-searchbar-wrapper"><label for="j-visor-search-input" class="j-508-label">Поиск</label><span class="j-search-n-spinner-wrapper"><i class="j-searchbar-icon icon-search"></i><i class="j-searchbar-thinker icon-spinner spin" aria-hidden="true"></i></span><input id="j-visor-search-input" type="text" class="j-search-input" value="" required="required"><a class="j-searchbar-close" aria-label="Закрыть" href="https://community.nxp.com/thread/486379#"><i class="icon-close-thin"></i></a></div><nav class="j-visor-tabs" style="display: none;"></nav><div class="j-visor-views"><div class="j-visor-view-blank" style="display: block;"></div></div></div></div><div class="j-alert-banner" id="cookie-consent-alert" role="alert" aria-live="polite" aria-atomic="true"><div class="j-alert j-bannerContainer"><span class="j-bannerText" id="cookieConsentMessage">Этот сайт использует файлы cookie, чтобы максимально персонализировать вашу работу с ним. C более детальной информацией о файлах cookie можно ознакомится в нашей <a href="https://www.nxp.com/" target="_blank" class="j-bannerText">Политике конфиденциальности</a>.</span><label class="j-508-label" id="agreeMessage">Принять и продолжить</label><div class="cookie-banner-btn-container"><button class="j-btn-global j-bannerButton" id="cookie-consent-agree" type="submit" aria-labelledby="cookieConsentMessage agreeMessage">Принять и продолжить</button><button data-decline-url="cookie-consent-decline.jspa" class="j-btn-global j-bannerButton" id="cookie-consent-disagree" type="submit" aria-label="Отказаться и закрыть">Отказаться и закрыть</button></div></div><div class="j-cookie-consent-overlay" id="cookie-consent-overlay"></div></div><a id="top"></a><a href="https://community.nxp.com/thread/486379#j-main" class="j-508-label">Пропустить навигацию</a><div id="j-header-wrap" data-company-name="Freescale Semiconductor, Inc. - Cloud" data-no-user-bar="false" role="banner"><header id="j-compact-header" class="clearfix"><!-- Customer generated HTML --><div id="j-cust-head" class="clearfix"><div id="hd">
+    <a href="https://community.nxp.com/">
+      <img alt="NXP Community" height="36px" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/NXP_Community.png">
+    </a>
+  </div></div><!-- Navigational buttons/links --><nav id="j-globalNav-bg" role="navigation" aria-label="Jive" data-mode="custom"><ul id="j-globalNav" role="menubar" class="j-globalNav"><li id="mobile-menu" class="mobile-tool"><a class="" href="https://community.nxp.com/thread/486379#"><span><i></i><i></i><i></i></span></a></li><li id="jive-nav-link-home" class=" j-globalNav-li j-ui-elem"><a href="https://community.nxp.com/welcome" class="j-globalNavLink j-ui-elem " role="menuitem"><span class="nav-link  ">Главная</span></a></li><li id="jive-nav-link-work" class=" j-globalNav-li j-ui-elem"><a href="https://community.nxp.com/content" class="j-globalNavLink j-ui-elem " role="menuitem"><span class="nav-link  ">Материалы</span></a></li><li id="jive-nav-link-places" class=" j-globalNav-li j-ui-elem"><a href="https://community.nxp.com/places" class="j-globalNavLink j-ui-elem " role="menuitem"><span class="nav-link  ">Места</span></a></li><li id="jive-navbar-link-news" class=" j-globalNav-li j-ui-elem"><a href="https://community.nxp.com/news" class="j-globalNavLink j-ui-elem " role="menuitem"><span class="nav-link  ">Последняя активность</span></a></li><li id="customLink0" class=" j-globalNav-li j-custom-link j-ui-elem"><a href="https://community.nxp.com/external-link.jspa?url=https%3A%2F%2Fwww.nxp.com%2F" class="j-globalNavLink j-ui-elem " target="_blank" role="menuitem"><span class="nav-link  ">Go to nxp.com</span></a></li></ul><div id="j-links" style="padding-right: 0px;"><ul class="j-globalNav"><li class="j-nav-create j-nav-user j-globalNav-li js-satellite-nav-container" aria-haspopup="true"><ul id="j-satNav"><li class="login"><a href="https://community.nxp.com/thread/486379#" class="login" id="navLogin" title="Войдите">Войдите</a></li></ul><div id="j-satNav-menu" class="clearfix" style="display:none;"></div><span data-count="0" tabindex="-1" aria-label="Входящие" class="j-js-update-indicator j-update-count zero  j-navbadge-count j-ui-elem" style="display:none;">0</span></li><li id="j-nav-search-li" class="j-nav-open-visor j-globalNav-li js-nav-open-visor-container j-nav-create" aria-haspopup="true"><label for="j-nav-search" class="j-508-label">Поиск</label><a href="https://community.nxp.com/thread/486379#" id="j-nav-search" class="j-globalNavLink j-ui-elem" role="menuitem" data-hideviews="bookmarks default history" data-hidetypes=""><span class="nav-link j-ui-elem"><i class="icon-search"></i></span><span class="j-508-label">Поиск</span></a></li><li id="mobile-search" class="j-globalNav-li mobile-tool"><a class="j-globalNavLink" href="https://community.nxp.com/thread/486379#"></a></li></ul><div id="j-spotlight-search" role="search" data-mode="custom"><span class="j-ui-elem j-search-left"><span id="searchpopupanchor"></span></span><span><label for="autosearch" class="j-508-label">Поиск</label><input data-spotlight-enabled="false" id="autosearch" class="j-ui-elem" data-component="autosearch" data-popup-anchor="searchpopupanchor" placeholder="Поиск" type="text" role="combobox" aria-labelledby="autosearch" aria-expanded="false" data-hidetypes="bookmarks frequent recent " data-community-name="NXP Community" data-filters="" data-origin="spotlight" aria-hidden="true" aria-busy="true"><a href="https://community.nxp.com/thread/486379#" id="mob-spotlight-cancel" title="Отмена"><span class="j-508-label">Отмена</span><span class="jive-icon-glyph icon-close-thin"></span></a></span><span class="j-ui-elem j-search-right"></span><span class="jive-icon-sml jive-glyph-delete" data-component="button" data-type="clear" data-field="autosearch"></span></div></div></nav></header><noscript><div class="j2-base-chrome-no-script">Error: You don't have JavaScript enabled. This tool uses JavaScript and much of it will not work correctly without it enabled. Please turn JavaScript back on and reload this page.</div></noscript></div><div id="mobile-overlay"></div><div class="j-breadcrumb-bar"><div class="j-wrap clearfix"><script>require([ 'apps/outcomes/badgeHelper', 'apps/outcomes/eventShim' ], function(badgeHelper) {badgeHelper.enableHeaderBadges();});require(['antivirus']);</script><nav class="j-context" role="navigation" aria-label="Иерархическая навигация"><span id="js-breadcrumb-intro" data-container-url="/community/imx" data-container-display-name="i.MX Processors" data-content-browse-filter="/community/imx/content?filterID=contentstatus%5Bpublished%5D%7Eobjecttype%7Ethread%5Bquestions%5D" data-has-content-rel-intro-key="forum.thrd.relatedQuestionsIn.link" data-no-content-rel-intro-key="forum.thrd.upToQuestionsIn.link"><a href="https://community.nxp.com/community/imx/content?filterID=contentstatus%5Bpublished%5D%7Eobjecttype%7Ethread%5Bquestions%5D">Больше вопросов</a> в <a href="https://community.nxp.com/community/imx">i.MX Processors</a></span> <a href="https://community.nxp.com/thread/486379#" id="js-place-parents-link" class="j-nav-more jive-icon-glyph icon-angle-down" title="Где находится это место?"><span class="j-508-label">Где находится это место?</span></a><div id="js-place-parents-container" class="j-pop-main j-menu j-quick-menu j-breadcrumb-popover" style="display: none"><ul class="j-icon-list"><li><a href="https://community.nxp.com/" class="noIcon"><span class="lnk">NXP Community</span></a></li><li><a href="https://community.nxp.com/places" class="noIcon"><span class="lnk">Все места</span></a><ul><li><a href="https://community.nxp.com/community/imx" class="last-child"><span class="jive-icon-med jive-icon-space"></span><span class="lnk">i.MX Processors</span></a></li></ul></li></ul></div><span id="js-place-link-breadcrumb" data-place-link-count="0" data-linked-content-id="486379" data-linked-content-type="1" data-place="true" data-parents="true"></span></nav><nav class="j-content-actions"><ul class="clearfix" role="toolbar" aria-label="Активность в социальных сетях"></ul></nav><div class="j-content-mobile-menu js-content-mobile-menu" data-jive-view="apps/content/menus/navbar"><a href="https://community.nxp.com/thread/486379#" id="mobile-sidenav-btn"></a></div></div></div><div class="j-messages-wrapper j-content-info" role="status" aria-live="polite" aria-atomic="true" tabindex="-1"><ul class="js-outcome-badge-container js-outcome-badge-container-top j-outcome-badge-container j-outcome-badge-container-top-v2 js-ed-1-486379" data-object-type="1" data-object-id="486379" data-object-type-name="question" aria-label="Значки результата" data-allowed-outcome-types="[&quot;finalized&quot;,&quot;outdated&quot;,&quot;official&quot;,&quot;wip&quot;]" data-use-v2-outcomes="true" aria-live="polite"></ul><div class="j-content-info-item"><div class="j2-base-components-global-guest-call-to-action"><span><a id="jive-guest-link-auth" href="https://community.nxp.com/login.jspa">Войдите</a>, чтобы создать и оценить материалы, оформить подписки, добавить закладки и поделиться материалами с остальными участниками.</span></div></div><div class="j-content-info-item" aria-atomic="true" role="alert" aria-live="assertive" tabindex="-1" style="display:none;"></div><div id="object-follow-notify" class="j-content-info-item" style="display:none" aria-live="polite" aria-atomic="true"></div><div id="content-featured-notify" class="j-content-info-item" style="display:none" aria-live="polite" aria-atomic="true"></div></div><div id="j-main-wrapper" class="j2-base-chrome-main-wrapper"><section id="j-main" class="clearfix"><div id="jive-body" class="clearfix"><div id="jive-body-main" class="js-tlo js-ed-1-486379" data-object-id="486379" data-object-type="1"><script type="application/ld+json">{"@context":"http://schema.org","@type":"Question","text":"How to set WDOG_B timeout period for i.MX6ULL?","headline":"\u003cbody\u003e\u003c!-- [DocumentBodyStart:ddf78fe2-db8d-4311-b0b9-826e902ebe2c] --\u003e\u003cdiv class\u003d\"jive-rendered-content\"\u003e\u003cp\u003eHi,\u003c/p\u003e\u003cp\u003eI attempted to change the setting of the timeout period of WDOG, depending on the device tree of i.MX6ULL.\u003c/p\u003e\u003cp\u003eI set it as below in the devicetree, but wdog timeout period is 60s.\u003c/p\u003e\u003cp\u003eHow to set WDOG_B timeout period for i.MX6ULL by devicetree?\u003c/p\u003e\u003cp style\u003d\"min-height: 8pt; padding: 0px;\"\u003e\u0026#160;\u003c/p\u003e\u003cp\u003e\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003c/p\u003e\u003cp\u003e//dtsi File: imx6ul-imx6ull-var-dart-common.dtsi\u003c/p\u003e\u003cblockquote class\u003d\"jive_macro_quote jive-quote jive_text_macro\"\u003e\u003cp\u003e\u0026amp;wdog1 {\u003cbr/\u003e pinctrl-names \u003d \"default\";\u003cbr/\u003e pinctrl-0 \u003d \u0026lt;\u0026amp;pinctrl_wdog\u0026gt;;\u003cbr/\u003e fsl,wdog_b;\u003cbr/\u003e};\u003c/p\u003e\u003cp\u003epinctrl_hog_1: hoggrp-1 {\u003cbr/\u003e fsl,pins \u003d \u0026lt;\u003cbr/\u003e //MX6UL_PAD_GPIO1_IO08__GPIO1_IO08 0x1b0b0\u003cbr/\u003e \u0026gt;;\u003cbr/\u003e };\u003c/p\u003e\u003cp\u003e\u003cbr/\u003epinctrl_wdog: wdoggrp {\u003cbr/\u003e fsl,pins \u003d \u0026lt;\u003cbr/\u003e MX6UL_PAD_GPIO1_IO08__WDOG1_WDOG_B \u003cstrong\u003e0x93c\u003c/strong\u003e\u003cbr/\u003e \u0026gt;;\u003cbr/\u003e };\u003c/p\u003e\u003c/blockquote\u003e\u003cp\u003e//dsti File: imx6ull.dtsi\u003c/p\u003e\u003cblockquote class\u003d\"jive_macro_quote jive-quote jive_text_macro\"\u003e\u003cp\u003ewdog1: wdog@020bc000 {\u003cbr/\u003e compatible \u003d \"fsl,imx6ul-wdt\", \"fsl,imx21-wdt\";\u003cbr/\u003e reg \u003d \u0026lt;0x020bc000 0x4000\u0026gt;;\u003cbr/\u003e interrupts \u003d \u0026lt;GIC_SPI 80 IRQ_TYPE_LEVEL_HIGH\u0026gt;;\u003cbr/\u003e clocks \u003d \u0026lt;\u0026amp;clks IMX6UL_CLK_WDOG1\u0026gt;;\u003cbr/\u003e };\u003c/p\u003e\u003c/blockquote\u003e\u003cp\u003e\u003cspan\u003e\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003c/span\u003e\u003c/p\u003e\u003cp style\u003d\"min-height: 8pt; padding: 0px;\"\u003e\u0026#160;\u003c/p\u003e\u003cp\u003e\"0x93c\" means as bellow\u0026#160;by i.MX6ULL reference manual \"WDOG Control Register\".\u003c/p\u003e\u003cp style\u003d\"min-height: 8pt; padding: 0px;\"\u003e\u0026#160;\u003c/p\u003e\u003cp\u003eWatchdog timeout: 0x09 5.0s\u003c/p\u003e\u003cp\u003eSoftware Reset Extention: 0 Continue WDOG timer operation\u003c/p\u003e\u003cp\u003eWDOG_B Assertion: 1 No effect on system(Default)\u003c/p\u003e\u003cp\u003eSoftware Reset Signal: 1 No effect on the system(Default)\u003c/p\u003e\u003cp\u003eWatchdog timeout assertion : 1 Assert WDOG_B upon a Watchdog Time-out event\u003c/p\u003e\u003cp\u003eWatchdog Enable : 1 Enable the Watchdog\u003c/p\u003e\u003cp\u003eWatchdog DBG: 0 Continue WDOG timer operation(Default)\u003c/p\u003e\u003cp\u003eWatchdog Low Power: 0 Continue timer operation(Default)\u003c/p\u003e\u003c/div\u003e\u003c!-- [DocumentBodyEnd:ddf78fe2-db8d-4311-b0b9-826e902ebe2c] --\u003e\u003c/body\u003e","author":{"@context":"http://schema.org","@type":"Person","name":"sny kr","image":"https://community.nxp.com/api/core/v3/people/327998/avatar?a\u003d29594"},"dateModified":"Oct 10, 2018 11:24:27 PM","datePublished":"Oct 10, 2018 6:56:17 AM","dateCreated":"Oct 10, 2018 6:56:17 AM","commentCount":1,"interactionStatistic":{"@context":"http://schema.org","@type":"InteractionCounter","interactionType":"http://schema.org/LikeAction","userInteractionCount":0},"image":"http://localhost","isPartOf":{"@context":"http://schema.org","@type":"Blog","url":"https://community.nxp.com/api/core/v3/places/1114"},"keywords":["i.MX6_All","i.MX6UL","Linux","Yocto Project","wdt","imx6_wdt time out","devicetree","imx6ull","yocto imx"],"answerCount":1}</script><!-- BEGIN Body region --><!-- BEGIN guided nav --><div class="j-guided-nav js-guided-nav" style="display: none;"><div class="j-header js-header j-rc-none-bottom"></div><div class="j-navbar js-navbar"></div></div><!-- END guided nav --><div class="j-content clearfix j-question-assumed" aria-labelledby="main-doc-header" role="main" data-jive-view="apps/content/questions/correct_view"><header class="j-content-header"><div class="j-welt-container"><div class="j-welt"><span class="j-welt-answered"><span class="j-question-icon jive-icon-glyph icon-star3"></span><span class="j-question-icon-text">Решенный</span></span><span class="j-welt-assumed"><span class="j-question-icon jive-icon-glyph icon-star3"></span><span class="j-question-icon-text">Считается решенным</span></span><span class="j-welt-open"><span class="j-question-icon jive-icon-glyph icon-j-discussion-question"></span></span></div></div><h1>How to set WDOG_B timeout period for i.MX6ULL?</h1><div class="j-content-header-author font-color-meta">Вопрос задан <a href="https://community.nxp.com/people/s_kr" data-username="s_kr" data-userid="327998" class="jive-username-link  jiveTT-hover-user  ">sny kr</a> в 09.10.2018<br><span id="latestReplyLine"><a href="https://community.nxp.com/thread/486379#comment-1066799" class="lastScroll js-latest-reply">Последний ответ</a>: 10.10.2018, автор: igorpadykov</span> <a id="latestReplyLine-RSS" class="j-rss-icon" href="https://community.nxp.com/community/feeds/messages?thread=486379" title="RSS"><span class="jive-icon-glyph icon-feed"></span></a><br></div><ul class="j-item-actions"><li class="j-item-action j-js-follow-controls"><span id="acclaim-container-2-1066231" data-type="medium" data-can-apply="false" data-acclaim-type="like" data-bullet="true" data-acclaim-count="0" class="js-acclaim-container acclaim-container acclaim-like-container j-disabled"><span class="j-social-action"><span class="jive-icon-glyph icon-thumbs-up3"><span class="icon-variant-unlike"></span><span class="icon-variant-disabled"></span></span>Мне нравится</span><span class="j-action-bullet"> • </span><label class="j-508-label" id="showAcclaim-1066231-2-count-label">Показать  отметки "Мне нравится" (0)</label><a class="j-people-count j-rc3 jive-acclaim-likedlink" data-command="showAcclaim" data-acclaim-type="like" data-object-id="1066231" data-object-type="2" data-count="0" href="https://community.nxp.com/thread/486379#" role="button" aria-labelledby="showAcclaim-1066231-2-count-label" title="Показать  отметки &quot;Мне нравится&quot; (0)">0</a> </span></li><li class="j-item-action jive-comment-link" data-jive-view="apps/content/region/comment_link_region_view"><span><span class="jive-icon-glyph icon-comment3"></span>Комментарий</span><span class="j-action-bullet"> • </span><a class="js-view-comments" href="https://community.nxp.com/thread/486379#comments"><span class="js-comment-link-count jive-comment-link-count">1</span></a></li></ul></header><section class="j-content-body"><!-- [DocumentBodyStart:ddf78fe2-db8d-4311-b0b9-826e902ebe2c] --><div class="jive-rendered-content"><p>Hi,</p><p>I attempted to change the setting of the timeout period of WDOG, depending on the device tree of i.MX6ULL.</p><p>I set it as below in the devicetree, but wdog timeout period is 60s.</p><p>How to set WDOG_B timeout period for i.MX6ULL by devicetree?</p><p style="min-height: 8pt; padding: 0px;">&nbsp;</p><p>====================================================</p><p>//dtsi File: imx6ul-imx6ull-var-dart-common.dtsi</p><blockquote class="jive_macro_quote jive-quote jive_text_macro"><p>&amp;wdog1 {<br> pinctrl-names = "default";<br> pinctrl-0 = &lt;&amp;pinctrl_wdog&gt;;<br> fsl,wdog_b;<br>};</p><p>pinctrl_hog_1: hoggrp-1 {<br> fsl,pins = &lt;<br> //MX6UL_PAD_GPIO1_IO08__GPIO1_IO08 0x1b0b0<br> &gt;;<br> };</p><p><br>pinctrl_wdog: wdoggrp {<br> fsl,pins = &lt;<br> MX6UL_PAD_GPIO1_IO08__WDOG1_WDOG_B <strong>0x93c</strong><br> &gt;;<br> };</p></blockquote><p>//dsti File: imx6ull.dtsi</p><blockquote class="jive_macro_quote jive-quote jive_text_macro"><p>wdog1: wdog@020bc000 {<br> compatible = "fsl,imx6ul-wdt", "fsl,imx21-wdt";<br> reg = &lt;0x020bc000 0x4000&gt;;<br> interrupts = &lt;GIC_SPI 80 IRQ_TYPE_LEVEL_HIGH&gt;;<br> clocks = &lt;&amp;clks IMX6UL_CLK_WDOG1&gt;;<br> };</p></blockquote><p><span>====================================================</span></p><p style="min-height: 8pt; padding: 0px;">&nbsp;</p><p>"0x93c" means as bellow&nbsp;by i.MX6ULL reference manual "WDOG Control Register".</p><p style="min-height: 8pt; padding: 0px;">&nbsp;</p><p>Watchdog timeout: 0x09 5.0s</p><p>Software Reset Extention: 0 Continue WDOG timer operation</p><p>WDOG_B Assertion: 1 No effect on system(Default)</p><p>Software Reset Signal: 1 No effect on the system(Default)</p><p>Watchdog timeout assertion : 1 Assert WDOG_B upon a Watchdog Time-out event</p><p>Watchdog Enable : 1 Enable the Watchdog</p><p>Watchdog DBG: 0 Continue WDOG timer operation(Default)</p><p>Watchdog Low Power: 0 Continue timer operation(Default)</p></div><!-- [DocumentBodyEnd:ddf78fe2-db8d-4311-b0b9-826e902ebe2c] --><div id="previewable-binary-viewer"></div><div class="j-question-content-footer js-samequestion clearfix"><div class="j-question-samequestion">Больше ни у кого нет этого вопроса</div><div class="j-mark-assumed js-assumed" data-jive-view="apps/content/questions/assumed" data-id="486379" data-type="1" style="display:none;"><a href="https://community.nxp.com/thread/486379#">Поставить отметку "Считать решенным"</a></div></div><div class="j-region-outcomes j-region-hidden" data-jive-view="apps/outcomes/v2_badge_view" data-object-id="486379" data-object-type="1" data-helpful-min-replies="1" data-most-liked-min-replies="4" data-most-liked-min-likes="3" data-most-liked-rollup-limit="20" data-allowed-outcome-types="[&quot;decision&quot;,&quot;success&quot;,&quot;pending&quot;,&quot;helpful&quot;,&quot;resolved&quot;]" data-use-v2-outcomes="true"><h2>Результаты</h2><ul class="js-outcome-badge-container j-outcome-badge-container js-outcome-summaries js-ed-1-486379" data-object-type="1" data-object-id="486379" aria-label="Значки результата" data-allowed-outcome-types="[&quot;decision&quot;,&quot;success&quot;,&quot;pending&quot;,&quot;helpful&quot;,&quot;resolved&quot;]" data-use-v2-outcomes="true" aria-live="polite"></ul></div></section><footer class="j-content-footer clearfix font-color-meta"><div class="j-content-footer-line"><span class="jive-content-personal font-color-meta"><strong class="font-color-meta">Доступ к материалам: </strong><span class="jive-icon-glyph icon-j-space"></span> <a class="j-container jivecontainerTT-hover-container" data-uri="https://community.nxp.com/api/core/v3/places/1114" href="https://community.nxp.com/community/imx">i.MX Processors</a></span><span class="jive-content-footer-item"><span id="js-view-count" class="j-view-count"> Просмотров: 336</span></span></div><div class="j-content-footer-line"><span class="jive-content-footer-item">Последние изменения: 09.10.2018 23:56</span></div><div class="j-content-footer-line"><div class="j-content-tags-section clearfix"><span class="j-content-footer-label">Метки:</span><span class="j-content-tags"><span class="jive-thread-post-details-tags" id="jive-thread-post-details-tags_ywAMY"><a class="j-content-tag-label font-color-meta" href="https://community.nxp.com/community/imx/tags#/?tags=wdt" title="Материалы с меткой " wdt""="" aria-labelledby="tag-link-tooltip-0"><span role="presentation" aria-hidden="true">wdt</span><div id="tag-link-tooltip-0" class="j-508-label">Материалы с меткой "wdt"</div></a><a class="j-content-tag-label font-color-meta" href="https://community.nxp.com/community/imx/tags#/?tags=devicetree" title="Материалы с меткой " devicetree""="" aria-labelledby="tag-link-tooltip-1"><span role="presentation" aria-hidden="true">devicetree</span><div id="tag-link-tooltip-1" class="j-508-label">Материалы с меткой "devicetree"</div></a><a class="j-content-tag-label font-color-meta" href="https://community.nxp.com/community/imx/tags#/?tags=imx6ull" title="Материалы с меткой " imx6ull""="" aria-labelledby="tag-link-tooltip-2"><span role="presentation" aria-hidden="true">imx6ull</span><div id="tag-link-tooltip-2" class="j-508-label">Материалы с меткой "imx6ull"</div></a><a class="j-content-tag-label font-color-meta" href="https://community.nxp.com/community/imx/tags#/?tags=imx6_wdt%20time%20out" title="Материалы с меткой " imx6_wdt="" time="" out""="" aria-labelledby="tag-link-tooltip-3"><span role="presentation" aria-hidden="true">imx6_wdt time out</span><div id="tag-link-tooltip-3" class="j-508-label">Материалы с меткой "imx6_wdt time out"</div></a><a class="j-content-tag-label font-color-meta" href="https://community.nxp.com/community/imx/tags#/?tags=yocto%20imx" title="Материалы с меткой " yocto="" imx""="" aria-labelledby="tag-link-tooltip-4"><span role="presentation" aria-hidden="true">yocto imx</span><div id="tag-link-tooltip-4" class="j-508-label">Материалы с меткой "yocto imx"</div></a></span></span></div></div><div class="j-content-footer-line"><div class="j-content-categories-section clearfix"><span class="jive-content-footer-item jive-content-footer-categories"><span class="j-content-footer-label">Категории:</span> <span class="jive-content-categories"><a class="j-content-category-label" href="https://community.nxp.com/community/imx/content?filterID=contentstatus[published]~category[imx6ul]" title="i.MX6UL">i.MX6UL</a><a class="j-content-category-label" href="https://community.nxp.com/community/imx/content?filterID=contentstatus[published]~category[imx6all]" title="i.MX6_All">i.MX6_All</a><a class="j-content-category-label" href="https://community.nxp.com/community/imx/content?filterID=contentstatus[published]~category[linux]" title="Linux">Linux</a><a class="j-content-category-label" href="https://community.nxp.com/community/imx/content?filterID=contentstatus[published]~category[yocto-project]" title="Yocto Project">Yocto Project</a></span></span></div></div><div class="j-content-footer-line"><span class="j-content-footer-label jive-content-rating-desc">Оценки:</span><div class="jive-content-rating j-rc5 clearfix" data-guid="4BWPP2CS7G0CJB9TGQNCE8EM2DP7BTGL"><script>require([ 'jive/rate', 'domReady!' ], function(Rate) {var i18n = {avgUserRatingTitlei18n : "Средний рейтинг пользователей", avgUserRatingLabeli18n : "Средний рейтинг пользователей", rateRatingLabel : "оценка", myRatingLabel : "Ваша оценка:", rateRatingsLabel : "оценки", ratingSavingText : "Сохранение...", rateSavedText : "Сохранено.", rateRatingSaved : "Оценка сохранена!", writeAReview : "Написать отзыв", commentOnRating : "Прокомментировать оценку", formSubmitPleaseWait: "Подождите...", rateRatingsNone: "Нет оценок", rateAmount: "{0} из {1}", rateAmountComplete: "Средняя оценка пользователя: {0} из {1}", rateRatingRate: "Оценить {0}({1} из {2})"}; var rteOptions = {preset        : "mini-w-quote", preferredMode : "advanced", startMode     : "advanced", mobileUI      : false, communityName : "NXP Community", height        : 200}; new Rate(14, 2004, 1, 486379, i18n, true, "4BWPP2CS7G0CJB9TGQNCE8EM2DP7BTGL", rteOptions);});</script><div class="jive-content-avgrating" tabindex="0" aria-labelledby="j-rating-score"><span class="j-508-label" id="j-rating-score">Средний рейтинг пользователей: Нет оценок (0 оценки)</span><div class="jive-content-avgrating-title">Средний рейтинг пользователей</div><div class="jive-content-avgrating-score" title="Средняя оценка пользователя: 0 из 5"><span class="j-508-label">Нет оценок</span><span class="jive-icon-avgrating-1 jive-icon-med jive-icon-rate-avg-off"></span><span class="jive-icon-avgrating-2 jive-icon-med jive-icon-rate-avg-off"></span><span class="jive-icon-avgrating-3 jive-icon-med jive-icon-rate-avg-off"></span><span class="jive-icon-avgrating-4 jive-icon-med jive-icon-rate-avg-off"></span><span class="jive-icon-avgrating-5 jive-icon-med jive-icon-rate-avg-off"></span></div><div class="jive-content-rating-print" style="display: none;">0</div><div class="jive-content-avgrating-count">(0 оценки)</div></div></div></div></footer></div><script>var _editor_lang = document.getElementsByTagName('html')[0].lang; var _jive_video_picker__url = "?container=2004&containerType=14"; var _jive_comment_images_enabled = false; require([ 'jquery', 'jive/comment_app', 'apps/comment_app/regions/main', 'apps/pager/regions/main', 'jive/namespace', 'domReady!' ], function($j, commentApp, CommentAppMain, Pager) {var pager = new Pager( "jive-comments-all", "/replies/view.jspa?contentID=486379&contentType=1",{per_page: 100,sort: "dateasc",mode: "comments",},{regions_requested: 'true'}); if (typeof(ContentFilterHandler) != 'undefined') {ContentFilterHandler.contentLoader = pager;}var options = {resourceType:       1, resourceID:         486379, messageID:          1066231, messageTarget:      'all', tabsEnabled:        false, regions_requested:  'true', contentObject: {object:            486379, contentObjectType: 1}, advEditorLnk:       'create-advanced-comment.jspa?id=', editReplyAction:    'update-advanced-comment.jspa?id=', isAnonymous:        true, isThreaded:         true, isFinalized:        false, draftEnabled:       true, draftInterval:      10, keepAliveEnabled:   true, paginate:           false, pageSize:           5, isPrintPreview:     false, rteOptions : {preset        : "mini-w-quote", preferredMode : "", startMode     : "", mobileUI      : false, toggleText    : 'Показать весь редактор', alwaysUseTabText : 'Всегда использовать этот редактор', editDisabledText : 'Вы пользуетесь устройством, с которого можно только добавлять материалы.', editDisabledSummary : 'Зайдя в {0} с компьютера, вы сможете добавлять и редактировать материалы.', height        : 200, images_enabled: window._jive_comment_images_enabled, comment: true}, i18n: {confirmDeleteComment:    'Вы уверены, что хотите удалить этот комментарий?', postSuccessText:         'Внимание: ваш комментарий был успешно добавлен, но сначала его должен утвердить модератор.', postUserWroteLabel:      '{0} написал(а)', postGuestWroteLabel:     'Сообщение гостя:', cmntEditingTitle:        'Кмментарий редактора', globalAjaxError:         'Произошла непредвиденная ошибка. Возможно, при просмотре страницы истекло время сеанса.', replyToTitle:            'Ответить на {0}', formSubmitPleaseWait:    'Подождите...', globalLoginRequired:     'Вы вышли из системы. {0}Для продолжения осуществите вход{1}.', loading:				 'Загрузка...', advEditor:               'Использовать расширенный редактор'}}; var tabView;jive.namespace('CommentApp'); jive.CommentApp.comments    = new CommentAppMain($j.extend({ commentMode: 'comments' }, options), tabView, pager);commentApp.set(jive.CommentApp);});</script><div id="jive-comments-all" class="j-content-comments-container"><div id="jive-all" class="j-content-comments j-content-comments-display-section j-comments-all"><div id="jive-rolled-up-comments" data-jive-view="apps/content/region/comment_app_view" data-show-replies="false" class="j-so-finalized-rollup j-rc4" style="display:none;">Эти материалы помечены как "окончательные". <a id="jive-unroll-comments" class="j-so-finalized-unroll j-comment-count" href="https://community.nxp.com/thread/486379#">Показать 1 комментарий</a></div><section id="jive-comments-block" class="j-ripstop-replies-block"><a href="https://community.nxp.com/thread/486379#" name="comments"></a><ul class="j-comment-options clearfix"><li id="jive-comments-tab" class="jive-body-tab j-tab-selected"><a href="https://community.nxp.com/thread/486379#">1 ответ</a></li></ul><!-- END tabs --><div style="display:none;" id="jive-comment-post-block"><!-- moderation warning --><!-- end moderation warning --><form method="post" action="javascript:void(0);" name="jive-comment-post-form" class="j-comment-form"><div class="jive-error-box" id="jive-comment-error-box" style="display:none"><p class="jive-error-message" id="jive-comment-error" style="display:none"></p></div><div class="jive-comment-post-anonymous jive-form-row"><div class="jive-form-label"><input id="comment-author" name="commentGuestName"><label for="comment-author">Имя</label></div><div class="jive-form-label"><input id="comment-email" name="commentGuestEmail"><label for="comment-email">Адрес электронной почты</label></div><div class="jive-form-label"><input id="comment-url" name="commentGuestUrl"><label for="comment-url">Адрес сайта</label></div></div><input type="hidden" class="js-outcome-attachment" value=""><div><textarea id="18220784092435704" class="wysiwygtext" name="body" rows="15" cols="30"></textarea></div><div style="display:none;" id="jive-blog-comment-preview" class="jive-blog-comment-preview"></div><div class="j-rte-message js-rte-message"></div><div class="jive-form-buttons"><input type="submit" name="post" class="j-btn-callout" value="Добавить комментарий"><input type="button" class="j-btn-global" name="cancel" value="Отмена"></div></form></div><div style="display:none;" id="jive-comment-edit-block"><form method="post" action="javascript:void(0);" name="jive-comment-edit-form" class="j-comment-form"><div class="jive-error-box" id="jive-comment-error-box" style="display:none"><p class="jive-error-text" id="jive-comment-error" style="display:none"></p></div><div class="jive-comment-post-anonymous"><div><input name="name" value=""><label for="name">Name<span>(Обязательно)</span></label></div><div><input name="email" value=""><label for="email">Email Address<span>(Требуется обязательно, не публикуется)</span></label></div><div><input name="url" value=""><label for="url">Адрес сайта</label></div></div><div><textarea id="18220784092892054" class="wysiwygtext" name="body" rows="15" cols="30"></textarea></div><div style="display:none;" id="jive-blog-comment-preview" class="jive-blog-comment-preview"></div><div class="j-rte-message js-rte-message"></div><div class="jive-form-buttons"><input type="submit" name="post" class="j-btn-callout" value="Сохранить"><input type="button" name="cancel" value="Отмена"></div></form></div><div class="j-comment-action-bar clearfix j-comment-add-comment-link-even-when-finalized"></div><div class="j-comment-display-listing"><ul class="j-answers jive-comment jive-comment-threaded clearfix jive-comment-indent-0"><li class="reply j-anchor-target " id="comment-1066799" data-object-type="2" data-object-id="1066799"><div class="jive-comment-content clearfix"><a href="https://community.nxp.com/people/igorpadykov" title="igorpadykov" class="j-avatar  jiveTT-hover-user" data-userid="206296"><img class="jive-avatar" src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/avatar" data-username="igorpadykov" height="72" data-height="72" width="72" data-random="18220784087741879" alt="igorpadykov" title="igorpadykov"></a><div class="j-comment-header"><span class="jive-comment-meta font-color-meta-light"><span class="j-username-wrap"><a href="https://community.nxp.com/people/igorpadykov" data-username="igorpadykov" data-userid="206296" class="jive-username-link  jiveTT-hover-user  ">igorpadykov</a> <img src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/roleBadge-4-1031-1456851681122.png" title="Сотрудник" alt="Сотрудник" height="16" width="16" class="j-role-badge">  </span><a href="https://community.nxp.com/thread/486379#comment-1066799" id="comment-modDate-1066799" class="font-color-meta-light">10.10.2018 16:24</a></span></div><div class="j-mark-correct js-mark-correct  clearfix" style="display:none;"><a href="https://community.nxp.com/thread/486379#" data-object-id="1066799" data-object-type="2" data-command="mark" data-type="correct" class="js-action-link js-correct-answer-link js-mark-correct-answer"><span class=""></span>Пометить как "Правильный"</a><div class="j-marked-correct"><span class="jive-icon-glyph icon-star3"></span>Правильный ответ</div></div><div id="comment-body-1066799"><!-- [DocumentBodyStart:271d58d5-8660-4260-beac-7fd80e2fe133] --><div class="jive-rendered-content"><p>Hi sny</p><p style="min-height: 8pt; padding: 0px;">&nbsp;</p><p>according to documentation below, seems it is not possible using device tree,</p><p>so one will have to modify driver to add such capability</p><p>linux/Documentation/devicetree/bindings/watchdog/fsl-imx-wdt.txt</p><p><a class="jive-link-external-small" href="https://community.nxp.com/external-link.jspa?url=https%3A%2F%2Fsource.codeaurora.org%2Fexternal%2Fimx%2Flinux-imx%2Ftree%2FDocumentation%2Fdevicetree%2Fbindings%2Fwatchdog%2Ffsl-imx-wdt.txt%3Fh%3Dimx_4.9.88_2.0.0_ga" rel="nofollow" target="_blank">fsl-imx-wdt.txt\watchdog\bindings\devicetree\Documentation - linux-imx - i.MX Linux kernel</a>&nbsp;</p><p style="min-height: 8pt; padding: 0px;">&nbsp;</p><p>Best regards<br>igor<br>-----------------------------------------------------------------------------------------------------------------------<br>Note: If this post answers your question, please click the Correct Answer button. Thank you!<br>-----------------------------------------------------------------------------------------------------------------------</p></div><!-- [DocumentBodyEnd:271d58d5-8660-4260-beac-7fd80e2fe133] --></div><!-- BEGIN attachments --><!-- END attachments --><div id="previewable-binary-viewer"></div><span class="js-outcome-helpful-counts-container j-outcome-helpful-counts-container-default font-color-okay j-outcome-helpful-counts-container" data-object-type="2" data-object-id="1066799" data-helpful-count="0" data-overall-count="0" data-display-overall="false"></span><ul class="js-outcome-badge-container j-outcome-badge-container js-ed-2-1066799" data-object-type="2" data-object-id="1066799" aria-label="Значки результата" aria-live="polite"></ul><div class="j-comment-footer js-comment-footer clearfix"><div class="jive-comment-actions font-color-meta clearfix" data-comment-id="1066799"><span class="j-item-action j-tlo-helpful-controls"></span><span class="js-liking-control j-liking-control"><span class="jive-icon-glyph icon-thumbs-up3 "></span><span id="acclaim-container-2-1066799" class="acclaim-container"><span id="jive-acclaim-like-container-2-1066799" data-acclaim-count="0" data-can-apply="false" data-type="small" data-show-icon="true" data-bullet="true" class="js-acclaim-container acclaim-like-container"><span class="j-social-action">Мне нравится<span class="j-action-bullet"> • </span><label class="j-508-label" id="showAcclaim-1066799-2-count-label">Показать  отметки "Мне нравится" (0)</label><a class="jive-acclaim-likedlink" data-command="showAcclaim" data-acclaim-type="like" data-object-id="1066799" data-object-type="2" data-count="0" href="https://community.nxp.com/thread/486379#" role="button" aria-labelledby="showAcclaim-1066799-2-count-label" title="Показать  отметки &quot;Мне нравится&quot; (0)">0</a> </span></span></span></span></div><div class="jive-comment-action-button font-color-meta clearfix"><a href="https://community.nxp.com/thread/486379#" class="font-color-meta js-outcome-button j-outcome-button" data-object-type="2" data-object-id="1066799" data-object-url="https://community.nxp.com/thread/486379#comment-1066799" data-author-id="206296" data-dom-actions="[]" data-parent-id="-1" data-root-community="NXP Community"><span class="jive-icon-glyph icon-gear"></span> Действия <span class="j-ui-elem j-action-down-arrow"></span></a></div></div></div></li></ul></div></section> <!-- / .jive-comment-wrapper --><ul class="j-comment-add-form jive-comment-section-region-all"></ul></div></div></div></div></section><div id="jive-footer-region" class="j-content-r2 clearfix"><section class="j-content-r2-wrap clearfix"><!-- BEGIN sidebar box 'More Like This' --><div class="j-content-r2-block js-more-like-this-block" style=""><header><h3 class="font-color-meta" id="more-like-header-1-486379">Смежные материалы</h3></header><section class="j-content-r2-block-body" role="navigation" aria-labelledby="more-like-header-1-486379"><div id="jive-more-like-this-1-486379" class="j-more-like-this"><ul class="j-icon-list"><li><a href="https://community.nxp.com/thread/321832"><span class="jive-icon-med jive-icon-discussion-correct"></span>i.MX6 : Watchdog Timer Power-down counter</a></li><li><a href="https://community.nxp.com/thread/466005"><span class="jive-icon-med jive-icon-discussion-correct"></span>Re: i.MX6ULL Watchdog</a></li><li><a href="https://community.nxp.com/thread/495977"><span class="jive-icon-med jive-icon-discussion-correct"></span>Board Lock-Up on Watchdog Reset</a></li><li><a href="https://community.nxp.com/thread/329077"><span class="jive-icon-med jive-icon-discussion-correct"></span>i.MX6 WATCH DOG PINS</a></li><li><a href="https://community.nxp.com/thread/508046"><span class="jive-icon-med jive-icon-discussion-correct"></span>imx6uL Watchdog (WDOGX_B)</a></li></ul></div></section></div><!-- END sidebar box 'More Like This' --><div class="j-content-r2-block"><header><h3 class="font-color-meta" id="recommended-content">Рекомендуемые материалы</h3></header><section class="j-content-r2-block-body" role="navigation" aria-labelledby="recommended-content"><ul class="j-icon-list"><li><span class="jive-icon-discussion-correct jive-icon-med"></span><a href="https://community.nxp.com/thread/315745">Problems getting IMX6Q MMU/L1/L2 cache to work</a></li><li><span class="jive-icon-document jive-icon-med"></span><a href="https://community.nxp.com/docs/DOC-341317">Generating a Bootable Image for the RT1050</a></li><li><span class="jive-icon-document jive-icon-med"></span><a href="https://community.nxp.com/docs/DOC-94572">Enabling MMU and Caches on i.MX6 Series Platform SDK</a></li><li><span class="jive-icon-discussion-correct jive-icon-med"></span><a href="https://community.nxp.com/thread/459342">Re: eMMC Fuses And Card did not respond to voltage select! I.MX6UL</a></li><li><span class="jive-icon-discussion-correct jive-icon-med"></span><a href="https://community.nxp.com/thread/464926">RT1050 QSPI Flash Limitations</a></li></ul></section></div></section></div><div id="j-footer-wrap" class="j-js-footer-wrap"><footer id="j-cust-foot" class="clearfix" role="contentinfo"><footer>
+    <div class="container" id="footer">
+      <div class="row">
+        <div class="col-sm-4 col-xs-6 col-md-3 dtmFooter" style="border:1px;">
+          <h4>ABOUT NXP</h4>
+          <ul class="list-unstyled">
+            <li>
+              <a href="http://investors.nxp.com/phoenix.zhtml?c=209114&amp;p=irol-irhome" target="_blank">Investors</a>
+            </li>
+            <li>
+              <a href="http://media.nxp.com/phoenix.zhtml?c=254228&amp;p=irol-media-center" target="_blank">Press, News, Blogs</a>
+            </li>
+            <li>
+              <a href="https://www.nxp.com/about/about-nxp/about-nxp/careers-at-nxp:CAREERS" target="_blank">Careers</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-4 col-xs-6 col-md-3 dtmFooter">
+          <h4>NXP RESOURCES</h4>
+          <ul class="list-unstyled">
+            <li>
+              <a href="https://www.nxp.com/about/about-nxp/about-nxp/nxp-mobile-applications:MOBILE" target="_blank">Mobile Apps</a>
+            </li>
+            <li>
+              <a href="https://www.nxp.com/about/about-nxp/about-nxp/contact-us:CONTACTUS" target="_blank">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-4 col-xs-12 col-md-3 dtmFooter">
+          <h4>FOLLOW NXP</h4>
+          <ul class="list-inline paddingtop5" id="footer-social">
+            <li class="twitter">
+              <a href="https://twitter.com/NXP" target="_blank" title="Follow NXP on Twitter">
+                <span class="icon-twitter22"></span>
+              </a>
+            </li>
+            <li class="linkedin">
+              <a href="http://www.linkedin.com/company/nxp-semiconductors" target="_blank" title="Follow NXP on Linked In">
+                <span class="icon-linkedin"></span>
+              </a>
+            </li>
+            <li class="facebook">
+              <a href="https://www.facebook.com/NXPsemi" target="_blank" title="Follow NXP on Facebook">
+                <span class="icon-facebook"></span>
+              </a>
+            </li>
+            <li class="email">
+              <a href="https://contact.nxp.com/Subscription-Center" target="_blank" title="Subscription Center">
+                <span class="icon-mail2"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-12 col-xs-12 col-md-3 dtmFooter">
+          <h4>NEWS</h4>
+          <p class="feednews">Look at our latest Press Releases and Product News. 
+            <a class="readmore" href="http://media.nxp.com/phoenix.zhtml?c=254228&amp;p=irol-media-center" target="_blank">Read more</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="legalContainer">
+      <div class="container">
+        <div class="row legal">
+          <div class="col-sm-6 dtmFooter">
+            <ul class="-legalLinks list-inline list-unstyled vertical">
+              <li>
+                <a href="https://www.nxp.com/about/about-nxp/about-nxp/privacy:PRIVACYPRACTICES" target="_blank">Privacy</a>
+              </li>
+              <li class="legalcontent">|</li>
+              <li>
+                <a href="https://www.nxp.com/about/about-nxp/about-nxp/terms-of-use:TERMSOFUSE" target="_blank">Terms of Use</a>
+              </li>
+              <li class="legalcontent">|</li>
+              <li>
+                <a href="https://www.nxp.com/about/about-nxp/about-nxp/our-terms-and-conditions-of-commercial-sale:TERMSCONDITIONSSALE" target="_blank">Terms of Sale</a>
+              </li>
+              <li class="legalcontent">|</li>
+              <li>
+                <a href="mailto:direct@nxp.com">Feedback</a>
+              </li>
+            </ul>
+          </div>
+          <div class="-copyright col-sm-6" style="text-align:right; color:#FFFFFF;">©2006-2019 NXP Semiconductors. All rights reserved.</div>
+        </div>
+      </div>
+    </div>
+  </footer></footer><footer id="j-footer" role="contentinfo"><div class="j-footer-nav font-color-meta"><a class="j-footer-nav-link" href="https://community.nxp.com/">Главная</a><span class="j-pipe j-footer-nav-link"> | </span><a class="j-footer-nav-link" href="https://community.nxp.com/thread/486379#top">Начало страницы</a><span class="j-pipe j-footer-nav-link"> | </span><a class="j-footer-nav-link" href="http://docs.jivesoftware.com/cloud_int/end_user/jive.help.core">Справка</a></div><div class="j-footer-jiveVersion font-color-meta">Jive Software, версия: 2018.19.0.0_jx, редакция: 20190718165146.9ff2aa7.release_2018.19.0-jx</div><span id="speakSpan" class="j-508-label" role="marquee" aria-live="assertive" aria-relevant="all"></span><script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ 
+ 
+  ga('create', 'UA-42380235-1', 'freescale.com');
+  ga('send', 'pageview');
+</script>
+<script src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/jivecommunity_fslanalytics.js"></script>
+                    
+                    
+                    
+                    
+                    <script>require([ 'ui-modules/spotlight/scripts/main', 'domReady!' ], function(spotlight){spotlight.init();});</script></footer></div></div><div id="jiveTT-note" class="jive-tooltip2 notedefault snp-mouseoffset" role="tooltip"><div class="jive-tooltip2-mid j-mini-modal j-mini-modal-place"><div class="jive-tooltip2-mid-padding j-modal-content clearfix j-js-note-body" id="jive-note-body"></div></div></div><div id="jiveTT-note-additems" class="jive-tooltip2 notedefault snp-mouseoffset"><div class="jive-tooltip2-mid j-mini-modal"><div class="jive-tooltip2-mid-padding j-modal-content clearfix" id="jive-note-additems-body"></div></div></div><div id="jiveTT-note-checkpoint" class="jive-tooltip2 notedefault snp-mouseoffset"><div class="jive-tooltip2-mid j-mini-modal"><div class="jive-tooltip2-mid-padding j-modal-content" id="jive-note-checkpoint-body"></div></div></div><div id="jiveTT-note-tasks" class="jive-tooltip2 notedefault snp-mouseoffset"><div class="jive-tooltip2-mid j-mini-modal"><div class="jive-tooltip2-mid-padding j-modal-content" id="jive-note-tasks-body"></div></div></div><div id="jiveTT-note-playbox" class="jive-tooltip2 notedefault snp-mouseoffset"><div class="jive-tooltip2-mid j-mini-modal"><div class="jive-tooltip2-mid-padding j-modal-content" id="jive-note-playbox-body"></div></div></div><script type="application/ld+json">{"@context": "http://schema.org", "@type": "WebSite", "url": "https://community.nxp.com", "potentialAction": {"@type": "SearchAction", "target": "https://community.nxp.com/search.jspa?q={search_term_string}", "query-input": "required name=search_term_string"}}</script><div class="j-alert-container" role="alert" aria-live="polite" aria-atomic="true"></div><span id="j-speak-accessibility" class="j-508-label" role="status" aria-live="polite" aria-relevant="all" aria-atomic="true"></span><script src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/cookieConsent.js"></script><script>require(['apps/shared/models/user_relationship_list_source', 'apps/shared/models/user_relationship_source' ]);</script><script>require([ 'apps/follows/main', 'apps/follows/user/views/follow_user_link', 'apps/follows/user/main' ]);</script><script>require([ 'jive/urlcleaner' ]);</script><script>var containerShortUrl = "\/container-short.jspa"; var videoShortUrl = "\/view-video-short.jspa"; var profileShortUrl = "\/profile-short.jspa"; var profileLoadingTooltip = "Загрузка профиля пользователя"; var profileErrorTooltip = "При загрузке информации данного профиля произошла ошибка."; var followErrorMessage = "При осуществлении подписки на объект произошла внутренняя ошибка."; var ajaxErrorMessage = "Произошла непредвиденная ошибка. Возможно, при просмотре страницы истекло время сеанса."; var ajaxNotFoundMessage = "Искомый объект не найден."; var ajaxUnauthorizedMessage = "У вас нет разрешения на это действие. Если вы не вошли под своим именем, войдите и повторите попытку.";
+        require([
+            'jquery'
+        ], function($) {
+            var originalWrite = document.write;
+            document.write = function() {
+                if(typeof $ != 'undefined' && $.isReady) {
+                    console.warn("document.write called after document was loaded: ", arguments);
+                } else {
+                    return Function.prototype.apply.call(originalWrite, document, arguments);
+                }
+            }
+        });
+        </script><script>require(['places-autocomplete']);</script><script>window.appsMarketEnabled =  false ; window.anyAppsEnabled =  false ; window.appsAvailable =  false ; window.appUUIDs = "";window.appContainerVersion = "2018.19.0.0_jx";window.appsMarketID = "6226a2d5-2136-42c9-9e41-0ec679a25204";require([ 'jive/app/core_container/event_relay' ], function() {require([ 'osapi' ], function(osapi) {require([ 'jive/app/app-feature-disabled' ], function(AppsDisabled) {window.appsDisabled = new AppsDisabled({apps_feature_disabled: "Возможно, вам не удастся просмотреть данные материалы, так как приложения для данной системы отключены. За подробностями обращайтесь к своему системному администратору."},{disabled: true});});});require([ 'jive/app/containerDeferred', 'jive/app/syntheticContainerDeferred', 'jive/app/core_container/mock', 'jive/app/core_container/tile_app' ], function(containerDeferred, syntheticContainerDeferred, Mock, TileApp) {var mockContainer = new Mock(); containerDeferred.resolve(mockContainer); var tileApp = TileApp(); tileApp.initActionLinkContext({coreAPIType: 'osapi.jive.core.Discussion', id:  486379.0   }); syntheticContainerDeferred.resolve(tileApp);});});</script><script>
+                require(['jquery'], function($) { $.migrateMute = true; });
+            </script><script src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/a32b66f9211aa4c0e1ba972f9bf02f3a.js"></script>
+<script>
+require([ 'jive/rte/defaultStyles' ], function(defaultStyles) {defaultStyles = ["https:\/\/community.nxp.com\/2018.19.0.9ff2aa7\/plugins\/gamification_2018.19.0\/resources\/styles\/n4jive.concat.css"];require(['jiverscripts/conc/observable'], function(observable) {jive.observable = observable;}); require([ 'jive/rte/externalLinkModal' ], function(externalLinkModal) {jive.rte.mobileUI = false;externalLinkModal("true", "" );});}); jive.global.typeToNumeric = {"embedded_video":1100,"webhook":1224013431,"placeTemplateEntity":1567134318,"dm":109016030,"project":600,"discussion":1,"poll":18,"profileImage":501,"blog":37,"space":14,"post":38,"announcement":22,"group":700,"2901":2901,"image":111,"placeTemplateCategory":955999628,"static":1140061448,"securityGroup":4,"externalStreamInstance":1094237539,"task":602,"system":-2,"slide":1606291040,"person":3,"extprop":-1840153649,"extStreamActivity":-960826044,"page":-2106121635,"contentVersion":120,"favorite":800,"remoteDocument":9876,"streamEntry":1501,"idea":3227383,"document":102,"update":1464927464,"video":1100,"carousel":1527402675,"mention":550,"file":102,"attachment":13,"stream":-891990144,"share":109400031,"tileInstance":1094237539,"profileField":500,"event":96891546,"outcome":2700,"tileDefinition":1803367074,"photo":102,"message":2,"url":801,"collaboration":2800,"privateprop":987082157,"interaction":2801,"comment":105,"invite":350,"user":2020,"extStreamDefinition":1803367074}; jive.global.typeToMacroName = {"embedded_video":"videolink","idea":"idea","document":"document","project":"project","update":"microblog","photo":"document","discussion":"thread","poll":"polls","video":"videolink","blog":"blog","message":"message","space":"community","url":"external-site","task":"task","file":"document","post":"blogpost","person":"user","comment":"comment","extStreamActivity":"tilestream","event":"event","group":"group"};
+
+require(['jive/bundles/zapatec'], function(Calendar) {Calendar._TT["DEF_DATE_FORMAT"] = "%d.%m.%Y";});
+
+require([ 'jquery', 'apps/follows/user/views/follow_user_link', 'apps/follows/user/main', 'jquery-plugin/jquery.placeheld', 'domReady!' ], function($, ProfileFollowView, FollowUserApp) {var followView = new ProfileFollowView({i18n: {startFollowingMessage: '<p>Вы подписались на {0}.</p>', stopFollowingMessage:  '<p>Вы отписались от {0}.</p>', pendingConnectionMessage: '<p>Внимание: ваш запрос должен получить подтверждение от {0}</p>'}, bidirectional: false}); var jiveUserFollow = new FollowUserApp({followView: followView}); $("input[placeholder]").placeHeld();});
+
+</script>
+<script>var containerType = '14'; var containerID = '2004';var spotlightSearchURL = "spotlight-search";</script><script>window._jive_images_enabled = true; window._jive_video_module_enabled = true; window._jive_give_badge_rte_enabled = true;
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("color","","TEXT", true, false, [], [{name: "0",value: ""},{name: "__default_attr",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("size","","TEXT", true, false, [], [{name: "0",value: ""},{name: "__default_attr",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("font","","TEXT", true, false, [], [{name: "0",value: ""},{name: "__default_attr",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("toc","","IMAGE", true, true, [], [], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro'), 'jive/rte/syntax/syntaxhighlightmacro' ], function() {jive.rte.macros.push(new jive.rte.Macro("code","","TEXT", false, true, [{ name: "java", deleteAll: true, params: [{ name: "__default_attr", value :"java"} ]},{ name: "plain", deleteAll: true, params: [{ name: "__default_attr", value :"plain"} ]},{ name: "xml", deleteAll: true, params: [{ name: "__default_attr", value :"xml"} ]},{ name: "html", deleteAll: true, params: [{ name: "__default_attr", value :"html"} ]},{ name: "sql", deleteAll: true, params: [{ name: "__default_attr", value :"sql"} ]}], [{name: "__default_attr",value: ["java","plain","xml","html","sql"]}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("noformat","","TEXT", true, false, [], [], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("thread","thread/","INLINE", true, false, [], [{name: "id",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("message","message/","INLINE", true, false, [], [{name: "id",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("external-site","bookmarks/","INLINE", false, false, [], [{name: "id",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("document","docs/","INLINE", true, false, [], [{name: "id",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("comment","/","INLINE", true, false, [], [{name: "id",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("tag","tags/","INLINE", true, false, [], [{name: "id",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""},{name: "tag",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("microblog","status/","INLINE", true, false, [], [{name: "id",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("polls","polls/","INLINE", true, false, [], [{name: "id",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("blogpost","blogs/","INLINE", true, false, [], [{name: "id",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("blog","blogs/","INLINE", true, false, [], [{name: "id",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""},{name: "name",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("community","community/","INLINE", true, false, [], [{name: "id",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("space","community/","INLINE", true, false, [], [{name: "id",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("user","people/","INLINE", true, false, [], [{name: "id",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""},{name: "username",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("project","project/","INLINE", true, false, [], [{name: "id",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("task","view-task.jspa?task=","INLINE", true, false, [], [{name: "id",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("group","groups/","INLINE", true, false, [], [{name: "id",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("quote","","TEXT", false, true, [], [{name: "title",value: ""},{name: "__default_attr",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("alert","","TEXT", false, true, [{ name: "success", deleteAll: true, params: [{ name: "__default_attr", value :"success"} ,{ name: "alert", value :"success"} ]},{ name: "info", deleteAll: true, params: [{ name: "__default_attr", value :"info"} ,{ name: "alert", value :"info"} ]},{ name: "warning", deleteAll: true, params: [{ name: "__default_attr", value :"warning"} ,{ name: "alert", value :"warning"} ]},{ name: "danger", deleteAll: true, params: [{ name: "__default_attr", value :"danger"} ,{ name: "alert", value :"danger"} ]}], [{name: "__default_attr",value: ""},{name: "alert",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("flag","","INLINE", false, true, [{ name: "new", deleteAll: true, params: [{ name: "flag", value :"new"} ]},{ name: "updated", deleteAll: true, params: [{ name: "flag", value :"updated"} ]}], [], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("vimeo","","IMAGE", false, false, [], [{name: "__default_attr",value: ""},{name: "width",value: ""},{name: "height",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("veoh","","IMAGE", false, false, [], [{name: "__default_attr",value: ""},{name: "width",value: ""},{name: "height",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("dailymotion","","IMAGE", false, false, [], [{name: "__default_attr",value: ""},{name: "width",value: ""},{name: "height",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("youtube","","IMAGE", false, false, [], [{name: "__default_attr",value: ""},{name: "width",value: ""},{name: "height",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("kaltura","","IMAGE", false, false, [], [{name: "__default_attr",value: ""},{name: "width",value: ""},{name: "height",value: ""},{name: "playerKey",value: ""},{name: "playerID",value: ""},{name: "partnerID",value: ""},{name: "playerColor",value: "#FFFFFF"},{name: "sourcedomain",value: ""}], false,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("brightcove","","IMAGE", false, false, [], [{name: "__default_attr",value: ""},{name: "width",value: ""},{name: "height",value: ""},{name: "playerKey",value: ""},{name: "playerID",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("showandshare","","IMAGE", false, false, [], [{name: "__default_attr",value: ""},{name: "width",value: ""},{name: "height",value: ""},{name: "playerColor",value: "#000000"},{name: "sourcedomain",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("videomacro","","IMAGE", true, false, [], [{name: "__default_attr",value: ""},{name: "videoid",value: ""},{name: "imageURL",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("videolink","thread/","INLINE", true, false, [], [{name: "id",value: ""},{name: "0",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("application","","INLINE", true, false, [], [{name: "id",value: ""},{name: "__default_attr",value: ""},{name: "__title",value: ""},{name: "__view",value: ""},{name: "__params",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("appEmbeddedView","","INLINE", true, false, [], [{name: "_default_attr",value: ""},{name: "_appuuid",value: ""},{name: "_title",value: ""},{name: "_view",value: ""},{name: "_context",value: ""},{name: "_url",value: ""},{name: "_previewimage",value: ""},{name: "_icon",value: ""},{name: "_action_id",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("tilestream","external/","INLINE", true, false, [], [{name: "id",value: ""},{name: "__default_attr",value: ""},{name: "title",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("event","","INLINE", true, false, [{ name: "default", deleteAll: true, params: [{ name: "id", value :""} ,{ name: "__default_attr", value :""} ,{ name: "title", value :""} ]}], [{name: "id",value: ""},{name: "title",value: ""},{name: "__default_attr",value: ""}], true,false));});});
+require(['application/config'], function(config) {require([ ('jive/rte4/macro') ], function() {jive.rte.macros.push(new jive.rte.Macro("idea","","INLINE", true, false, [{ name: "default", deleteAll: true, params: [{ name: "id", value :""} ,{ name: "__default_attr", value :""} ,{ name: "title", value :""} ]}], [{name: "id",value: ""},{name: "title",value: ""},{name: "__default_attr",value: ""}], true,false));});});
+</script><script src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/bundle_ru.js"></script><script>
+require([ 'jquery', 'soy!jive.skin.template.cookieConsent.cookieBanner', 'i18nReady!' ], function($, cookieBanner) {var cookieBannerContent = cookieBanner( { 'privacyPolicyUrl' : 'https://www.nxp.com', 'cookieConsentDeclineButtonEnabled' : true, 'declineRedirectUrl' : 'cookie-consent-decline.jspa', } ); $( "body" ).prepend( cookieBannerContent ); $( document ).trigger('cookieBannerLoad');});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+require([ 'apps/socialgroup/membership/main' ], function(MembershipApp) {var jiveMembership = new MembershipApp({objectID:2004});}); require([ 'apps/email_notification/main', 'domReady!' ], function(EmailNotification) {new EmailNotification(486379, 1);}); require(['jquery', 'jive/util'], function ($, util) {window.publishDraft = function() {var form = $j('#documentPublishForm'); util.securedForm(form).always(function() {form.submit();});}}); require(['jquery', 'domReady!'], function($j) {$j('#jive-office-plugin-download').css('display','block'); $j('#jive-office-plugin-download > div').css('padding', '0px');});
+
+require([ 'jquery', 'breadcrumb', 'jive/contentplace_relationship' ]);
+
+require([ 'apps/morelikethis/main' ], function() {new jive.MoreLikeThisApp.Main({objectType: '1', objectID: '486379', containerID: "jive-more-like-this-1-486379", numResults: 5, noContentMessage: 'Похожих материалов не найдено.', errorMessage: 'Не удается получить содержимое с сервера:'});});
+
+
+
+
+
+
+
+
+
+
+
+
+
+require(['apps/core_acclaim/core_acclaim_main']);
+
+require([ 'apps/guided_navigation/main', 'domReady!' ], function(GuidedNavigation) {new GuidedNavigation();});
+
+require(['apps/core_acclaim/core_acclaim_main']);
+
+require(['apps/outcomes/eventShim']);
+
+require(['apps/outcomes/eventShim']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+require([ 'sso/google-oidc-login', 'domReady!' ], function(GoogleOidcLogin) {window.jiveGoogleOidcLogin = new GoogleOidcLogin({jiveTokenName: "jive.googleoidc.login", jiveTokenGUID: "1571733555394-8C6EQBNFUGIQDTZR1657K387BYRUG0P1", clientID: "null", openIDRealm: "null", redirectURI: "https://community.nxp.com/googleoidc/sso"});});
+
+
+                        require(['jquery'], function($) {
+                            $('#navLogin').on('click', function(e) {
+                                var fragment = '';
+                                if (window.location.hash.length > 1){
+                                    fragment = "?fragment=" + window.location.hash.substring(1);
+                                }
+                                $('#navLogin').attr("href", window._jive_base_url + '/login.jspa' + fragment);
+                           });
+                        });
+                        
+
+
+            require(['apps/autosearch/autosearch_main']);
+            
+
+require([ 'apps/activity_stream/activity_notifier', 'apps/activity_stream/models/activity_stream_source', 'apps/shared/controllers/switchboard', 'domReady!', 'jive/responsive' ], function(ActivityNotifier, ActivityStreamSource) {}); require([ 'domReady!' ], function() {jive.onLoadEventComplete = true;});
+
+require([ 'apps/authentication/main', 'apps/authentication/models/authentication_source', 'apps/userregistration/main' ], function(Authentication, AuthenticationSource, UserRegistration) {var authSource = new AuthenticationSource({forceSecure: false});});
+
+require(['apps/tile/html_tile_connector', 'jive/app/app-feature-disabled', 'jiveCoreApiV3'], function(connector) {require(['gadgets', 'shindig', 'osapi']);connector.listen();});
+
+</script>
+<!-- plugin javascript --><script src="./How to set WDOG_B timeout period for i.MX6ULL_ _ NXP Community_files/bootstrapper.js"></script><!-- end plugin javascript -->
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"errorBeacon":"bam.nr-data.net","licenseKey":"90ec53e80f","agent":"","beacon":"bam.nr-data.net","applicationTime":195,"applicationID":"155738075","transactionName":"M1BRYEAEWBVYURYLWAoaYVFBEWEDW2EHEEENVlYbQABRD1ZcEU1BDVBEG1EKWBJcXBZNTAdaXUBXC0IvfU9CSnAhYRo=","queueTime":0}</script></body><!-- BEGIN attachments --><!-- END attachments --></html>
