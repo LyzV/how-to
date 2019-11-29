@@ -1,0 +1,71 @@
+Переменные yocto:
+
+MACHINE			- phyboard-segin-imx6ul-2
+DISTRO			- yogurt-vendor
+TMPDIR 			- pd17.1.2/build/tmp - здесь выполняет всю свою работу OpenEmbedded
+package feed area- pd17.1.2/build/deploy/ipk/
+pd17.1.2/build 	- build directory
+PACKAGE_ARCH	- архитектрура для которой делается пакет
+DEPLOY_DIR 		- pd17.1.2/build/deploy
+DEPLOY_DIR_IPK 	- pd17.1.2/build/deploy/ipk/phyboard_segin_imx6ul_2
+S 				- путь к исходникам рецепта
+PN, BPN			- имя рецепта
+PV 				- версия рецепта
+PR 				- версия релиза
+TARGET_OS 		- OS целевой платформы
+
+$ bitbake phytec-qt5demo-image -e | grep ^VENDOR=
+VENDOR="phytec"
+
+$ bitbake phytec-qt5demo-image -e | grep ^TMPDIR=
+TMPDIR="/home/lyzv/work/bsp/pd17.1.2/build/tmp"
+
+$ bitbake phytec-qt5demo-image -e | grep ^PACKAGE_ARCH=
+PACKAGE_ARCH="phyboard_segin_imx6ul_2"
+
+$ bitbake phytec-qt5demo-image -e | grep ^MACHINE_ARCH=
+MACHINE_ARCH="phyboard_segin_imx6ul_2"
+
+$ bitbake phytec-qt5demo-image -e | grep ^DEPLOY_DIR=
+DEPLOY_DIR="/home/lyzv/work/bsp/pd17.1.2/build/deploy"
+
+$ bitbake phytec-qt5demo-image -e | grep ^DEPLOY_DIR_IPK=
+DEPLOY_DIR_IPK="/home/lyzv/work/bsp/pd17.1.2/build/deploy/ipk"
+
+$ bitbake phytec-qt5demo-image -e | grep ^S=
+S="/home/lyzv/work/bsp/pd17.1.2/build/tmp/work/phyboard_segin_imx6ul_2-phytec-linux-gnueabi/phytec-qt5demo-image/1.0-r0/phytec-qt5demo-image-1.0"
+
+$ bitbake phytec-qt5demo-image -e | grep ^PN=
+PN="phytec-qt5demo-image"
+
+$ bitbake phytec-qt5demo-image -e | grep ^BPN=
+BPN="phytec-qt5demo-image"
+
+$ bitbake phytec-qt5demo-image -e | grep ^PV=
+PV="1.0"
+
+$ bitbake phytec-qt5demo-image -e | grep ^PR=
+PR="r0"
+
+$ bitbake phytec-qt5demo-image -e | grep ^TARGET_OS=
+TARGET_OS="linux-gnueabi"
+
+$ bitbake phytec-qt5demo-image -e | grep ^ROOT_HOME=
+ROOT_HOME="/home/root"
+
+Архитектуры пакетов бывают:
+- процессора целевой платы 		- cortexa7hf-neon-vfpv4-phytec-linux-gnueabi = ${??}-${TARGET_OS}
+- целевой платы					- phyboard_segin_imx6ul_2-phytec-linux-gnueabi = ${PACKAGE_ARCH}-${VENDOR}-${TARGET_OS}
+- процессора и OS хост машины	- x86_64-linux  (BUILD_ARCH). Получается из команды "uname"
+- процессора машины SDK			- x86_64-nativesdk-phytecsdk-linux  ${SDK_ARCH}-${SDKPKGSUFFIX}
+- buildtools					- buildtools-dummy-nativesdk-phytec-linux - это архитектура для внутреннего использования
+
+
+
+
+pd17.1.2/build/ - корень каталога сборки 
+             `tmp/ - здесь выполняет всю свою работу OpenEmbedded - TMPDIR
+
+
+
+./barebox/2017.04.0-phy3-r7.0/git/arch/arm/dts/imx6ull-phytec-phycore-som.dts

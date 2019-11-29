@@ -1,0 +1,20 @@
+#! /bin/bash
+
+echo ' '
+echo 'CLEAN IMAGE DIRECTORY...'
+bitbake phytec-qt5demo-image -c clean
+echo ' '
+echo 'COPY CAN0 CONFIGURATION...'
+./cp_can0
+echo ' '
+echo 'BUILD IMAGE RECEPT...'
+bitbake phytec-qt5demo-image
+echo ' '
+echo 'COPY DTS FILES...'
+./cp_dt
+echo ' '
+echo 'BUILD DTS AND KERNEL...'
+./build_kernel
+echo ' '
+echo 'BUILD IMAGE RECEPT...'
+bitbake phytec-qt5demo-image

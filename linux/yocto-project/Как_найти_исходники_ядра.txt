@@ -1,0 +1,8 @@
+
+$ bitbake phytec-qt5demo-image -e | grep ^STAGING_KERNEL_DIR=
+STAGING_KERNEL_DIR="/home/lyzv/work/bsp/pd17.1.2/build/tmp/work-shared/phyboard-segin-imx6ul-2/kernel-source"
+
+Конечный путь:
+~/work/bsp/pd17.1.2/build/tmp/work-shared/phyboard-segin-imx6ul-2/kernel-source/arch/arm
+
+Для файлов *.dts 

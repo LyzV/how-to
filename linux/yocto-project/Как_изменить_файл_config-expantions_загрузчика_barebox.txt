@@ -1,0 +1,12 @@
+Как у загрузчика в файле /env/config-expantions раскомментарить строки:
+. /env/expansions/imx6ul-phytec-segin-peb-av-02
+of_display_timings -S /soc/aips-bus@02100000/lcdif@021c8000/display@di0/display- ....
+
+1) Открыть директорию для поиска и редактирования:
+$ cd ./meta-phytec/recipes-bsp/barebox
+$ subl barebox/
+
+2) В редакторе поискать все вхождения "imx6ul-phytec-segin-peb-av-02"
+3) Раскомментарить нужные строки
+5) Пересобрать образ:
+$ bitbake phytec-qt5demo-image

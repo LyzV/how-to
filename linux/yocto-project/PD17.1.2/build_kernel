@@ -1,0 +1,4 @@
+#! /bin/bash
+
+bitbake -c compile -f virtual/kernel 
+bitbake -c deploy -f virtual/kernel

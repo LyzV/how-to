@@ -1,0 +1,3 @@
+
+$ sudo apt-get install device-tree-compiler
+$ dtc -I dtb -O dts -o imx6ul-phytec-phyboard-segin-ff-rdk.dts imx6ul-phytec-phyboard-segin-ff-rdk.dtb

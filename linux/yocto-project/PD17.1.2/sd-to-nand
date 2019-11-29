@@ -1,0 +1,33 @@
+
+
+echo ' '
+echo 'CLEAR ALL NAND ...'
+erase /dev/nand0
+
+echo ' '
+echo 'WRITE BAREBOX ...'
+barebox_update -t nand /mnt/mmc/barebox.bin
+
+echo ' '
+echo 'FORMAT NAND ...'
+ubiformat /dev/nand0.root
+ubiattach /dev/nand0.root
+
+echo ' '
+echo 'MAKE PARTITIONS ...'
+ubimkvol -t static /dev/nand0.root.ubi kernel 8M
+ubimkvol -t static /dev/nand0.root.ubi oftree 1M
+ubimkvol -t dynamic /dev/nand0.root.ubi root 0
+
+echo ' '
+echo 'COPY KERNEL ...'
+ubiupdatevol /dev/nand0.root.ubi.kernel /mnt/mmc/zImage
+ubiupdatevol /dev/nand0.root.ubi.oftree /mnt/mmc/oftree
+
+echo ' '
+echo 'COPY ROOT FILE SYSTEM ...'
+cp -v /mnt/mmc/root.ubifs /dev/nand0.root.ubi.root
+
+echo ' '
+echo 'FINISH !!!'
+echo 'POWER OFF, EJECT SD-CARD, SWITCH JUMPERS AND REBOOT DEVICE'

@@ -1,0 +1,37 @@
+#! /bin/bash
+
+device=/dev/sdb1
+accept=no
+
+echo "Enter flash-device partition:"
+ls /dev/sd[b-z]1
+read device
+
+mpoint=`get_mount_point.py ${device}`
+echo Device ${device} mounted to ${mpoint}
+
+if [ -z "$mpoint" ]; then
+	echo Device ${device} is not mounted
+	exit
+fi	
+
+ls -la "$mpoint"
+
+echo "Continue (yes/no, default - yes)?"
+read accept
+if [ -z $accept ]; then
+	echo "Writing..."
+else
+	if [ $accept != yes ]; then
+		echo 'Exit...'
+   		exit 
+   	fi	
+   	echo "Writing..."
+fi
+
+cp -f deploy/images/phyboard-segin-imx6ul-2/zImage   										"$mpoint"/zImage
+cp -f deploy/images/phyboard-segin-imx6ul-2/zImage-imx6ul-phytec-phyboard-segin-ff-rdk.dtb	"$mpoint"/oftree
+cp -f deploy/images/phyboard-segin-imx6ul-2/zImage-imx6ul-phytec-phyboard-segin-ff-rdk.dtb	"$mpoint"/imx6ul-phytec-phyboard-segin-ff-rdk.dtb
+
+echo "Check partition:"
+ls -la "$mpoint"

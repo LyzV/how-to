@@ -1,0 +1,6 @@
+echo 'Write barebox ...'
+barebox_update -t nand /mnt/mmc/barebox.bin
+echo 'Clear barebox ...'
+erase /dev/nand0.barebox-environment.bb
+echo 'POWER OFF. SWITCH JUMPERS AND REBOOT'
+

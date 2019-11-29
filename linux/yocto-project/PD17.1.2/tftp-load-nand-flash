@@ -1,0 +1,20 @@
+
+echo "FORMAT NAND-memory ..."
+ubiformat /dev/nand0.root
+ubiattach /dev/nand0.root
+echo "MAKE PARTITIONS ..."
+ubimkvol -t static /dev/nand0.root.ubi kernel 8M
+ubimkvol -t static /dev/nand0.root.ubi oftree 1M
+ubimkvol -t dynamic /dev/nand0.root.ubi root 0
+
+echo "COPY KERNEL & OFFTREE ..."
+cp /mnt/tftp/zImage .
+cp /mnt/tftp/oftree .
+ubiupdatevol /dev/nand0.root.ubi.kernel zImage
+ubiupdatevol /dev/nand0.root.ubi.oftree oftree
+
+echo "COPY ROOTFS ..."
+cp -v /mnt/tftp/root.ubifs /dev/nand0.root.ubi.root
+
+echo "THAT IS ALL!"
+

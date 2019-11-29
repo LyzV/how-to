@@ -1,0 +1,3 @@
+#! /bin/bash
+
+cp -f can0.service ../sources/meta-yogurt/recipes-core/systemd/systemd-machine-units/

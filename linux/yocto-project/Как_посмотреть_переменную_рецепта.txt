@@ -1,0 +1,7 @@
+
+
+bitbake phytec-qt5demo-image -e | grep ^WORKDIR=
+WORKDIR="/home/lyzv/work/bsp/pd17.1.2/build/tmp/work/phyboard_segin_imx6ul_2-phytec-linux-gnueabi/phytec-qt5demo-image/1.0-r0"
+
+Показывает переменную WORKDIR
+
