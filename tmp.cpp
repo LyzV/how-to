@@ -135,3 +135,187 @@ Device Descriptor:
           Usage Type               Data
         wMaxPacketSize     0x0200  1x 512 bytes
         bInterval               0
+///////////////////////////////
+*/
+*/
+*/
+
+[-+]? - один из списка или ничего
+(?:   \d+  (?:  \.\d*)?   |\.\d+)
+
+(?:[eE][-+]?\d+)?
+
+Execute tasks from a specific .bb recipe directly.
+WARNING: Does not handle any dependencies from other recipes
+
+DESCOR
+http://descor-m.ru/diler
+http://descor-k.ru/
+
+CLIPSO
+
+/******************************************/
+Спальня               
+S= 21 м2
+P=3X7 = 20 метров
+
+Кладовка
+S= 4 м2
+P=2Х2 = 8 метров
+
+Кладовка в коридоре
+S= 4 м2
+P=2Х2 = 8 метров
+
+Зал
+S= 18 м2
+P=3.3Х5.3 = 20 метров
+
+Прихожка
+S= 17 м2
+P=3,5Х5 = 17 метров
+
+Прихожка 2
+S= 4 м2
+P=2Х2 = 8 метров
+
+Кухня
+S= 12 м2
+P=3,5Х3,5 = 14 метров
+
+Ванная
+S= 4 м2
+P=2Х2 = 8 метров
+
+Туалет
+S= 2 м2
+P=2Х1 = 6 метров
+
+Итого:
+S= 86 м2
+P=110 метров
+/****************************************/
+Спальня + кладовка
+4.1м х 7.5м = 31 м2
+
+Зал
+4.1м х 6м = 25 м2
+
+Прихожка + ванная + туалет
+4.1м х 5.1м = 21 м2
+
+Кухня 
+4.1м х 4м = 17 м2
+
+Прихожка 2 + кладовка
+4.1м х 4.5 = 19 м2
+
+Итого:
+L = 30 метров
+S = 30*4.1= 123м2
+$ = 
+
+
+У Дмитрия 
+123 м2 - 42тр
+110 м - 4тр
+
+/***************************************************************/
+
+
+CFlagNotify       return CFLAGNOTIFY;
+[_a-zA-Z][_a-zA-Z0-9]*  return ID;
+;           return SEMICOLON;
+[ \t]         ;
+
+ CFLAGNOTIFY ID SEMICOLON 
+
+
+ int len=(yyleng>ID_NAME_LEN)? ID_NAME_LEN: yyleng;
+              strncpy(id_name, yytext, len);
+              id_name[len]='\0';
+
+
+set auto-load safe-path /
+handle SIGILL nostop
+
+
+FN_KbdFplusEvent
+FN_KbdFminusEvent
+FN_IndexBoldFont
+
+to |
+from |
+behind |
+above |
+below |
+between |
+below     printf("%s: is a preposition\n", yytext);
+
+
+
+/* /////////////////// */
+
+
+yystate - состояние парсера
+
+yytext - строка текста связанная с токеном
+yyleng - длина yytext
+yylval - токен
+
+Стеки
+/* The state stack.  */
+    yytype_int16 yyssa[YYINITDEPTH];
+    yytype_int16 *yyss;
+    yytype_int16 *yyssp;
+
+    /* The semantic value stack.  */
+    YYSTYPE yyvsa[YYINITDEPTH];
+    YYSTYPE *yyvs;
+    YYSTYPE *yyvsp;
+
+
+  enum yytokentype
+  {
+    EXTERN = 258,
+    CFLAGNOTIFY = 259,
+    NAME = 260,
+    SEMICOLON = 261
+  };
+
+  yyinput
+
+  \+            return '+';
+-           return '-';
+\*            return '*';
+\/            return '/';
+\^            return '^';
+n             return 'n';
+
+{ printf("\t%.10g\n", $1); }
+
+input:    /* empty */
+        | input line
+    ;
+
+\+                  { lprintf("+ "  ); return '+'; }
+\-                  { lprintf("- "  ); return '-'; }
+\*                  { lprintf("* "  ); return '*'; }
+\/                  { lprintf("/ "  ); return '/'; }
+\^                  { lprintf("^ "  ); return '^'; }
+n                   { lprintf("n "  ); return 'n'; }
+.           ;
+
+\n            { return '\n'; }
+.           { return yytext[0]; }
+
+
+{ strcpy(yylval.sval, yytext); return NAME; }
+
+{ yylval=yytext; 
+
+
+\/\*(.*\n)*.*\*\/         ; /* c-comments */
+
+
+  <HR( +SIZE *= *[0-9]+)? *>
