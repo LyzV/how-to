@@ -1,0 +1,2 @@
+
+bitbake -e phytec-qt5demo-image | grep ^IMAGE_ROOTFS=
