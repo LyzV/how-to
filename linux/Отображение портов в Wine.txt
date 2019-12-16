@@ -1,0 +1,6 @@
+
+
+linux	Wine
+-------------
+ttyS4   COM5
+ttyS5	COM6
