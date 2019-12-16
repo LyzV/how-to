@@ -1,0 +1,21 @@
+
+$ bitbake -e phytec-qt5demo-image | grep ^PACKAGE_ARCH=
+PACKAGE_ARCH="phyboard_segin_imx6ul_2"
+$ bitbake -e phytec-qt5demo-image | grep ^TARGET_OS=
+TARGET_OS="linux-gnueabi"
+$ bitbake -e phytec-qt5demo-image | grep ^PN=
+PN="phytec-qt5demo-image"
+$ bitbake -e phytec-qt5demo-image | grep ^BPN=
+BPN="phytec-qt5demo-image"
+$ bitbake -e phytec-qt5demo-image | grep ^PV=
+PV="1.0"
+$ bitbake -e phytec-qt5demo-image | grep ^PR=
+PR="r0"
+$ bitbake -e phytec-qt5demo-image | grep ^WORKDIR=
+WORKDIR="/home/lyzv/work/bsp/pd17.1.2/build/tmp/work/phyboard_segin_imx6ul_2-phytec-linux-gnueabi/phytec-qt5demo-image/1.0-r0"
+$ bitbake -e phytec-qt5demo-image | grep ^S=
+S="/home/lyzv/work/bsp/pd17.1.2/build/tmp/work/phyboard_segin_imx6ul_2-phytec-linux-gnueabi/phytec-qt5demo-image/1.0-r0/phytec-qt5demo-image-1.0"
+
+Здесь:
+ phytec-qt5demo-image - имя рецепта
+ PACKAGE_ARCH - имя переменной
