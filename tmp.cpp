@@ -14,6 +14,7 @@
 1. При аварии по высокому напряжению сети (в КИ) в аварийный контекст укладываются 3 фазных напряжения.
    Римера показывает напряжения Uab, Ubc, Uca.
 2. Режим роснефти "прокачка газа". Нужно сделать Fmin и Fmax настраиваемыми относительно текущей заданной частоты.
+3. Срабатывает перевод часов лето/зима. Надо проверить правильность.
 
 
 
@@ -499,3 +500,29 @@ cat /sys/kernel/debug/pinctrl/20e0000.iomuxc/pinconf-groups | grep GPIO1
 |   ||+-------------------- 1    - PAD_CTL_PUE
 |   ++--------------------- 11   - PAD_CTL_PUS_22K_UP  
 +-------------------------- 1    - PAD_CTL_HYS
+
+0xB0
+0   0000 0000   1011 0000
+|   |||| |      |||  |  |
+|   |||| |      |||  |  +-- 0    - PAD_CTL_SRE_FAST
+|   |||| |      ||+--+----- 110  - PAD_CTL_DSE_80ohm
+|   |||| |      ++--------- 01   - PAD_CTL_SPEED_LOW
+|   |||| +----------------- 0    - нет PAD_CTL_ODE (открытый коллектор)
+|   |||+------------------- 1    - PAD_CTL_PKE
+|   ||+-------------------- 1    - PAD_CTL_PUE
+|   ++--------------------- 11   - PAD_CTL_PUS_22K_UP  
++-------------------------- 1    - PAD_CTL_HYS
+
+~/work/bsp/pd17.1.2/build/tmp/work-shared/phyboard-segin-imx6ul-2/kernel-source
+
+      0 00  0 0 0 000 00 000 00 0
+         |  | | |      |  |
+         |  | | |      |  +--------- DSE   
+         |  | | |      +------------ SPEED
+         |  | | +------------------- OD
+         |  | +--------------------- PKE
+         |  +----------------------- PUE 
+         +-------------------------- PUS
+
+alias gks='cd ~/work/bsp/pd17.1.2/build/tmp/work-shared/phyboard-segin-imx6ul-2/kernel-source'
+alias grfs='cd ~/work/bsp/pd17.1.2/build/tmp/work/phyboard_segin_imx6ul_2-phytec-linux-gnueabi/phytec-qt5demo-image/1.0-r0/rootfs'
