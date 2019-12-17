@@ -1,0 +1,74 @@
+
+Как добавить свой файл
+
+1. Создаём уровень meta-utility
+$ gb
+$ . sources/poky/oe-init-build-env
+$ cd ../sources/
+$ mkdir -p meta-utility/conf
+$ cd meta-utility/conf
+
+2. Создаём конфигурационный файл уровня
+$ touch layer.conf && subl layer.conf
+Файл должен содержать:
+
+# We have a conf and classes directory, add to BBPATH
+BBPATH .= ":${LAYERDIR}"
+
+# We have recipes-* directories, add to BBFILES
+BBFILES += "${LAYERDIR}/recipes-*/*/*.bb \
+	        ${LAYERDIR}/recipes-*/*/*.bbappend \
+	        ${LAYERDIR}/recipes-*/*.bb \
+	        ${LAYERDIR}/recipes-*/*.bbappend "
+
+BBFILE_COLLECTIONS += "ksu"
+BBFILE_PATTERN_ksu = "^${LAYERDIR}/"
+BBFILE_PRIORITY_ksu = "1"
+LAYERVERSION_ksu = "1"
+
+3. Создаём директорию для рецепта
+$ cd ../
+$ mkdir -p recipes-utility && cd recipes-utility
+$ touch utility.bb && subl utility.bb
+Файл должен содержать:
+
+DESCRIPTION = "Utility for testing serial ports."
+SECTION = "utility"
+DEPENDS = ""
+LICENSE = "CLOSED"
+FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+
+SRC_URI = "file://sendto2"
+
+S = "${WORKDIR}"
+
+do_install() {
+install -d ${D}/home/root/bin
+install ${S}/sendto2 ${D}/home/root/bin/
+}
+
+FILES_${PN} += " \
+            /home/root/bin/* \
+         "
+
+4. Создаём файл sendto2
+$ mkdir files && cd files
+$ touch sendto2 && subl sendto2
+
+
+5. Создаём рецепт для добавления в образ
+$ cd ../..
+$ pwd 
+/home/lyzv/work/bsp/pd17.1.2/sources/meta-ksu
+$ mkdir recipes-images && cd recipes-images/
+$ touch phytec-qt5demo-image.bbappend && subl phytec-qt5demo-image.bbappend
+Файл должен содержать:
+IMAGE_INSTALL_append = " utility "
+
+6. Добавляем уровень в образ 
+$ cd ../../../build/conf/ && subl bblayers.conf
+В файл необходимо вставить строку:
+${OEROOT}/../meta-ksu \
+
+7. Собрать дистрибутив
+$ bitbake phytec-qt5demo-image

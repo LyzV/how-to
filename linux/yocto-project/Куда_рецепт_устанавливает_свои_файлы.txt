@@ -1,0 +1,8 @@
+
+$ bitbake -e qtserialport | grep "^S="
+
+Это путь к исходникам.
+
+$ bitbake -e qtserialport | grep "^D="
+А это куда деплоятся файлы данного рецепта.
+Можно видеть что и куда укладывается в rootfs

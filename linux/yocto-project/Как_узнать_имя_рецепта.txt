@@ -1,0 +1,25 @@
+
+Имя рецепта присваивается переменной SECTION в файле рецепта. Например, 
+вот файл рецепта utility.bb:
+
+
+DESCRIPTION = "Utility for testing serial ports."
+SECTION = "utility"
+DEPENDS = ""
+LICENSE = "CLOSED"
+FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+
+SRC_URI += "file://sendto2"
+SRC_URI += "file://sendto4"
+
+S = "${WORKDIR}"
+
+do_install() {
+install -d ${D}/home/root/bin
+install ${S}/sendto2 ${D}/home/root/bin/
+install ${S}/sendto4 ${D}/home/root/bin/
+}
+
+FILES_${PN} += " \
+            /home/root/bin/* \
+         "
