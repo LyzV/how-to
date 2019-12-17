@@ -529,3 +529,14 @@ cat /sys/kernel/debug/pinctrl/20e0000.iomuxc/pinconf-groups | grep GPIO1
 
 alias gks='cd ~/work/bsp/pd17.1.2/build/tmp/work-shared/phyboard-segin-imx6ul-2/kernel-source'
 alias grfs='cd ~/work/bsp/pd17.1.2/build/tmp/work/phyboard_segin_imx6ul_2-phytec-linux-gnueabi/phytec-qt5demo-image/1.0-r0/rootfs'
+
+
+1) Отпайка.
+2)      Разрещение защиты - Нет.
+3)      Уставки защиты по умолчанию отсутствуют.
+4)      Уставки номиналов ВД по умолчанию отсутствуют.
+5)      По умолчанию заданная частота должна быть 100Гц. 
+6)      Скорость разгона/торможения установить 5Гц/с
+7)      По умолчанию U/F до 100Гц.
+8)      Вид ПЭД.
+9) 
