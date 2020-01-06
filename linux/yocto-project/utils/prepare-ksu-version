@@ -1,0 +1,29 @@
+#! /bin/bash
+
+strip=/opt/SDK-PD17.1.2/sysroots/x86_64-phytecsdk-linux/usr/bin/arm-phytec-linux-gnueabi/arm-phytec-linux-gnueabi-strip
+tmpdir=/tmp
+archive_dir=${tmpdir}/ksu_archive
+current_dir=$(pwd)
+
+# delete old work files
+if [ -e $archive_dir ]
+then
+	rm -r ${archive_dir}
+fi
+
+if [ -e ${tmpdir}/ksu.strip.tar.gz ]
+then
+	rm ${tmpdir}/ksu.strip.tar.gz
+fi
+
+# make archive
+mkdir -p ${archive_dir}
+$strip ksu -o ${archive_dir}/ksu.strip
+md5sum ${archive_dir}/ksu.strip > ${archive_dir}/ksu.strip.md5
+cd ${tmpdir}
+tar -czf ksu.strip.tar.gz ksu_archive
+
+# make version
+cp ksu.strip.tar.gz ${current_dir}/$*.ksu
+
+
