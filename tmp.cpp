@@ -558,3 +558,64 @@ disable 0x7b0400
 ///////////////////////////////////////////////////////////////////////////////
 
 lyzv@lyzv-pc:/opt/SDK-PD17.1.2$ ./sysroots/x86_64-phytecsdk-linux/usr/libexec/arm-phytec-linux-gnueabi/gcc/arm-phytec-linux-gnueabi/6.2.0/strip --help
+
+git clone https://gitlab.com/LyzV/bootstrap.git
+
+#! /bin/bash
+cd /home/root
+./bootstrap.strip -f /home/root/ksu_boot1 -s /home/root/ksu_boot2 -d /home/root &
+
+# INHIBIT_PACKAGE_STRIP = "1"
+# INHIBIT_PACKAGE_STRIP = "1"
+
+RDEPENDS_ksuboot libc.so.6 /bin/bash
+
+
+
+https://github.com/joaocfernandes/Learn-Yocto/blob/master/develop/Recipe-qt5.md
+
+https://stackoverflow.com/questions/52247180/inserting-my-qt-application-to-yocto-image-and-runing-it-after-startup
+https://www.toradex.com/community/questions/26009/integrate-qt-application-into-image-build-process.html
+https://wiki.yoctoproject.org/wiki/Creating_a_recipe_for_a_Qt_application
+
+#PR = "r0"
+
+git clone git@gitlab.com:LyzV/bootstrap.git
+
+# SRC_URI = "git://github.com/vpapadopou/qt-simple-calculator;branch=master"
+# SRCREV = "1af09d43f9a41ad3136a4fac9db63b9542692f91"
+
+install -m 0755 bootstrap ${D}/home/root
+
+
+DEPENDS = "flex-native bison-native iptables"
++RDEPENDS_${PN} = "bash"
+
+do_strip(){
+  strip ksu_boot
+  md5sum ksu_boot > ${WORKDIR}/ksu_boot.md5
+}
+
+
+SRC_URI  = "file://ksu_boot.pro"
+SRC_URI += "file://entry_dialog.ui"
+SRC_URI += "file://ctrl_form.ui"
+SRC_URI += "file://main.cpp"
+SRC_URI += "file://vtypes.h"
+SRC_URI += "file://bash_cmd.h"
+SRC_URI += "file://bash_cmd.cpp"
+SRC_URI += "file://qctrlform.h"
+SRC_URI += "file://qctrlform.cpp"
+SRC_URI += "file://qentrydialog.h"
+SRC_URI += "file://qentrydialog.cpp"  
+SRC_URI += "file://qksutreeview.h"
+SRC_URI += "file://qksutreeview.cpp"  
+SRC_URI += "file://qusbnotifier.h"
+SRC_URI += "file://qusbnotifier.cpp"  
+SRC_URI += "file://task.hpp"
+SRC_URI += "file://task.cpp"
+SRC_URI += "file://treeitem.h"
+SRC_URI += "file://treeitem.cpp"
+SRC_URI += "file://treemodel.h"
+SRC_URI += "file://treemodel.cpp"
+

@@ -1,0 +1,45 @@
+Вот пример скрипта "bashcmd.bb":
+=============================================================
+
+DESCRIPTION = "This recipe place scripts of ksu"
+SECTION = "bashcmd"
+LICENSE = "CLOSED"
+FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+
+PR = "r0"
+
++RDEPENDS_${PN} += "bash"
+
+SRC_URI  = "file://bashrc"
+SRC_URI += "file://linux-distributive-version.txt"
+SRC_URI += "file://rc.local"
+SRC_URI += "file://sendto2"
+SRC_URI += "file://sendto4"
+
+S = "${WORKDIR}"
+
+do_install() {
+	install -d ${D}/home/root
+	install -d ${D}/etc
+	install ${WORKDIR}/bashrc ${D}/home/root
+	install ${WORKDIR}/linux-distributive-version.txt ${D}/home/root
+	install ${WORKDIR}/rc.local ${D}/etc
+	install ${WORKDIR}/sendto2 ${D}/home/root
+	install ${WORKDIR}/sendto4 ${D}/home/root
+}
+
+FILES_${PN}  = "/home/root/*"
+FILES_${PN} += "/etc/*"
+
+inherit allarch
+
+==========================================================
+
+Здесь важной является строка:
+inherit allarch
+
+Скрипт добавляет следующие файлы:
+bashrc - просто текстовый файл. Размещается по пути /home/root
+linux-distributive-version.txt - просто текстовый файл. Размещается по пути /home/root
+rc.local - скрипт запуска bootstrap. Размещается по пути /etc/
+sendto2, sendto4 - скрипты тестирования UART-ов. Размещается по пути /home/root
