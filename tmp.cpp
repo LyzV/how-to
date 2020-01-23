@@ -2,6 +2,7 @@
 пароль: IntelCoreI27
 пароль: IntelCoreI28
 пароль: IntelCoreI29
+пароль: IntelCoreI30
 ///////////////////////////////////////////////////////////////
 
 Отчёт за 2-6 сентября 2019г
@@ -618,4 +619,167 @@ SRC_URI += "file://treeitem.h"
 SRC_URI += "file://treeitem.cpp"
 SRC_URI += "file://treemodel.h"
 SRC_URI += "file://treemodel.cpp"
+
+
+QString fullFileName=filePath+"/"+fileName;
+
+=====================================================================
+
+1.      Выяснить почему не грузится?
+2.      Проверить успешное обновление ПО:
+          - рабочего КСУ
+          - загрузчика КСУ
+3.      Если не могу обновить ПО, то выдать внятное объяснение.
+4.      Сделать принудительный переход в рабочее ПО.
+5. Сделать информацию об:
+  - версии аппаратного обеспечени
+  - версии загрузчика
+  - версии дистрибутива
+  - версии PD...
+6. Сделать копирование прошивок во внутреннее хранилище.
+7. Сделать программирование КИ
+
+=====================================================================================
+
+/******************************************************
+   ПЕРЕЧЕНЬ АВТОМАТОВ
+*******************************************************/
+#define AUTO_NO ((uint64_t)0)//0
+//Автоматы защит ПЧ
+#define AUTO_BADFREQIN  SPM_DEF_BADFREQIN     //(1<<0 )Отклонение частоты питающей сети 
+#define AUTO_HIVLTGIN   SPM_DEF_HIVLTGIN        //(1<<1 )Повышение напряжения питающей сети
+#define AUTO_LOWVLTGIN  SPM_DEF_LOWVLTGIN       //(1<<2 )Понижение напряжения питающей сети
+#define AUTO_HICURRIN SPM_DEF_HICURRIN        //(1<<3 )Повышение тока питающей сети
+#define AUTO_HIDCVLTG SPM_DEF_HIDCVLTG        //(1<<4 )Повышение напряжения цепи постоянного звена
+#define AUTO_HIDCPULSE  SPM_DEF_HIDCPULSE       //(1<<5 )Повышение пульсаций напряжения цепи постоянного звена
+#define AUTO_HIIGBTTEMP SPM_DEF_HIIGBTTEMP     //(1<<6 )Повышение температуры радиатора силовых ключей инвертора
+#define AUTO_HITHYRTEMP SPM_DEF_HITHYRTEMP     //(1<<7 )Повышение температуры радиатора силовых ключей выпрямителя
+#define AUTO_HICURROUT  SPM_DEF_HICURROUT       //(1<<8 )Повышение тока ПЧ
+#define AUTO_LOWINSULNC SPM_DEF_LOWINSULNC     //(1<<9 )Понижение сопротивления изоляции
+#define AUTO_DOOROPENED SPM_DEF_DOOROPENED     //(1<<10)Открытие двери
+#define AUTO_IGBTAFAULT SPM_DEF_IGBTAFAULT     //(1<<11)Ошибки по IGBT по фазе U
+#define AUTO_IGBTBFAULT SPM_DEF_IGBTBFAULT     //(1<<12)Ошибки по IGBT по фазе V
+#define AUTO_IGBTCFAULT SPM_DEF_IGBTCFAULT     //(1<<13)Ошибки по IGBT по фазе W
+#define AUTO_UNKNOWNCFG SPM_DEF_UNKNOWNCFG     //(1<<14)Не верная конфигурация СУ
+#define AUTO_FLTOVRHEAT SPM_DEF_FLTOVRHEAT     //(1<<15)Повышение температуры внешнего фильтра
+#define AUTO_EMIRESET SPM_DEF_EMIRESET        //(1<<16)Сброс КИ либо от выключения питания либо от помехи
+#define AUTO_WDTRESET SPM_DEF_WDTRESET        //(1<<17)Сброс КИ от сторожевой собаки
+#define AUTO_MTZ      SPM_DEF_MTZ           //(1<<18)Максимальная токовая защита ПЭД
+#define AUTO_POWERBAD SPM_DEF_POWERBAD        //(1<<19)Раннее предупреждение о пропадании питания
+#define AUTO_DI2U       SPM_DEF_DI2U           //(1<<20)Не готова плата ДИ-2 по фазе U
+#define AUTO_DI2V       SPM_DEF_DI2V           //(1<<21)Не готова плата ДИ-2 по фазе V
+#define AUTO_DI2W       SPM_DEF_DI2W           //(1<<22)Не готова плата ДИ-2 по фазе W
+
+#define AUTO_SYNCH      SPM_DEF_SYNCH           //(1<<30)Ошибка взаимодействия с блоком КИ (таймаут или рассинхронизация)
+#define AUTO_UNKNOWN    SPM_DEF_UNKNOWN         //(1<<31)Неизвестная ошибка
+
+//Автоматы защит погружного оборудоавния
+#define AUTO_KILINK   SPM_DEF_KILINK          //(1<<32)Потеря связи с блоком КИ
+#define AUTO_ILOW     SPM_DEF_ILOW            //(1<<33)Недогруз
+#define AUTO_ULOW     SPM_DEF_ULOW            //(1<<34)Понижение сетевого напряжения
+#define AUTO_UHI      SPM_DEF_UHI             //(1<<35)Повышение сетевого напряжения
+#define AUTO_IHI      SPM_DEF_IHI             //(1<<36)Перегруз
+#define AUTO_IUNBL    SPM_DEF_IUNBL           //(1<<37)Дисбаланс тока
+#define AUTO_UUNBL    SPM_DEF_UUNBL           //(1<<38)Дисбаланс сетевого напряжения
+#define AUTO_RIZ      SPM_DEF_RIZ             //(1<<39)Сопротивление изоляции
+#define AUTO_TURB     SPM_DEF_TURB            //(1<<40)Турбинное вращение
+#define AUTO_SEQ      SPM_DEF_SEQ             //(1<<41)Чередование фаз
+#define AUTO_F        SPM_DEF_F               //(1<<42)Отклонение частоты сети
+#define AUTO_TMT_T    SPM_DEF_TMT_T           //(1<<43)Погружная телеметрия. Повышение температуры ПЭД
+#define AUTO_TMT_P    SPM_DEF_TMT_P           //(1<<44)Погружная телеметрия. Понижение давления столба жидкости
+#define AUTO_TMT_V    SPM_DEF_TMT_V           //(1<<45)Погружная телеметрия. Повышение вибрации ПЭД
+#define AUTO_TMT_Q    SPM_DEF_TMT_Q           //(1<<46)Погружная телеметрия. Понижение расхода насоса
+
+#define AUTO_C1       SPM_DEF_C1              //(1<<48Контакт 1 манометра (Понижение давления)
+#define AUTO_C2       SPM_DEF_C2              //(1<<49)Контакт 2 манометра (Повышение давления)
+#define AUTO_MHI      SPM_DEF_MHI             //(1<<50)Превышение момента на валу ПЭД
+#define AUTO_ILIM     SPM_DEF_ILIM            //(1<<51)Понижение частоты при ограничении тока ПЭД
+#define AUTO_SPEC_IHI   ((uint64_t)1<<52)       //(1<<52)Защита для спец.алгоритма роснефти. Задержка отключения - 5 секунд
+
+
+#define AUTO_DTIME    ((uint64_t)1<<54)//Автомат разновремённых пусков
+#define AUTO_PICKUP   ((uint64_t)1<<55)//Автомат подхвата и разворота ротора при турбинном вращении ПЭД (роснефть)
+=======================================================================================
+
+
+//AUTO_LOWINSULNC
+//AUTO_DOOROPENED
+//AUTO_UNKNOWNCFG
+//AUTO_MTZ
+//AUTO_RIZ
+//AUTO_SEQ
+//AUTO_PICKUP
+
+SPM_State   MonitorState;
+uint64_t    AlarmReason ;
+
+Index_MbServer0
+
+======================================================================================
+Что нужно ещё сделать:
+0.    Убрать зебру.
+1. Аппаратную версию железа КСУ.
+2.    Выпустить bootstrap.
+3.    Выпустить ksuboot
+4. Выпустить ksu
+5. Выпустить версию дистрибутива линукс.
+6. Переход на загрузчик.
+
+======================================================================================
+
+Методика проверки качелей загрузчика ПО КСУ:
+
+1.      Нет загрузочной директории.
+2.      Загрузочная директория пуста.
+3.      Одна корректная загрузочная директория.
+4.      Две корректных загрузочных директорий.
+5.      Нет файла контрольной суммы.
+6.      Нет стартового файла.
+7.      Нет файла счётчика.
+8.      Не верный формат файла контрольной суммы.
+9. Не верный формат файла счётчика.
+10. Не соответствует имя стартового файла файлу контрольной суммы.
+
+--- комбинаторика счётчиков -----------
+11.   0 1
+12.   2 1  
+13.   2 3
+14.   4 3
+15.   4 5
+16.   6 5
+17.   6 7
+18.   0 7
+19.   0 1
+
+
+
+Index_RegP_Fmin
+Index_RegP_Fmax
+
+
+
+Замечания к ПО КСУ:
+1. Регуляторы
+2. Время работы ПЭД за предыдущие сутки: IndexPrevWorkTime
+3. Перевыпустить Rimera.
+4. В режиме по программе в выключенном состоянии если моргнуть питанием (без выкл. КСУ) то 
+   ПЭД больше не пускается.
+5. Архив измерений. Если задать 1 минуту. Реальные срезы идут то 1 минуту, то 30 секунд.
+
+
+
+1. clear_all_nand
+2. sd-to-nand
+3. barebox.bin
+4. oftree
+5. root.ubifs
+6. zImage
+
+
+MX6UL_PAD_CSI_MCLK__UART6_DTE_RX  0x1b0b1         MX6UL_PAD_CSI_MCLK__GPIO4_IO17
+MX6UL_PAD_CSI_PIXCLK__UART6_DTE_TX  0x1b0b1       MX6UL_PAD_CSI_PIXCLK__GPIO4_IO18
+
+
+https://www.digitalcitizen.life/how-access-windows-7-shared-folders-ubuntu
+https://www.digitalcitizen.life/how-change-workgroup-ubuntu-linux-work-windows
 

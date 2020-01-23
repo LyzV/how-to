@@ -1,0 +1,5 @@
+
+SUBSYSTEM=="block", KERNEL=="sd[a-z][0-9]", ACTION=="add", RUN+="/bin/mkdir -p /media/usb-%k"
+SUBSYSTEM=="block", KERNEL=="sd[a-z][0-9]", ACTION=="add", RUN+="/bin/mount -t vfat -o auto,sync /dev/%k /media/usb-%k"
+SUBSYSTEM=="block", KERNEL=="sd[a-z][0-9]", ACTION=="remove", RUN+="/bin/umount /media/usb-%k/"
+SUBSYSTEM=="block", KERNEL=="sd[a-z][0-9]", ACTION=="remove", RUN+="/bin/rm -r /media/usb-%k/"
