@@ -783,3 +783,19 @@ MX6UL_PAD_CSI_PIXCLK__UART6_DTE_TX  0x1b0b1       MX6UL_PAD_CSI_PIXCLK__GPIO4_IO
 https://www.digitalcitizen.life/how-access-windows-7-shared-folders-ubuntu
 https://www.digitalcitizen.life/how-change-workgroup-ubuntu-linux-work-windows
 
+
+https://adayinthelifeof.nl/2011/10/11/creating-partitioned-virtual-disk-images/
+
+https://www.barebox.org/doc/latest/commands/file/md5sum.html
+
+status = "disabled";
+
+IndexNumContr
+IndexTypeContr
+IndexProdDateContr
+
+
+1 f0 59
+
+00000001 00110000  01011001
+1 30 59
