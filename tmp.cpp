@@ -793,9 +793,14 @@ status = "disabled";
 IndexNumContr
 IndexTypeContr
 IndexProdDateContr
+IndexProdDateContr,  KT_VAR,    FL_PSWRD|FL_NOMOD|FL_INTERFACE|FL_NOCRC,   STRING_T,    6, FLASH_NO_FORMAT_DISK, FORMAT_DMY,            "Д:М:Г",  "ДАТА ИЗГОТОВЛ КСУ",     "ДАТА ИЗГОТОВЛЕНИЯ КСУ",                   NotifyTableNULL,
 
 
 1 f0 59
 
 00000001 00110000  01011001
 1 30 59
+
+barebox:
+AREA: https://barebox.org/doc/latest/user/memory-areas.html?highlight=area
+md5sum: https://www.barebox.org/doc/latest/commands/file/md5sum.html
