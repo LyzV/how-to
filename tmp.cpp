@@ -804,3 +804,16 @@ IndexProdDateContr,  KT_VAR,    FL_PSWRD|FL_NOMOD|FL_INTERFACE|FL_NOCRC,   STRIN
 barebox:
 AREA: https://barebox.org/doc/latest/user/memory-areas.html?highlight=area
 md5sum: https://www.barebox.org/doc/latest/commands/file/md5sum.html
+
+deploy/images/phyboard-segin-imx6ul-2/barebox.bin
+deploy/images/phyboard-segin-imx6ul-2/zImage-phyboard-segin-imx6ul-2.bin
+deploy/images/phyboard-segin-imx6ul-2/zImage-imx6ul-phytec-phyboard-segin-ff-rdk.dtb
+deploy/images/phyboard-segin-imx6ul-2/phytec-qt5demo-image-phyboard-segin-imx6ul-2.ubifs
+
+0x00, 0x00,  TI
+0x00, 0x00,  PI
+0x00, 0x06,  Length
+0x01,        Device address
+0x04, Func
+0x01, 0x00,  Starting address = 0x100
+0x00, 0x01   Qnty registers = 1
