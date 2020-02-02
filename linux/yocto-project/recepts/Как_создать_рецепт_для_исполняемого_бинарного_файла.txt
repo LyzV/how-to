@@ -1,0 +1,37 @@
+Вот пример размещения qt программы bootstrap:
+
+==================================================================
+
+SUMMARY = "First time bootloader recipe"
+DESCRIPTION = "This recipe builds a bootstrap for a graphical boot loader of KSU."
+LICENSE = "CLOSED"
+FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+
+SRC_URI  = "file://bootstrap.pro"
+SRC_URI += "file://main.cpp"
+SRC_URI += "file://qbootstrap.cpp"
+SRC_URI += "file://qbootstrap.h"
+
+DEPENDS += "qtbase"
+
+S = "${WORKDIR}"
+
+do_install_append() {
+    install -d ${D}/home/root
+    arm-phytec-linux-gnueabi-strip bootstrap
+    install -m 0755 bootstrap ${D}/home/root
+}
+
+FILES_${PN} += "/home/root/*"
+
+INSANE_SKIP_${PN} += "already-stripped"
+
+inherit qmake5
+
+===========================================================
+
+Здесь важные строки:
+
+DEPENDS += "qtbase"       - устанавливает зависимость от qt
+inherit qmake5			  - видимо указывает, что необходимо использовать qmake
+arm-phytec-linux-gnueabi-strip bootstrap         - вырезает всю отладочную информацию из бинарника

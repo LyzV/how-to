@@ -29,3 +29,8 @@ Sat Jan  7 09:11:33 2017  0.000000 seconds
 root@phyboard-segin-imx6ul-2:~# hwclock --hctosys
 root@phyboard-segin-imx6ul-2:~# date
 Sat Jan  7 09:20:12 UTC 2017
+
+
+///////////////////////////////////////////////////////////
+Для того, чтобы проверить подцепил-ли linux микросхему rtc необходимо набрать:
+$ dmesg | grep rtc

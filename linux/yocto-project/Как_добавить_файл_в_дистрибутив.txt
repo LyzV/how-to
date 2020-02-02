@@ -1,12 +1,11 @@
 
 Как добавить свой файл
 
-1. Создаём уровень meta-utility
+1. Создаём уровень meta-ksu
 $ gb
 $ . sources/poky/oe-init-build-env
 $ cd ../sources/
-$ mkdir -p meta-utility/conf
-$ cd meta-utility/conf
+$ mkdir -p meta-ksu/conf && cd meta-ksu/conf
 
 2. Создаём конфигурационный файл уровня
 $ touch layer.conf && subl layer.conf

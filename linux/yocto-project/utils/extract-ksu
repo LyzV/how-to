@@ -1,0 +1,27 @@
+#! /bin/bash
+
+tmpdir=/tmp
+archive_dir=${tmpdir}/ksu_archive
+current_dir=$(pwd)
+file=$1
+
+# delete old work files
+if [ -e $archive_dir ]
+then
+	rm -r ${archive_dir}
+fi
+
+if [ -e ${tmpdir}/ksu.strip.tar.gz ]
+then
+	rm ${tmpdir}/ksu.strip.tar.gz
+fi
+
+# extract
+cp ${file} ${tmpdir}/ksu.strip.tar.gz
+cd ${tmpdir}
+tar -xf ksu.strip.tar.gz
+
+# copy here
+cd ksu_archive
+cp ksu.strip ${current_dir}/
+cp ksu.strip.md5 ${current_dir}/

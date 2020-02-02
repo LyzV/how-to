@@ -1,0 +1,14 @@
+Инструкция по подготовке технололической SD-card с дистрибутивом linux
+
+0. Для производства технологической SD-card потребуются: 
+   - прошивка дистрибутива (dist-1.0.1-PD17.1.2.iso); 
+   - программа записи образа на SD-card (Universal-USB-Installer).
+1. Установить на ПК (Windows XP и новее) программу "Universal-USB-Installer". Программу скачать с
+   сайта https://www.pendrivelinux.com
+2. Запустить программу Universal-USB-Installer.
+3. В поле "Step 1: Select a Distribution from the dropdown to put on your USB" выбрать 
+   "Try via DD (Overwrites disk)". Это последний пункт в ниспадающем выборе.
+4. В поле "Step 2: Select your *.iso" ввести полный путь к файлу прошивке дистрибутива. 
+   Можно воспользоваться кнопкой "Browse".
+5. В поле "Step 3: Drive (X:) on (Disk N) Selected" выбрать носитель с вставленной SD-card.
+6. Нажать кнопку "Create", дождаться окончания процесса.
