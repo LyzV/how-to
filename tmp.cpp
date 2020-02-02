@@ -529,3 +529,36 @@ cat /sys/kernel/debug/pinctrl/20e0000.iomuxc/pinconf-groups | grep GPIO1
 
 alias gks='cd ~/work/bsp/pd17.1.2/build/tmp/work-shared/phyboard-segin-imx6ul-2/kernel-source'
 alias grfs='cd ~/work/bsp/pd17.1.2/build/tmp/work/phyboard_segin_imx6ul_2-phytec-linux-gnueabi/phytec-qt5demo-image/1.0-r0/rootfs'
+
+
+/********************************************************************************/
+0. Создать модель.
+1. Создать представление.
+2. Установить модель в представление.
+3. Установить корневой индекс в модели.
+
+Как получить указатель на модель по индексу:
+QAbstractItemModel *model = index.model();
+
+Как получить индекс:
+QModelIndex index = model->index(row, column, QModelIndex()); - здесь QModelIndex() указывает на родителя самого верхнего уровня.
+QModelIndex index = model->index(row, column, parent); - здесь parent указывает на родителя в модели дерева.
+
+У элемента модели могут быть разные роли (свойтсва).
+Роли элемента:
+Qt::DisplayRole - текст элемента
+Qt::DecorationRole - иконка слева от текста элемента
+Qt::StatusTipRole - текст элемента предназначенный для отображения в статус-баре
+
+Для получения данных об элементе необходимо модели передать индекс и роль:
+QVariant value = model->data(index, role);
+
+Получаем данные для отображения текста элемента:
+QString text = model->data(index, Qt::DisplayRole).toString();
+
+
+virtual QModelIndex index(int row, int column, const QModelIndex &parent = QModelIndex()) const = 0;
+virtual QModelIndex parent(const QModelIndex &child) const = 0;
+virtual int rowCount(const QModelIndex &parent = QModelIndex()) const = 0;
+virtual int columnCount(const QModelIndex &parent = QModelIndex()) const = 0;
+virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const = 0;
