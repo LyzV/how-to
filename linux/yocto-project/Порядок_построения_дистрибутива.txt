@@ -1,0 +1,43 @@
+
+
+1. Рабочий путь дистрибутива: /home/lyzv/work/bsp/pd17.1.2
+2. Путь к кэшу: /home/lyzv/work/bsp/cache
+3. Путь к загрузкам: /home/lyzv/work/bsp/downloads
+4. Путь к device tree: /home/lyzv/work/prj/qt/ksu/DEVICE_TREE
+5. Перейти в папку дистрибутива:
+$ cd /home/lyzv/work/bsp/pd17.1.2
+
+6. Перейти в окружение:
+$ . sources/poky/oe-init-build-env
+
+7. Построить всё:
+$ bitbake phytec-qt5demo-image
+
+
+
+
+
+
+
+
+2. Поместить туда скрипт phyLinux.
+3. Загрузить исходники с оригинального источника:
+$ ./phyLinux init
+4. В процессе скачивания исходников выбрать:
+
+	7: PDVendor-phyBOARD-Segin-PD17.1.2
+
+	1: phyboard-segin-imx6ul-2: PHYTEC phyBOARD-Segin i.MX6 UltraLite
+                             512MB RAM, NAND
+                             PB-02013-001.A2, PB-02013-110I.A2, PCL-063-23300CI.A2
+                             distro: yogurt-vendor
+                             target: phytec-qt5demo-image
+
+5. 
+Z:\home\lyzv\work\bsp\pd17.1.2\sources\meta-phytec\recipes-bsp\barebox\barebox_2016.11.0-phy4.bb
+заменить на 
+
+
+. /env/expansions/imx6ul-phytec-segin-peb-av-02
+
+of_display_timings -S /soc/aips-bus@02100000/lcdif@021c8000/display@di0/display-timings/ETM0700G0EDH6
