@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Modbus Poll
+Exec=env WINEPREFIX="/home/lyzv/.wine" wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/lyzv/.wine/dosdevices/c:/users/Public/Desktop/Modbus\\ Poll.lnk
+Type=Application
+StartupNotify=true
+Path=/home/lyzv/.wine/dosdevices/c:/Program Files (x86)/WitteCom/Modbus Poll
+Icon=CEE8_mbpoll.0
+StartupWMClass=mbpoll.exe
