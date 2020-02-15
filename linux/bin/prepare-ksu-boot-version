@@ -1,0 +1,27 @@
+#! /bin/bash
+
+strip=/opt/SDK-PD17.1.2/sysroots/x86_64-phytecsdk-linux/usr/bin/arm-phytec-linux-gnueabi/arm-phytec-linux-gnueabi-strip
+tmpdir=/tmp
+current_dir=$(pwd)
+app=ksu_boot
+
+# delete old work files
+if [ -e ${tmpdir}/${app}.strip.tar.gz ]
+then
+	rm ${tmpdir}/${app}.strip.tar.gz
+fi
+
+# make archive
+$strip ${app} -o ${tmpdir}/${app}.strip
+cd ${tmpdir}
+md5sum ${app}.strip > ${app}.strip.md5
+tar -czf ${app}.strip.tar.gz ${app}.strip ${app}.strip.md5
+
+# make version
+cp -f ${app}.strip.tar.gz ${current_dir}/$1.ldr
+
+# make САЛН
+7z a ${current_dir}/САЛН.00135-90.7z  ${current_dir}/$1.ldr
+
+# rm temp files
+rm ${app}.strip ${app}.strip.md5 ${app}.strip.tar.gz

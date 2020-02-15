@@ -1,0 +1,3 @@
+#! /bin/bash
+
+xterm -e 'microcom --port=/dev/ttyS4 --speed=115200' &

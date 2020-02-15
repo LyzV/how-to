@@ -526,38 +526,6 @@ alias gks='cd ~/work/bsp/pd17.1.2/build/tmp/work-shared/phyboard-segin-imx6ul-2/
 alias grfs='cd ~/work/bsp/pd17.1.2/build/tmp/work/phyboard_segin_imx6ul_2-phytec-linux-gnueabi/phytec-qt5demo-image/1.0-r0/rootfs'
 
 
-/********************************************************************************/
-0. Создать модель.
-1. Создать представление.
-2. Установить модель в представление.
-3. Установить корневой индекс в модели.
-
-Как получить указатель на модель по индексу:
-QAbstractItemModel *model = index.model();
-
-Как получить индекс:
-QModelIndex index = model->index(row, column, QModelIndex()); - здесь QModelIndex() указывает на родителя самого верхнего уровня.
-QModelIndex index = model->index(row, column, parent); - здесь parent указывает на родителя в модели дерева.
-
-У элемента модели могут быть разные роли (свойтсва).
-Роли элемента:
-Qt::DisplayRole - текст элемента
-Qt::DecorationRole - иконка слева от текста элемента
-Qt::StatusTipRole - текст элемента предназначенный для отображения в статус-баре
-
-Для получения данных об элементе необходимо модели передать индекс и роль:
-QVariant value = model->data(index, role);
-
-Получаем данные для отображения текста элемента:
-QString text = model->data(index, Qt::DisplayRole).toString();
-
-
-virtual QModelIndex index(int row, int column, const QModelIndex &parent = QModelIndex()) const = 0;
-virtual QModelIndex parent(const QModelIndex &child) const = 0;
-virtual int rowCount(const QModelIndex &parent = QModelIndex()) const = 0;
-virtual int columnCount(const QModelIndex &parent = QModelIndex()) const = 0;
-virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const = 0;
-
 1) Отпайка.
 2)          Разрещение защиты - Нет.
 3)          Уставки защиты по умолчанию отсутствуют.
@@ -797,6 +765,7 @@ Index_RegP_Fmax
 4. В режиме по программе в выключенном состоянии если моргнуть питанием (без выкл. КСУ) то 
    ПЭД больше не пускается.
 5. Архив измерений. Если задать 1 минуту. Реальные срезы идут то 1 минуту, то 30 секунд.
+6. Отрицательная энергия показаний электросчётчика Меркурий.
 
 
 
@@ -850,3 +819,148 @@ deploy/images/phyboard-segin-imx6ul-2/phytec-qt5demo-image-phyboard-segin-imx6ul
 0x01, 0x00,  Starting address = 0x100
 0x00, 0x01   Qnty registers = 1
 
+00 00
+00 00 
+00 05
+01
+04 
+02
+00 10  
+
+
+
+_LINK_TO_(id) id,       uint16_t  id;// Если начало/окончание формы, то номер базовой формы = TOPLEVEL, все прочие формы: TOPLEVEL+1...TOPLEVEL+т 
+                                     // Если параметр, но индекс.     
+              F_LINK,   uint16_t  sid;//  Сложносоставное поле:
+              0,        const char *lpszFullName ;    // полное название формы
+              0,        const char *lpszShortName;    // сокращенное название формы
+              0,        const char *lpszStatusbar;    // строка состоЯниЯ (status bar) ??? мож быть и форматнаЯ строка вывода
+              0,        uint8_t (*f_ctrl)(OS_MSG *, FORM &);
+              0,        uint8_t (*f_view)(uint8_t, FORM &); 
+              0         FormClbT *i_clb;//Интерфейс обратных вызовов
+
+
+
+uint16_t FindFormRecord(uint16_t id, uint16_t sid, uint16_t from)
+
+
+
+FORM_RECORD *FindFormRecordPtr(uint16_t id, uint16_t sid, FORM_RECORD *pFrom)
+
+Жарков - ?
+Иванов
+Овчинников - ?
+Самохина
+0100
+1000
+
+
+
+
+Асинхр:
+const char str_FOUT[]         = "ВЫХОДНАЯ F (ГЦ)                       ";
+const char str_Fset[]         = "УСТАВКА F (ГЦ)
+
+
+
+Универсал:
+const char str_FOUT[]         = "F ВЫХОД.(ГЦ / ОБ/С)                   ";
+const char str_Fset[]         = "F ЗАДАН.(ГЦ / ОБ/С)  
+
+
+BuildVFLinCharacteristic
+
+Заводское значение установленной частоты:
+Index_KI_Fset
+
+Заводское значение шага изменения частоты: 
+Index_Drive_KeyboardSensitivity_FLASH
+
+Заводское значение таблицы U/F
+
+Заводское значение режимов пуска и работы:
+Index_FC_StartMode
+Index_FC_WorkMode
+
+Заводское значение режима по программе:
+Index_PrgMode
+
+_PARAM_(Index_NumPole,     0),
+  _PARAM_(IndexIMotorNom,   0), 
+  _PARAM_(IndexCosNom,    0), 
+  _PARAM_(IndexUMotorNom,   0), 
+  _PARAM_(IndexPwrMotorNom,   0),
+  _PARAM_(Index_Wped_nom_min, 0),
+    _PARAM_(Index_Wped_nom_cek, 0),
+    _PARAM_(Index_MotorFnom,  0),
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+1.      Проверить сокрытие окон для синхронного ПЭД. 
+2.      Проверить восстановление окон для асинхронного ПЭД.
+3.      Проверить ограничения параметров для синхронного ПЭД.
+4.      Проверить снятие ограничений для параметров асинхроннного ПЭД.
+5.      Проверить заводские уставки для синхронного ПЭД.
+6.      Проверить заводские уставки для асинхронного ПЭД.
+
+Ошибки:
+1.      Характеристика U/F. Убрать задание ломаной характеристики.
+2. После программирования КИ универсальной версией параметры управления ВД не корректные.
+3.      Параметры ПЭД для асинхронного. НОМ. ЧАСТОТА ПЭД. Надо убрать редактирование этого параметра.
+4. Rimera. Во вкладку параметров ПЧ добавить параметры режима оптимизации U/F.
+5.      При включении вентильного ПЭД заданная частота устанавливается в 60Гц.
+6.      Поправить работу с индексом перевода часов на летнее время.
+7.      Тип контроллера убрать.
+8.      Исправить работу с версией железа.
+9. 
+
+
+_PARAM_(Index_FiltOverh    , 0),
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+Удалённые:
+
+IndexUFreqNom
+NT_IndexLenCable
+IndexDI4
+IndexKTM_DI4
+FN_IndexOverIBypassDelay_forML
+FN_IndexOverIOffDelay_forML
+FN_IndexOverUEnable_forML
+FN_IndexOverUOffDelay_forML
+FN_IndexUnderUEnable_forML
+FN_IndexUnderUOffDelay_forML
+FN_IndexUnbUEnable_forML
+FN_IndexUnbUBypassDelay_forML
+FN_IndexFreqUEnable_forML
+IndexUbat
+IndexTOil
+IndexPSht
+IndexProtectContactEnable
+FN_IndexTMotorProtectEnable_forML
+FN_IndexTMotorOffDelay_forML
+FN_IndexPPumpProtectEnable_forML
+FN_IndexPPumpOffDelay_forML
+FN_IndexVibrProtectEnable_forML1
+FN_IndexVibrProtectEnable_forML2
+FN_IndexVibrOffDelay_forML1
+FN_IndexVibrOffDelay_forML2
+FN_IndexVibrBypassDelay_forML1
+IndexMaxIOffDelay
+IndexKSUAbort
+IndexGrafikStartTime
+FN_IndexTimeOn
+IndexIBypassDelay
+IndexUBypassDelay
+IndexAnalogBypassDelay
+
+Index_StkStart...
+
+
+IndexContrastGki
+
+_ContrastGki
+
+IndexUinTran
+IndexUoutTran

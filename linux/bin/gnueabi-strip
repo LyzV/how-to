@@ -1,0 +1,3 @@
+#! /bin/bash
+
+/opt/SDK-PD17.1.2/sysroots/x86_64-phytecsdk-linux/usr/bin/arm-phytec-linux-gnueabi/arm-phytec-linux-gnueabi-strip $*
