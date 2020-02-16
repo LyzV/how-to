@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Icon[en_US]=gnome-panel-launcher
+Name[en_US]=serial-ttyS4
+Exec=/home/lyzv/bin/serial-ttyS4
+Name=serial-ttyS4
+Icon=gnome-panel-launcher

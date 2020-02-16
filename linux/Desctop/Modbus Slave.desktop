@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Modbus Slave
+Exec=env WINEPREFIX="/home/lyzv/.wine" wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/lyzv/.wine/dosdevices/c:/users/Public/Desktop/Modbus\\ Slave.lnk
+Type=Application
+StartupNotify=true
+Path=/home/lyzv/.wine/dosdevices/c:/Program Files (x86)/WitteCom/Modbus Slave
+Icon=0062_mbslave.0
+StartupWMClass=mbslave.exe

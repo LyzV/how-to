@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=WinMerge
+Exec=env WINEPREFIX="/home/lyzv/.wine" wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/lyzv/.wine/dosdevices/c:/users/Public/Desktop/WinMerge.lnk
+Type=Application
+StartupNotify=true
+Path=/home/lyzv/.wine/dosdevices/c:/Program Files (x86)/WinMerge
+Icon=D809_WinMergeU.0
+StartupWMClass=winmergeu.exe

@@ -819,7 +819,8 @@ deploy/images/phyboard-segin-imx6ul-2/phytec-qt5demo-image-phyboard-segin-imx6ul
 0x01, 0x00,  Starting address = 0x100
 0x00, 0x01   Qnty registers = 1
 
-00 00
+<<<<<<< HEAD
+
 rpcinfo -p
 
 5c:e0:c5:13:ce:0a
@@ -836,6 +837,24 @@ https://opencentr.ru/article/rusifikaciya-xubuntu-1604/
 http://webdevelopment.in.ua/linux/ubuntu/ustanovka-xfce-v-ubuntu-16-04/
 
 https://xubuntu-ru.net/how-to/37-ustanovka-xfce-v-ubuntu-ili-kak-iz-ubuntu-sdelat-xubuntu.html
+=======
+00 00
+00 00 
+00 05
+01
+04 
+02
+00 10  
+
+
+
+_LINK_TO_(id) id,       uint16_t  id;// Если начало/окончание формы, то номер базовой формы = TOPLEVEL, все прочие формы: TOPLEVEL+1...TOPLEVEL+т 
+                                     // Если параметр, но индекс.     
+              F_LINK,   uint16_t  sid;//  Сложносоставное поле:
+              0,        const char *lpszFullName ;    // полное название формы
+              0,        const char *lpszShortName;    // сокращенное название формы
+              0,        const char *lpszStatusbar;    // строка состоЯниЯ (status bar) ??? мож быть и форматнаЯ строка вывода
+              0,        uint8_t (*f_ctrl)(OS_MSG *, FORM &);
               0,        uint8_t (*f_view)(uint8_t, FORM &); 
               0         FormClbT *i_clb;//Интерфейс обратных вызовов
 
@@ -964,3 +983,4 @@ _ContrastGki
 
 IndexUinTran
 IndexUoutTran
+>>>>>>> 681226033c97037ef78565a0dc04e237a025619d
