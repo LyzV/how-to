@@ -850,3 +850,20 @@ deploy/images/phyboard-segin-imx6ul-2/phytec-qt5demo-image-phyboard-segin-imx6ul
 0x01, 0x00,  Starting address = 0x100
 0x00, 0x01   Qnty registers = 1
 
+
+rpcinfo -p
+
+5c:e0:c5:13:ce:0a
+5C:E0:C5:13:CE:0A - notebook
+DC:A6:32:1F:AA:D1 - raspbarry
+
+
+sudo mount -t nfs -o rw,user lyzv-pc.local:/home/lyzv/work/share /home/lyzv/share
+
+https://www.youtube.com/watch?v=CaZCcaChfag
+
+https://opencentr.ru/article/rusifikaciya-xubuntu-1604/
+
+http://webdevelopment.in.ua/linux/ubuntu/ustanovka-xfce-v-ubuntu-16-04/
+
+https://xubuntu-ru.net/how-to/37-ustanovka-xfce-v-ubuntu-ili-kak-iz-ubuntu-sdelat-xubuntu.html
