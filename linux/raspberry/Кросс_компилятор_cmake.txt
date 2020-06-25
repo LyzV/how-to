@@ -1,0 +1,3 @@
+https://medium.com/@au42/the-useful-raspberrypi-cross-compile-guide-ea56054de187
+CMake for QtCreator:
+https://doc.qt.io/qtcreator/creator-project-cmake.html

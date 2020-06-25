@@ -3,6 +3,13 @@
 пароль: IntelCoreI28
 пароль: IntelCoreI29
 пароль: IntelCoreI30
+IntelCoreI31
+IntelCoreI32
+
+///////////////////////////////////////////////////////////////
+SoM
+ PCL-063-23300CI.A4
+ PCL_063_KSP_RIMERA_A0
 ///////////////////////////////////////////////////////////////
 
 Отчёт за 2-6 сентября 2019г
@@ -20,6 +27,96 @@
    перехода на частоту встряхивания. Необходимо блокировать во время действия алгоритма пропускание команды
    изменения частоты.
 5. Ручной режим. При срабатывании защиты не входит в блокировку. Нужно в ручной режим подставить состояние ПЭД.
+
+Отчёт за 6-10 апреля 2020г
+1. Рефакторинг журнала событий. 
+Затрачено - 5*8=40 часов.
+Выполнено ~ 90%
+
+Отчёт за 13-17 апреля 2020г
+1. Рефакторинг журнала событий. Выпуск универсальной версии 13.1.18 ПО КСУ.
+Затрачено - 5*8=40 часов.
+Выполнено - 100%
+
+Отчёт за 20-24 апреля 2020г
+1) Разработка системы удалённого чтения архива по ТЗ роснефти. Без удалённого обновления ПО. 
+а) Объединение стеков протоколов MODBUS/RTU и MODBUS/TCP.
+    Затрачено - 5*8=40 часов.
+    Выполнено - 90%
+Общих ход выполнения работы: 
+    Выполнено - 15%
+
+
+Отчёт за 27 апреля - 1 мая 2020г
+1) Сопровождение. Отказы в работе с электросчётчиком Меркурий.
+  Затрачено - 1*8=8 часов.
+  Выполнено - 100%.
+
+2) Разработка системы удалённого чтения архива по ТЗ роснефти. Без удалённого обновления ПО. 
+  Общий ход выполнения работы - 30%
+а) Объединение стеков протоколов MODBUS/RTU и MODBUS/TCP.
+    Затрачено - 1*8=8 часов.
+    Выполнено - 100%
+б) Кодирование/тестирование дополнительных MEI14
+  Затрачено - 1*8=8 часов 
+  Выполнено - 80%
+в) Кодирование/тестирование функции 20 чтения файловой записи.
+  Затрачено - 2*8=16 часов
+  Выполнено - 80%
+
+
+Отчёт за 4-8 мая 2020г
+1) Разработка системы удалённого чтения архива по ТЗ роснефти. 
+  Затрачено - 2*8=16 часов
+  Выполнено - 40%
+2) Разработка системы удалённого обновления ПО по ТЗ роснефти.
+  Затрачено - 3-8=24 часа
+  Выполнено - 10%
+
+Отчёт за 11-15 мая 2020г
+1) Разработка системы удалённого чтения архива по ТЗ роснефти. 
+  Затрачено - 3*8=24 часа
+  Выполнено - 50%
+2) Разработка системы удалённого обновления ПО по ТЗ роснефти.
+  Затрачено - 2*8=16 часов
+  Выполнено - 20%
+
+Отчёт за 21-22 мая 2020г
+1) Разработка системы удалённого чтения архива по ТЗ роснефти. 
+  Затрачено - 3*8=24 часа
+  Выполнено - 60%
+2) Разработка системы удалённого обновления ПО по ТЗ роснефти.
+  Затрачено - 2*8=16 часов
+  Выполнено - 30%
+
+Отчёт за 25-29 мая 2020г
+1) Разработка системы удалённого чтения архива по ТЗ роснефти. 
+  Затрачено - 5*8=40 часов
+  Выполнено - 80%
+
+Отчёт за 1-5 июня 2020г
+1) Разработка системы удалённого чтения архива по ТЗ роснефти. 
+  Затрачено - 4*8=32 часов
+  Выполнено - 95%
+
+2) Разработка MODBUS-карты памяти Газпромнефть-Хантос.
+  Затрачено - 1*8=8 часов.
+  Выполнено - 5%
+
+///////////////////////////////////////////////////////////////////////////////////////////
+Тактические очки:
+https://www.voentorg.ru/catalog/snaryazhenie/ochki/4519.html  - с возможностью диоптрических линз
+Хорошие фирмы очков: Окли, Ревижн, Сминт, Вилейкс
+
+Комплект противоосколочных очков ESS:
+https://www.voentorg.ru/catalog/snaryazhenie/ochki/6148.html
+https://www.voentorg.ru/catalog/snaryazhenie/ochki/1039.html
+crowwbow
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+Индия, релакс:
+https://www.youtube.com/watch?v=CM7f_5xY4w8
 
 
 
@@ -968,3 +1065,1441 @@ IndexUoutTran
 
 Gislaved Nord*Frost 200
 Toyo Observ Ice Freeser
+
+////////////////////////////////////
+1) Дылда
+2) 
+
+/home/lyzv/.wine/drive_c/Program Files (x86)/WinMerge/WinMergeU.exe
+WinMergeU.exe
+
+wine "/home/lyzv/.wine/drive_c/Program Files (x86)/WinMerge/WinMergeU.exe"
+
+
+ jpegoptim -o Заявление3.jpg -S 500 Заявление2_оригинал.jpg
+
+
+/home/lyzv/.bash_aliases
+/media/lyzv/Seagate\ Backup\ Plus\ Drive/TREE/Документы/Копия_компьютера_на_27_марта_2020г/.bash_aliases
+
+////////////////////////////////////
+
+type=CT_SINGLE number= "0" label= "1585306743" event= "a001" dataQnty= "0"//Отключение питания СУ
+type=CT_SINGLE number= "1" label= "1585326703" event= "a002" dataQnty= "0"//Включение питания СУ
+type=CT_SINGLE number= "8" label= "1585326713" event= "b1dd" dataQnty= "0"//АВАРИЯ. НЕ СООТВЕТСТВИЕ ТИПА ПЭД КОНФИГУРАЦИИ СУ
+type=CT_SINGLE number= "9" label= "1585327826" event= "a001" dataQnty= "0"//Отключение питания СУ
+type=CT_SINGLE number= "10" label= "1585565987" event= "a002" dataQnty= "0"//Включение питания СУ
+type=CT_SINGLE number= "11" label= "1585565998" event= "b1dd" dataQnty= "0"//АВАРИЯ. НЕ СООТВЕТСТВИЕ ТИПА ПЭД КОНФИГУРАЦИИ СУ
+type=CT_SINGLE number= "12" label= "1585566041" event= "a00c" dataQnty= "0"//Пуск ПЭД. Ручной
+type=CT_SINGLE number= "13" label= "1585566047" event= "a001" dataQnty= "0"//Отключение питания СУ
+type=CT_SINGLE number= "14" label= "1585574820" event= "a002" dataQnty= "0"//Включение питания СУ
+type=CT_SINGLE number= "15" label= "1585574830" event= "b1dd" dataQnty= "0"//АВАРИЯ. НЕ СООТВЕТСТВИЕ ТИПА ПЭД КОНФИГУРАЦИИ СУ
+type=CT_SINGLE number= "16" label= "1585575614" event= "a001" dataQnty= "0"//Отключение питания СУ
+type=CT_SINGLE number= "17" label= "1585575968" event= "a002" dataQnty= "0"//Включение питания СУ
+type=CT_FIRST number= "18" label= "1585575978" event= "a170" dataQnty= "4"//Обновлено ПО КСУ
+type=CT_SINGLE number= "22" label= "1585575996" event= "a001" dataQnty= "0"//Отключение питания СУ
+type=CT_SINGLE number= "23" label= "1585576827" event= "a002" dataQnty= "0"//Включение питания СУ
+type=CT_SINGLE number= "24" label= "1585576838" event= "b1dd" dataQnty= "0"//АВАРИЯ. НЕ СООТВЕТСТВИЕ ТИПА ПЭД КОНФИГУРАЦИИ СУ
+type=CT_SINGLE number= "27" label= "1585576871" event= "b1dd" dataQnty= "0"//АВАРИЯ. НЕ СООТВЕТСТВИЕ ТИПА ПЭД КОНФИГУРАЦИИ СУ
+type=CT_FIRST number= "28" label= "1585576887" event= "a003" dataQnty= "4"//Изменение параметра
+type=CT_SINGLE number= "30" label= "1585576895" event= "a00c" dataQnty= "0"//Пуск ПЭД. Ручной
+type=CT_SINGLE number= "31" label= "1585576954" event= "a001" dataQnty= "0"//Отключение питания СУ
+type=CT_SINGLE number= "32" label= "1585577020" event= "a002" dataQnty= "0"//Включение питания СУ
+type=CT_SINGLE number= "33" label= "1585577031" event= "b1dd" dataQnty= "0"//АВАРИЯ. НЕ СООТВЕТСТВИЕ ТИПА ПЭД КОНФИГУРАЦИИ СУ
+type=CT_SINGLE number= "34" label= "1585577163" event= "a00c" dataQnty= "0"//Пуск ПЭД. Ручной
+
+
+type=CT_SINGLE number= "0" label= "1585577580" event= "a034" dataQnty= "0"//Очистка архива
+
+type=CT_SINGLE number= "0" label= "1585578829" event= "a001" dataQnty= "0"
+type=CT_SINGLE number= "1" label= "1585578987" event= "a002" dataQnty= "0"
+type=CT_SINGLE number= "2" label= "1585578997" event= "b1dd" dataQnty= "0"
+
+//В момент отключения питания
+type=CT_FIRST number= "0" label= "1585586285" event= "b1a4" dataQnty= "0"//СТОП ПЭД.ПОНИЖЕНИЕ НАПРЯЖЕНИЯ СЕТИ
+type=CT_FIRST number= "0" label= "1585586285" event= "a117" dataQnty= "0"//Блокировка СУ
+
+//В момент включения питания
+type=CT_SINGLE number="0" label= "1585586271" event= "a034" dataQnty= "0"
+type=CT_FIRST number= "0" label= "1585586285" event= "b1a4" dataQnty= "4"
+type=CT_FIRST number= "0" label= "1585586288" event= "a001" dataQnty= "0"
+type=CT_FIRST number= "0" label= "1585586476" event= "a002" dataQnty= "0"
+type=CT_FIRST number= "0" label= "1585586487" event= "b1dd" dataQnty= "0"
+
+//Печать журнала
+type=CT_SINGLE number= "0" label= "1585586271" event= "a034" dataQnty= "0"//Очистка архива
+type=CT_FIRST number=  "1" label= "1585586285" event= "b1a4" dataQnty= "4"//СТОП ПЭД.ПОНИЖЕНИЕ НАПРЯЖЕНИЯ СЕТИ
+type=CT_SINGLE number= "3" label= "1585586288" event= "a001" dataQnty= "0"//Отключение питания СУ
+type=CT_SINGLE number= "4" label= "1585586476" event= "a002" dataQnty= "0"//Включение питания СУ
+type=CT_SINGLE number= "5" label= "1585586487" event= "b1dd" dataQnty= "0"//АВАРИЯ. НЕ СООТВЕТСТВИЕ ТИПА ПЭД КОНФИГУРАЦИИ СУ
+
+type=CT_SINGLE number= "0" label= "1585590761" event= "a034" dataQnty= "0"//Очистка архива
+type=CT_FIRST number=  "1" label= "1585590779" event= "b1c2" dataQnty= "4"//ПОНИЖЕНИЕ НАПРЯЖЕНИЯ СЕТИ
+type=CT_SINGLE number= "2" label= "1585590782" event= "a001" dataQnty= "0"//Отключение питания СУ
+type=CT_SINGLE number= "3" label= "1585590863" event= "a002" dataQnty= "0"//Включение питания СУ
+
+
+type=CT_SINGLE number= "0" label= "1585590761" event= "a034" dataQnty= "0"//Очистка архива
+type=CT_FIRST number = "1" label= "1585590779" event= "b1c2" dataQnty= "4"//ПОНИЖЕНИЕ НАПРЯЖЕНИЯ СЕТИ
+type=CT_SINGLE number= "2" label= "1585590782" event= "a001" dataQnty= "0"//Отключение питания СУ
+type=CT_SINGLE number= "4" label= "1585590863" event= "a001" dataQnty= "0"//Отключение питания СУ
+type=CT_SINGLE number= "5" label= "1585664136" event= "a002" dataQnty= "0"//Включение питания СУ
+
+1585675485 45494 B1B6//СБОЙ БЛОКА КИ
+1585675485 45494 B1B6//СБОЙ БЛОКА КИ
+1585675474 40962 A002//Включение питания СУ
+1585664136 40961 A001//Отключение питания СУ
+1585664136 40962 A002//Включение питания СУ
+
+1585590863 40961 A001//Отключение питания СУ
+1585590863 40962 A002//Включение питания СУ
+1585590782 40961 A001//Отключение питания СУ
+1585590761 41012 A034//Очистка архива
+1585590761 41012 A034//Очистка архива
+
+1585675485 45494 B1B6//СБОЙ БЛОКА КИ
+
+type=CT_SINGLE number= "0"  label= "1585590761" event= "a034" dataQnty= "0"
+type=CT_FIRST  number= "1"  label= "1585590779" event= "b1c2" dataQnty= "4"
+type=CT_SINGLE number= "2"  label= "1585590782" event= "a001" dataQnty= "0"
+type=CT_SINGLE number= "4"  label= "1585590863" event= "a001" dataQnty= "0"
+type=CT_SINGLE number= "6"  label= "1585664136" event= "a001" dataQnty= "0"
+type=CT_SINGLE number= "7"  label= "1585675474" event= "a002" dataQnty= "0"
+type=CT_FIRST  number= "8"  label= "1585675485" event= "b1b6" dataQnty= "4"
+type=CT_SINGLE number= "10" label= "1585675785" event= "a18f" dataQnty= "2"
+type=CT_SINGLE number= "11" label= "1585677162" event= "a18d" dataQnty= "2"
+
+
+
+
+type=CT_SINGLE number= "0" label= "1585685053" event= "a034" dataQnty= "0"//Очистка архива
+type=CT_FIRST number = "1" label= "1585685084" event= "b1c2" dataQnty= "4"//ПОНИЖЕНИЕ НАПРЯЖЕНИЯ СЕТИ
+type=CT_SINGLE number= "2" label= "1585685090" event= "a001" dataQnty= "0"//Отключение питания СУ
+type=CT_SINGLE number= "3" label= "1585685199" event= "a002" dataQnty= "0"//Включение питания СУ
+
+1585685199 40962 A002//Включение питания СУ
+1585685199 40962 A002//Включение питания СУ
+
+1585685090 40961 A001//Отключение питания СУ
+1585685053 41012 A034//Очистка архива
+1585685053 41012 A034//Очистка архива
+
+1585685199 40962 A002//Включение питания СУ
+
+type=CT_SINGLE number= "0" address= "4"  label= "1585686610" event= "a034" dataQnty= "0"//Очистка архива
+type=CT_SINGLE number= "1" address= "20" label= "1585686620" event= "a118" dataQnty= "0"//Снятие блокировки СУ
+type=CT_FIRST number = "2" address= "36" label= "1585686626" event= "b1c2" dataQnty= "4"//ПОНИЖЕНИЕ НАПРЯЖЕНИЯ СЕТИ
+type=CT_SINGLE number= "3" address= "52" label= "1585686629" event= "a001" dataQnty= "0"//Отключение питания СУ
+type=CT_SINGLE number= "4" address= "68" label= "1585686699" event= "a002" dataQnty= "0"//Включение питания СУ
+
+4 1585686699 40962
+
+4 1585686699 40962 A002//Включение питания СУ
+3 1585686629 40961 A001//Отключение питания СУ
+1 1585686620 41240 A118//Снятие блокировки СУ
+0 1585686610 41012 A034//Очистка архива
+
+
+type=CT_SINGLE number= "0" address= "4"  label= "1585740525" event= "a034" dataQnty= "0"//Очистка архива
+type=CT_FIRST number = "1" address= "20" label= "1585740539" event= "b1c2" dataQnty= "4"//ПОНИЖЕНИЕ НАПРЯЖЕНИЯ СЕТИ
+type=CT_SINGLE number= "2" address= "36" label= "1585740543" event= "a001" dataQnty= "0"//Отключение питания СУ
+type=CT_SINGLE number= "3" address= "52" label= "1585740612" event= "a002" dataQnty= "0"//Включение питания СУ
+
+3 1585740612 40962 A002//Включение питания СУ
+2 1585740543 40961 A001//Отключение питания СУ
+
+ReadAbsPos - позиция (номер начального кластера), которую будет читать ReadCurrent
+             функция ReadNext уменьшит на 1 этот номер и прочтёт.
+             функция ReadBack увеличит на 1 этот номер и прочтёт.
+
+ALARM_LOWVLTGIN
+  <Event EventId="0xb1c2" EventName="ПОНИЖЕНИЕ НАПРЯЖЕНИЯ СЕТИ" Define="ALARM_LOWVLTGIN">
+    <ExData Num="1" Size="2" Type="INT16U"  Name="U СЕТИ ФАЗЫ А" Ed="В"  VFormat="FORMAT_U"></ExData>
+    <ExData Num="2" Size="2" Type="INT16U"  Name="U СЕТИ ФАЗЫ B" Ed="В"  VFormat="FORMAT_U"></ExData>
+    <ExData Num="3" Size="2" Type="INT16U"  Name="U СЕТИ ФАЗЫ C" Ed="В"  VFormat="FORMAT_U"></ExData>
+  </Event>
+
+type=CT_SINGLE number= "0" address= "4"  label= "1585741440" event= "a034" dataQnty= "0"//Очистка архива
+type=CT_FIRST number = "1" address= "20" label= "1585741446" event= "b1c2" dataQnty= "4"//ПОНИЖЕНИЕ НАПРЯЖЕНИЯ СЕТИ
+type=CT_SINGLE number= "2" address= "36" label= "1585741450" event= "a001" dataQnty= "0"//Отключение питания СУ
+type=CT_SINGLE number= "3" address= "52" label= "1585741564" event= "a002" dataQnty= "0"//Включение питания СУ
+
+3 1585741564 40962 A002//Включение питания СУ
+2 1585741450 40961 A001//Отключение питания СУ
+
+41359 A18F
+
+1585742788 45506 B1C2 size=6
+
+type=CT_FIRST number= "0"          address= "2320096" label= "1585744428" event= "b1c2" dataQnty= "0"
+type=CT_FIRST number= "1840244696" address= "2" label= "1585744428" event= "b1c2" dataQnty= "4"
+type=CT_LAST  number= "1840244696" address= "2" dataQnty= "2"
+
+
+
+----------------------------------------------------------------------------------------------
+Выключение питания:
+type=CT_FIRST number= "0" address= "2320096" label= "1585746840" event= "b1c2" dataQnty= "0"
+type=CT_FIRST number= "0" address= "20" label= "1585746840" event= "b1c2" dataQnty= "4"
+type=CT_LAST  number= "0" address= "36" dataQnty= "2"
+
+
+Включение питания:
+type=CT_SINGLE number= "2130705064" address= "0" label= "1585746827" event= "a034" dataQnty= "0"
+type=CT_FIRST number= "2130705064" address= "0" label= "1585746840" event= "b1c2" dataQnty= "4"
+type=CT_FIRST number= "0" address= "1585746843" label= "1585746843" event= "a001" dataQnty= "0"
+type=CT_SINGLE number= "0" address= "36" label= "1585746843" event= "a001" dataQnty= "0"
+type=CT_FIRST number= "0" address= "1585746843" label= "1585747645" event= "a002" dataQnty= "0"
+type=CT_SINGLE number= "0" address= "52" label= "1585747645" event= "a002" dataQnty= "0"
+
+Печать вручную:
+type=CT_SINGLE number= "0" address= "4"  label= "1585746827" event= "a034" dataQnty= "0"
+type=CT_FIRST number = "1" address= "20" label= "1585746840" event= "b1c2" dataQnty= "4"
+type=CT_SINGLE number= "2" address= "36" label= "1585746843" event= "a001" dataQnty= "0"
+type=CT_SINGLE number= "3" address= "52" label= "1585747645" event= "a002" dataQnty= "0"
+
+
+3 1585747645 40962
+2 1585746843 40961
+1 buf @0x6a2fe834 uint8_t[16]
+      [0] 92  uint8_t 5С  0101 1100 = 2 = CT_FIRST
+
+      [1] 152 uint8_t 98
+      [2] 147 uint8_t 93
+      [3] 132 uint8_t 84
+      [4] 94  uint8_t 5E
+
+      [5] 152 uint8_t 98
+      [6] 147 uint8_t 93
+      [7] 132 uint8_t 84
+      [8] 94  uint8_t 5E
+
+      [9] 194 uint8_t C2
+      [10]  177 uint8_t B1
+      [11]  1 uint8_t
+      [12]  0 uint8_t
+      [13]  1 uint8_t
+      [14]  0 uint8_t
+      [15]  235 uint8_t EB
+
+2   buf @0x6a2fe834 uint8_t[16]
+      [0] 52  uint8_t 34    0011 0100 = 1 = CT_SINGLE
+      [1] 155 uint8_t
+      [2] 147 uint8_t
+      [3] 132 uint8_t
+      [4] 94  uint8_t
+      [5] 155 uint8_t
+      [6] 147 uint8_t
+      [7] 132 uint8_t
+      [8] 94  uint8_t
+      [9] 1 uint8_t
+      [10]  160 uint8_t
+      [11]  0 uint8_t
+      [12]  0 uint8_t
+      [13]  0 uint8_t
+      [14]  0 uint8_t
+      [15]  245 uint8_t
+    
+
+Перед выключением:
+type=CT_FIRST number= "0" address= "2320096" label= "1585756348" event= "b1c2" dataQnty= "0"
+type=CT_FIRST number= "0" address= "20" label= "1585756348" event= "b1c2" dataQnty= "4"
+type=CT_LAST number= "0" address= "36" dataQnty= "2"
+
+Вручную:
+Print unsorted clusters:
+type=CT_SINGLE number= "0" address= "4"  label= "1585756333" event= "a034" dataQnty= "0"
+type=CT_FIRST  number= "1" address= "20" label= "1585756348" event= "b1c2" dataQnty= "4"
+type=CT_SINGLE number= "2" address= "36" label= "1585756352" event= "a001" dataQnty= "0"
+type=CT_SINGLE number= "3" address= "52" label= "1585756447" event= "a002" dataQnty= "0"
+
+Print sorted by label clusters:
+type=CT_SINGLE number= "0" address= "4" label= "1585756333" event= "a034" dataQnty= "0"
+type=CT_FIRST number= "1" address= "20" label= "1585756348" event= "b1c2" dataQnty= "4"
+type=CT_SINGLE number= "2" address= "36" label= "1585756352" event= "a001" dataQnty= "0"
+////////////////////////////////
+
+Полёт на венеру:
+https://www.youtube.com/watch?v=14Mk5ZuJVqU
+
+///////////////////////////////
+
+
+
+
+type=CT_SINGLE number= "0" address= "4" label= "1586122984" event= "a034" dataQnty= "0"
+type=CT_FIRST number= "1" address= "20" label= "1586122987" event= "b1a4" dataQnty= "4"
+type=CT_LAST number= "2" address= "36" dataQnty= "2"
+type=CT_SINGLE number= "3" address= "52" label= "1586122987" event= "a001" dataQnty= "0"
+type=CT_SINGLE number= "4" address= "68" label= "1586123400" event= "a002" dataQnty= "0"
+type=CT_SINGLE number= "5" address= "84" label= "1586123514" event= "a089" dataQnty= "0"
+type=CT_SINGLE number= "6" address= "100" label= "1586123520" event= "a18b" dataQnty= "0"
+type=CT_SINGLE number= "7" address= "116" label= "1586123597" event= "a088" dataQnty= "0"
+type=CT_FIRST number= "8" address= "132" label= "1586123859" event= "a003" dataQnty= "4"
+type=CT_LAST number= "9" address= "148" dataQnty= "7"
+type=CT_SINGLE number= "10" address= "164" label= "1586123931" event= "a118" dataQnty= "0"
+type=CT_SINGLE number= "11" address= "180" label= "1586123933" event= "a00c" dataQnty= "0"
+type=CT_SINGLE number= "12" address= "196" label= "1586123946" event= "a089" dataQnty= "0"
+type=CT_SINGLE number= "13" address= "212" label= "1586123954" event= "a18b" dataQnty= "0"
+type=CT_SINGLE number= "14" address= "228" label= "1586123962" event= "a088" dataQnty= "0"
+type=CT_SINGLE number= "15" address= "244" label= "1586124259" event= "a18f" dataQnty= "2"
+type=CT_SINGLE number= "16" address= "260" label= "1586124309" event= "a089" dataQnty= "0"
+type=CT_SINGLE number= "17" address= "276" label= "1586124309" event= "a18d" dataQnty= "2"
+type=CT_SINGLE number= "18" address= "292" label= "1586124315" event= "a18b" dataQnty= "0"
+type=CT_SINGLE number= "19" address= "308" label= "1586124321" event= "a088" dataQnty= "0"
+type=CT_SINGLE number= "20" address= "324" label= "1586124372" event= "a089" dataQnty= "0"
+type=CT_SINGLE number= "21" address= "340" label= "1586124379" event= "a18b" dataQnty= "0"
+type=CT_SINGLE number= "22" address= "356" label= "1586124387" event= "a088" dataQnty= "0"
+
+record.value.append((const char *)cluster.u.next.value, cluster.u.next.size);
+
+
+Print unsorted clusters:
+type=CT_SINGLE number= "0" address= "4" label= "1586281383" event= "a034" dataQnty= "0"
+type=CT_SINGLE number= "1" address= "20" label= "1586281389" event= "a00c" dataQnty= "0"
+type=CT_SINGLE number= "2" address= "36" label= "1586281391" event= "b01b" dataQnty= "0"
+type=CT_SINGLE number= "3" address= "52" label= "1586281396" event= "a00c" dataQnty= "0"
+type=CT_FIRST number= "4" address= "68" label= "1586281406" event= "b1a4" dataQnty= "4"
+type=CT_LAST number= "5" address= "84" dataQnty= "2"
+type=CT_SINGLE number= "6" address= "100" label= "1586281407" event= "a117" dataQnty= "0"
+type=CT_SINGLE number= "7" address= "116" label= "1586281427" event= "a089" dataQnty= "0"
+type=CT_SINGLE number= "8" address= "132" label= "1586281432" event= "a18b" dataQnty= "0"
+type=CT_SINGLE number= "9" address= "148" label= "1586281436" event= "a088" dataQnty= "0"
+type=CT_SINGLE number= "10" address= "164" label= "1586281520" event= "a118" dataQnty= "0"
+type=CT_SINGLE number= "11" address= "180" label= "1586281552" event= "a00c" dataQnty= "0"
+type=CT_FIRST number= "12" address= "196" label= "1586281557" event= "b1a4" dataQnty= "4"
+type=CT_LAST number= "13" address= "212" dataQnty= "2"
+type=CT_SINGLE number= "14" address= "228" label= "1586281557" event= "a117" dataQnty= "0"
+type=CT_SINGLE number= "15" address= "244" label= "1586281615" event= "a18e" dataQnty= "2"
+type=CT_SINGLE number= "16" address= "260" label= "1586281619" event= "a18d" dataQnty= "2"
+type=CT_SINGLE number= "17" address= "276" label= "1586281621" event= "a118" dataQnty= "0"
+type=CT_SINGLE number= "18" address= "292" label= "1586281967" event= "a18f" dataQnty= "2"
+type=CT_SINGLE number= "19" address= "308" label= "1586283115" event= "a18d" dataQnty= "2"
+
+#define Index_EventSubsystemVersion                        16370 // "ВЕРСИЯ ПОДСИСТЕМЫ СОБЫТИЙ"
+
+ http://download.qt.io/official_releases/qt/5.7/5.7.1/qt-opensource-linux-x64-5.7.1.run
+
+ САЛН.00138-90
+
+ Добрый день!
+Направляю извещение о введение в действие версии рабочего ПО КСУ-6.05 ("нового"). Версия должна записываться во все станции, и обычные, и универсальные.
+В обычной станции нужно задавать тип двигателя -асинхронный, при попытке установить тип двигателя - вентильный будет выдаваться аварийное сообщение о несовпадении типа двигателя с конфигурацией СУ.
+Версий ПО КИ остаётся пока две, для обычной станции и для настройки КИ - 11.1.53, для универсальной СУ - 11.3.3.
+
+
+Здравсвтвуйте, все.
+
+
+Вот актуальное ПО для наших СУ.
+Мы выпускаем "асинхронную СУ" и "универсальную СУ". Первая может управлять только асинхонными ПЭД. Универсальная может управлять как асинхронными так и вентильными ПЭД. 
+Мы выпускаем типа блоков КСУ. Старый КСУ-6. Новый КСУ-6.05. Новый КСУ-6.05 предназначен для замены старого КСУ-6. Новый совместим по разъёмам со старым.
+
+
+Рабочее ПО для КСУ-6 выпускается только под асинхронные СУ. Последняя версия 11-03-27.
+Рабочее ПО для КСУ-6.05 выпускается универсальное. Единственная версия 13.1.16. Поставляется как для асинхронных, так и для универсальных СУ.
+
+-----------------------------------------------------------------------------------------------
+Для СУ с новым контроллером КСУ-6.05.
+Асинхронная СУ:  рабочее ПО КСУ версия 13.1.16; рабочее ПО КИ версия 11.3.3.
+Универсальная СУ: рабочее ПО КСУ версия 13.1.16; рабочее ПО КИ версия 11.3.3; версия 1.0.8 загрузчика КСУ.
+
+4 
+1899552083
+
+  Locals    
+    j 0 int
+    maxLabel  1885051349  uint32_t
+    maxPosition 12  int32_t
+    position  0 uint16_t
+    ramDisk @0x736a450c CRamDisk<228>
+    record  @0x736a44f0 logbook::record_t
+    stream  @0x736a4500 ChunkStream
+    this  @0x736a44bc logbook::CLogbook
+  Inspector   
+  Expressions   
+  Return Value    
+  Tooltip   
+
+
+
+
+
+///////////////////////////////////////
+    Locals    
+    buffer  @0x736a448c uint8_t[16]
+    i 1 uint16_t
+    maxLabel  103023956 uint32_t &
+    maxPosition -1  int32_t
+    record  @0x736a447c logbook::record_t
+    stream  @0x736a4500 ChunkStream &
+    this  @0x736a4474 logbook::CLogbook
+    type  2 logbook::cluster_e
+  Inspector   
+  Expressions   
+  Return Value    
+  Tooltip  
+
+    Locals    
+    buffer  @0x736a448c uint8_t[16]
+    i 4 uint16_t
+    maxLabel  103023956 uint32_t &
+    maxPosition 1 int32_t
+    record  @0x736a447c logbook::record_t
+    stream  @0x736a4500 ChunkStream &
+    this  @0x736a4474 logbook::CLogbook
+    type  2 logbook::cluster_e
+  Inspector   
+  Expressions   
+  Return Value    
+  Tooltip   
+ 
+
+  Locals    
+    buffer  @0x736a448c uint8_t[16]
+    i 7 uint16_t
+    maxLabel  1161520777  uint32_t &
+    maxPosition 4 int32_t
+    record  @0x736a447c logbook::record_t
+    stream  @0x736a4500 ChunkStream &
+    this  @0x736a4474 logbook::CLogbook
+    type  2 logbook::cluster_e
+  Inspector   
+  Expressions   
+  Return Value    
+  Tooltip   
+
+  Locals    
+    buffer  @0x736a448c uint8_t[16]
+    i 10  uint16_t
+    maxLabel  1344938132  uint32_t &
+    maxPosition 7 int32_t
+    record  @0x736a447c logbook::record_t
+    stream  @0x736a4500 ChunkStream &
+    this  @0x736a4474 logbook::CLogbook
+    type  2 logbook::cluster_e
+  Inspector   
+  Expressions   
+  Return Value    
+  Tooltip   
+
+
+  Locals    
+    buffer  @0x736a448c uint8_t[16]
+    i 12  uint16_t
+    maxLabel  1885051349  uint32_t &
+    maxPosition 12  int32_t
+    record  @0x736a447c logbook::record_t
+    stream  @0x736a4500 ChunkStream &
+    this  @0x736a4474 logbook::CLogbook
+    type  2 logbook::cluster_e
+  Inspector   
+  Expressions   
+  Return Value    
+  Tooltip 
+
+
+type=CT_SINGLE number= "0"  address= "4"   label= "1586281383" event= "a034" dataQnty= "0"
+type=CT_SINGLE number= "1"  address= "20"  label= "1586281389" event= "a00c" dataQnty= "0"
+type=CT_SINGLE number= "2"  address= "36"  label= "1586281391" event= "b01b" dataQnty= "0"
+type=CT_SINGLE number= "3"  address= "52"  label= "1586281396" event= "a00c" dataQnty= "0"
+type=CT_FIRST number=  "4"  address= "68"  label= "1586281406" event= "b1a4" dataQnty= "4"
+type=CT_LAST number=   "5"  address= "84" dataQnty= "2"
+type=CT_SINGLE number= "6"  address= "100" label= "1586281407" event= "a117" dataQnty= "0"
+type=CT_SINGLE number= "7"  address= "116" label= "1586281427" event= "a089" dataQnty= "0"
+type=CT_SINGLE number= "8"  address= "132" label= "1586281432" event= "a18b" dataQnty= "0"
+type=CT_SINGLE number= "9"  address= "148" label= "1586281436" event= "a088" dataQnty= "0"
+type=CT_SINGLE number= "10" address= "164" label= "1586281520" event= "a118" dataQnty= "0"
+type=CT_SINGLE number= "11" address= "180" label= "1586281552" event= "a00c" dataQnty= "0"
+type=CT_SINGLE number= "12" address= "196" label= "1936326657" event= "a001" dataQnty= "0"
+type=CT_LAST number=   "13" address= "212" dataQnty= "2"
+type=CT_SINGLE number= "14" address= "228" label= "1586281557" event= "a117" dataQnty= "0"
+type=CT_SINGLE number= "15" address= "244" label= "1586281615" event= "a18e" dataQnty= "2"
+type=CT_SINGLE number= "16" address= "260" label= "1586281619" event= "a18d" dataQnty= "2"
+type=CT_SINGLE number= "17" address= "276" label= "1586281621" event= "a118" dataQnty= "0"
+type=CT_SINGLE number= "18" address= "292" label= "1586281967" event= "a18f" dataQnty= "2"
+type=CT_SINGLE number= "19" address= "308" label= "1586283115" event= "a18d" dataQnty= "2"
+type=CT_SINGLE number= "20" address= "324" label= "1586283115" event= "a001" dataQnty= "0"
+type=CT_SINGLE number= "21" address= "340" label= "1586551107" event= "a002" dataQnty= "0"
+type=CT_SINGLE number= "22" address= "356" label= "1586551157" event= "a00c" dataQnty= "0"
+type=CT_SINGLE number= "23" address= "372" label= "1586551160" event= "b01b" dataQnty= "0"  
+
+
+//Следующее - тестировать readCurrent
+
+Кластер №0
+  Locals    
+    buffer  @0x736a4608 uint8_t[16]
+      [0] 84  uint8_t 0x54 1010100b -> 2-type, 10-size
+      [1] 174 uint8_t
+      [2] 144 uint8_t
+      [3] 148 uint8_t
+      [4] 94  uint8_t
+      [5] 174 uint8_t
+      [6] 144 uint8_t
+      [7] 148 uint8_t
+      [8] 94  uint8_t
+      [9] 52  uint8_t 0x34    0xa034 //Очистка архива 
+      [10]  160 uint8_t 0xA0
+      [11]  0 uint8_t
+      [12]  0 uint8_t
+      [13]  0 uint8_t
+      [14]  0 uint8_t
+      [15]  136 uint8_t
+    i 0 uint16_t
+    idisk @0x219d8c CVirtualDisk &
+    maxLabel  0 uint32_t
+    maxPosition -1  int32_t
+    number  0 uint16_t
+    stream  @0x736a4618 logbook::stream_t
+    this  @0x736a45ec logbook::CLogbook
+    type  1 logbook::cluster_e
+  Inspector   
+  Expressions   
+    clusterPosition @0x21e6ec logbook::Position
+      ifront  0 uint16_t
+      imax  0 uint16_t
+      iread -1  int32_t
+      irear 0 uint16_t
+      qnty  0 uint16_t
+  Return Value    
+  Tooltip   
+    CT_FIRST  2 enum {...}
+
+
+Detaching from process 565
+Detaching from process 566
+Print unsorted clusters:
+type=CT_SINGLE number= "0" address= "4" label= "0" event= "a001" dataQnty= "0"
+type=CT_SINGLE number= "1" address= "20" label= "1586799831" event= "a002" dataQnty= "0"
+type=CT_SINGLE number= "2" address= "36" label= "1586799831" event= "a001" dataQnty= "0"
+type=CT_SINGLE number= "3" address= "52" label= "1586800034" event= "a002" dataQnty= "0"
+type=CT_FIRST number= "4" address= "68" label= "1586800050" event= "b1b6" dataQnty= "4"
+type=CT_LAST number= "5" address= "84" dataQnty= "4"
+Print sorted by label clusters:
+type=CT_SINGLE number= "0" address= "4" label= "0" ev
+
+
+Print unsorted clusters:
+type=CT_SINGLE number= "0" address= "4" label= "0" event= "a001" dataQnty= "0"
+type=CT_SINGLE number= "1" address= "20" label= "1586799831" event= "a002" dataQnty= "0"
+type=CT_SINGLE number= "2" address= "36" label= "1586799831" event= "a001" dataQnty= "0"
+type=CT_SINGLE number= "3" address= "52" label= "1586800034" event= "a002" dataQnty= "0"
+type=CT_FIRST number= "4" address= "68" label= "1586800050" event= "b1b6" dataQnty= "4"
+type=CT_LAST number= "5" address= "84" dataQnty= "4"
+type=CT_SINGLE number= "6" address= "100" label= "1586800371" event= "a18f" dataQnty= "2"
+type=CT_SINGLE number= "7" address= "116" label= "1586800717" event= "a18d" dataQnty= "2"
+type=CT_SINGLE number= "8" address= "132" label= "1586800738" event= "a00c" dataQnty= "0"
+type=CT_SINGLE number= "9" address= "148" label= "1586800740" event= "b01b" dataQnty= "0"
+Print sorted by label clusters:
+
+
+  Locals    
+    buffer  @0x736a45c8 uint8_t[16]
+      [0] 0 uint8_t
+      [1] 79  uint8_t
+      [2] 132 uint8_t
+      [3] 149 uint8_t
+      [4] 94  uint8_t
+      [5] 79  uint8_t
+      [6] 132 uint8_t
+      [7] 149 uint8_t
+      [8] 94  uint8_t
+      [9] 2 uint8_t
+      [10]  160 uint8_t
+      [11]  0 uint8_t
+      [12]  0 uint8_t
+      [13]  0 uint8_t
+      [14]  0 uint8_t
+      [15]  130 uint8_t
+    cluster @0x736a45ac logbook::cluster_t
+    first false bool
+    number  5 uint16_t
+    record  @0x736a4608 logbook::record_t &
+    recordNumber  4 int32_t &
+    stopNumber  4 uint16_t
+    stream  @0x736a4618 logbook::stream_t &
+    this  @0x736a45a4 logbook::CLogbook
+    vector  <1 items> QVector<logbook::cluster_t>
+  Inspector   
+  Expressions   
+  Return Value    
+  Tooltip   
+
+
+  Print unsorted clusters:
+type=CT_SINGLE number= "0" address= "4" label= "1586874208" event= "a034" dataQnty= "0"
+type=CT_SINGLE number= "1" address= "20" label= "1586874219" event= "a089" dataQnty= "0"
+type=CT_SINGLE number= "2" address= "36" label= "1586874226" event= "a18b" dataQnty= "0"
+type=CT_SINGLE number= "3" address= "52" label= "1586874238" event= "a088" dataQnty= "0"
+type=CT_SINGLE number= "4" address= "68" label= "1586874365" event= "a18e" dataQnty= "2"
+type=CT_SINGLE number= "5" address= "84" label= "1586874369" event= "a18d" dataQnty= "2"
+type=CT_SINGLE number= "6" address= "100" label= "1586874401" event= "a00e" dataQnty= "2"
+type=CT_SINGLE number= "7" address= "116" label= "1586874403" event= "a00c" dataQnty= "0"
+type=CT_FIRST number= "8" address= "132" label= "1586874450" event= "a003" dataQnty= "4"
+type=CT_LAST number= "9" address= "148" dataQnty= "7"
+type=CT_SINGLE number= "10" address= "164" label= "1586874450" event= "a00e" dataQnty= "2"
+type=CT_SINGLE number= "11" address= "180" label= "1586874475" event= "a001" dataQnty= "0"
+type=CT_SINGLE number= "12" address= "196" label= "1586874508" event= "a002" dataQnty= "0"
+type=CT_SINGLE number= "13" address= "212" label= "1586874579" event= "a00b" dataQnty= "0"
+type=CT_SINGLE number= "14" address= "228" label= "1586874694" event= "a001" dataQnty= "0"
+type=CT_SINGLE number= "15" address= "244" label= "1586874735" event= "a002" dataQnty= "0"
+type=CT_SINGLE number= "16" address= "260" label= "1586874805" event= "a00b" dataQnty= "0"
+type=CT_SINGLE number= "17" address= "276" label= "1586874841" event= "a001" dataQnty= "0"
+type=CT_SINGLE number= "18" address= "292" label= "1586874926" event= "a002" dataQnty= "0"
+Print sorted by label clusters:
+
+////////////////////////////////////////
+for()
+
+  Locals    
+    buffer  @0x736a45fc uint8_t[16]
+      [0] 84  uint8_t
+      [1] 16  uint8_t
+      [2] 7 uint8_t
+      [3] 150 uint8_t
+      [4] 94  uint8_t
+      [5] 16  uint8_t
+      [6] 7 uint8_t
+      [7] 150 uint8_t
+      [8] 94  uint8_t
+      [9] 12  uint8_t
+      [10]  160 uint8_t
+      [11]  0 uint8_t
+      [12]  0 uint8_t
+      [13]  0 uint8_t
+      [14]  0 uint8_t
+      [15]  22  uint8_t
+    i 102 uint16_t
+    idisk @0x21bea4 CVirtualDisk &
+    maxLabel  1586890470  uint32_t
+    maxPosition 101 int32_t
+    next  103 int32_t
+    nextPosition  102 int32_t &
+    number  102 uint16_t
+    record  @0x736a45e8 logbook::record_t
+    stream  @0x736a460c logbook::stream_t
+    this  @0x736a45e4 logbook::CLogbook
+    type  2 logbook::cluster_e
+  Inspector   
+  Expressions   
+    clusterPosition @0x220804 logbook::Position
+  Return Value    
+  Tooltip   
+
+
+Print unsorted clusters:
+type=CT_SINGLE number= "0" address= "4" label= "1586893048" event= "a034" dataQnty= "0"
+type=CT_FIRST number= "1" address= "20" label= "1586893064" event= "b1a4" dataQnty= "4"
+type=CT_LAST number= "2" address= "36" dataQnty= "2"
+
+type=CT_SINGLE number= "0" address= "4" label= "1586893048" event= "a034" dataQnty= "0"
+type=CT_FIRST number= "1" address= "20" label= "1586893064" event= "b1a4" dataQnty= "4"
+type=CT_LAST number= "2" address= "36" dataQnty= "2"
+
+
+Print unsorted clusters:
+type=CT_SINGLE number= "0" address= "4" label= "1586893266" event= "a034" dataQnty= "0"
+type=CT_FIRST number= "1" address= "20" label= "1586893278" event= "b1a4" dataQnty= "4"
+type=CT_LAST number= "2" address= "36" dataQnty= "2"
+_frame_recv. Can't read from socket: Timeout
+
+type=CT_SINGLE number= "0" address= "4" label= "1586893266" event= "a034" dataQnty= "0"
+type=CT_FIRST number= "1" address= "20" label= "1586893278" event= "b1a4" dataQnty= "4"
+type=CT_LAST number= "2" address= "36" dataQnty= "2"
+
+
+type=CT_SINGLE number= "0" address= "4" label= "1586893583" event= "a034" dataQnty= "0"
+type=CT_FIRST number= "1" address= "20" label= "1586893594" event= "b1a4" dataQnty= "4"
+type=CT_LAST number= "2" address= "36" dataQnty= "2"
+
+
+IndexOverIEnable
+IndexOverISetpoint
+
+
+Print unsorted clusters:
+type=CT_SINGLE number= "0" address= "4 " label= "1587206833" event= "a034" dataQnty= "0"
+type=CT_SINGLE number= "1" address= "20" label= "1587206847" event= "a001" dataQnty= "0"
+type=CT_SINGLE number= "2" address= "36" label= "1587206959" event= "a002" dataQnty= "0"
+type=CT_SINGLE number= "3" address= "52" label= "1587207049" event= "a00e" dataQnty= "2"
+type=CT_SINGLE number= "4" address= "68" label= "1587207067" event= "a00b" dataQnty= "0"
+type=CT_FIRST  number= "5" address= "84" label= "1587207089" event= "b1a4" dataQnty= "4"
+
+
+Print unsorted clusters:
+type=CT_SINGLE number= "0" address= "4" label= "1587206833" event= "a034" dataQnty= "0"
+type=CT_SINGLE number= "1" address= "20" label= "1587206847" event= "a001" dataQnty= "0"
+type=CT_SINGLE number= "2" address= "36" label= "1587206959" event= "a002" dataQnty= "0"
+type=CT_SINGLE number= "3" address= "52" label= "1587207049" event= "a00e" dataQnty= "2"
+type=CT_SINGLE number= "4" address= "68" label= "1587207067" event= "a00b" dataQnty= "0"
+type=CT_SINGLE number= "5" address= "84" label= "1587207092" event= "a001" dataQnty= "0"
+type=CT_SINGLE number= "6" address= "100" label= "1587208825" event= "a001" dataQnty= "0"
+type=CT_SINGLE number= "7" address= "116" label= "1587209269" event= "a002" dataQnty= "0"
+type=CT_SINGLE number= "8" address= "132" label= "1587209320" event= "a00c" dataQnty= "0"
+type=CT_SINGLE number= "9" address= "148" label= "1587209322" event= "a00e" dataQnty= "2"
+type=CT_FIRST number= "10" address= "164" label= "1587209339" event= "b1a4" dataQnty= "4"
+
+
+
+
+Print unsorted clusters:
+type=CT_SINGLE number= "0" address= "4" label= "1587206833" event= "a034" dataQnty= "0"
+type=CT_SINGLE number= "1" address= "20" label= "1587206847" event= "a001" dataQnty= "0"
+type=CT_SINGLE number= "2" address= "36" label= "1587206959" event= "a002" dataQnty= "0"
+type=CT_SINGLE number= "3" address= "52" label= "1587207049" event= "a00e" dataQnty= "2"
+type=CT_SINGLE number= "4" address= "68" label= "1587207067" event= "a00b" dataQnty= "0"
+type=CT_SINGLE number= "5" address= "84" label= "1587207092" event= "a001" dataQnty= "0"
+type=CT_SINGLE number= "6" address= "100" label= "1587208825" event= "a001" dataQnty= "0"
+type=CT_SINGLE number= "7" address= "116" label= "1587209269" event= "a002" dataQnty= "0"
+type=CT_SINGLE number= "8" address= "132" label= "1587209320" event= "a00c" dataQnty= "0"
+type=CT_SINGLE number= "9" address= "148" label= "1587209322" event= "a00e" dataQnty= "2"
+type=CT_SINGLE number= "10" address= "164" label= "1587209342" event= "a001" dataQnty= "0"
+type=CT_SINGLE number= "11" address= "180" label= "1587209405" event= "a002" dataQnty= "0"
+type=CT_SINGLE number= "12" address= "196" label= "1587209508" event= "a00b" dataQnty= "0"
+type=CT_SINGLE number= "13" address= "212" label= "1587209661" event= "a00e" dataQnty= "2"
+type=CT_SINGLE number= "14" address= "228" label= "1587209662" event= "b01b" dataQnty= "0"
+type=CT_SINGLE number= "15" address= "244" label= "1587209667" event= "a00e" dataQnty= "2"
+type=CT_SINGLE number= "16" address= "260" label= "1587209668" event= "a00c" dataQnty= "0"
+type=CT_SINGLE number= "17" address= "276" label= "1587209682" event= "a001" dataQnty= "0"
+type=CT_SINGLE number= "18" address= "292" label= "1587209740" event= "a002" dataQnty= "0"
+type=CT_SINGLE number= "19" address= "308" label= "1587209741" event= "a001" dataQnty= "0"
+type=CT_SINGLE number= "20" address= "324" label= "1587209865" event= "a002" dataQnty= "0"
+type=CT_FIRST number= "21" address= "340" label= "1587209875" event= "b1b6" dataQnty= "4"
+type=CT_LAST number= "22" address= "356" dataQnty= "4"
+type=CT_SINGLE number= "23" address= "372" label= "1587209906" event= "a00b" dataQnty= "0"
+type=CT_FIRST number= "24" address= "388" label= "1587209923" event= "b1a4" dataQnty= "4"
+
+
+Префикс на версию - 4
+Префикс на индекс - 2
+
+//При выключении:
+addr= "68" sz= "16"
+addr= "84" sz= "16"
+addr= "100" sz= "16"
+
+При включении:
+Print unsorted clusters:
+type=CT_SINGLE number= "0" address= "4" label= "1587211292" event= "a001" dataQnty= "0"
+type=CT_SINGLE number= "1" address= "20" label= "1587211694" event= "a002" dataQnty= "0"
+type=CT_FIRST number= "2" address= "36" label= "1587211704" event= "b1b6" dataQnty= "4"
+type=CT_LAST number= "3" address= "52" dataQnty= "4"
+type=CT_SINGLE number= "4" address= "68" label= "1587211735" event= "a00b" dataQnty= "0"//Пуск ПЭД. Автоматический
+type=CT_FIRST number= "5" address= "84" label= "1587211804" event= "b1a4" dataQnty= "4"//СТОП ПЭД.ПОНИЖЕНИЕ НАПРЯЖЕНИЯ СЕТИ
+addr= "84" sz= "16"
+addr= "100" sz= "16"
+
+
+
+//При выключении:
+addr= "20" sz= "16"
+addr= "36" sz= "16"
+
+При включении:
+Print unsorted clusters:
+type=CT_SINGLE number= "0" address= "4" label= "1587213797" event= "a034" dataQnty= "0"
+type=CT_FIRST number= "1" address= "20" label= "1587213828" event= "b1a4" dataQnty= "4"
+type=CT_LAST number= "2" address= "36" dataQnty= "2"
+addr= "52" sz= "16"
+addr= "68" sz= "16"
+
+
+//При выключении:
+addr= "22" sz= "16"
+addr= "38" sz= "16"
+
+При включении:
+type=CT_SINGLE number= "0" address= "4" label= "1587214566" event= "a034" dataQnty= "0"
+type=CT_FIRST number= "1" address= "20" label= "1587214578" event= "b1a4" dataQnty= "4"
+addr= "22" sz= "16"
+addr= "38" sz= "16"
+
+
+//При выключении:
+addr= "22" sz= "16"
+addr= "38" sz= "16"
+
+Print unsorted clusters:
+type=CT_SINGLE number= "0" address= "4" label= "1587215067" event= "a034" dataQnty= "0"
+type=CT_FIRST number= "1" address= "20" label= "1587215073" event= "b1a4" dataQnty= "4"
+type=CT_LAST number= "2" address= "36" dataQnty= "2"
+type=CT_SINGLE number= "3" address= "52" label= "1587215073" event= "a117" dataQnty= "0"
+addr= "70" sz= "16"
+addr= "86" sz= "16"
+
+
+
+https://code-live.ru/tag/cpp-manual/
+http://cppstudio.com/cat/271/
+https://ravesli.com/uroki-cpp/
+
+
+<Event EventId="0xa147" Color="Maroon" EventName="Ошибка чтения FRAM" Define="ERROR_FRAM_READ"></Event>
+
+<Event EventId="0xa570" Color="Red"  EventName="Ошибка чтения FRAM блока КИ" Define="KI_FRAM_ERROR"></Event>
+
+
+Указание о внедрении:
+В уточнение п.3  ТР №622 и 623, вновь вводимая версия ПО КСУ-6.05 должна 
+записываться во все станции управления ИНМ-3-ЧР, и обычные, и универсальные. 
+Настройка КСУ-6.05 также должна  проводиться с версией 13.01.16.
+
+Указание о заделе:
+Задел станций управления и КСУ-6.05 доработать обновлением ПО КСУ-6.05 на 
+версию 13.01.16. Допускается не обновлять ПО  в станциях управления, прошедших ПСИ.
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+Заместитель Генерального директора по перспективным разработкам Скорик Александр Григорьевич  
+(49254) 3-51-14;
++7(915)756-14-57
+skorik@elekton.ru
+
+
+
+InputRegisters
+
+Ошибка в сервере MODBUS/TCP для выбора карты используется индекс Index_MbServer. Нужно использовать Index_MbServer0
+
+
+aduAnsver:  "\x01
+             \x04+\x00\x10\x00\x00\x00\x00\x00\f\x14\x04\x14\b\x1F\x06\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00
+             \xD9\x00\x01\x00\xD9\x00&\x00\x00\x00\x00\x00\x00\x00\x00'\x0F\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01
+             \xD8\x00\x00\x00\x04\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00
+             \x00\x00\x00\x00\x00\x00\x00\x1A="
+aduAnsver:  "\x01\x04+\x00\x10\x00\x00\x00\x00\x00\f\x14\x04\x14\b\x1F\x06\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xD8\x00\x01\x00\xD9\x00&\x00\x00\x00\x00\x00\x00\x00\x00'\x0F\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\xD8\x00\x00\x00\x04\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xE7\xFD"
+
+
+aduAnsver:  Device Address:  "1" Function Code:  "4" Byte Count:  "43"
+"0 10 0 0 0 0 0 c 14 4 14 8 1f 6 0 0 0 0 0 0 0 0 0 0 0 d8 0 1 0 d8 0 26 0 0 0 0 0 0 0 0 27 "
+_frame_recv. Can't read from socket: Timeout
+aduAnsver:  Device Address:  "1" Function Code:  "4" Byte Count:  "43"
+"0 10 0 0 0 0 0 c 14 4 14 8 1f 6 0 0 0 0 0 0 0 0 0 0 0 d8 0 1 0 d8 0 26 0 0 0 0 0 0 0 0 27 "
+aduAnsver:  Device Address:  "1" Function Code:  "4" Byte Count:  "43"
+"0 10 0 0 0 0 0 c 14 4 14 8 1f 6 0 0 0 0 0 0 0 0 0 0 0 d8 0 1 0 d8 0 26 0 0 0 0 0 0 0 0 27 "
+aduAnsver:  Device Address:  "1" Function Code:  "4" Byte Count:  "43"
+"0 10 0 0 0 0 0 c 14 4 14 8 1f 6 0 0 0 0 0 0 0 0 0 0 0 d8 0 1 0 d8 0 26 0 0 0 0 0 0 0 0 27 "
+_frame_recv. Can't read from socket: Timeout
+aduAnsver:  Device Address:  "1" Function Code:  "4" Byte Count:  "43"
+"0 10 0 0 0 0 0 c 14 4 14 8 1f 6 0 0 0 0 0 0 0 0 0 0 0 d8 0 1 0 d8 0 26 0 0 0 0 0 0 0 0 27 "
+aduAnsver:  Device Address:  "1" Function Code:  "4" Byte Count:  "43"
+"0 10 0 0 0 0 0 c 14 4 14 8 1f 6 0 0 0 0 0 0 0 0 0 0 0 d8 0 1 0 d8 0 26 0 0 0 0 0 0 0 0 27 "
+aduAnsver:  Device Address:  "1" Function Code:  "4" Byte Count:  "43"
+"0 10 0 0 0 0 0 c 14 4 14 8 1f 6 0 0 0 0 0 0 0 0 0 0 0 d8 0 1 0 d8 0 26 0 0 0 0 0 0 0 0 27 "
+aduAnsver:  Device Address:  "1" Function Code:  "4" Byte Count:  "43"
+"0 10 0 0 0 0 0 c 14 4 14 8 1f 6 0 0 0 0 0 0 0 0 0 0 0 d7 0 1 0 d7 0 25 0 0 0 0 0 0 0 0 27 "
+_frame_recv. Can't read from socket: Timeout
+aduAnsver:  Device Address:  "1" Function Code:  "4" Byte Count:  "43"
+
+aduAnsver:  Device Address:  "1" Function Code:  "4" Byte Count:  "86"
+"0 10 0 0 0 0 0 c 14 4 14 8 1f 6 0 0 0 0 0 0 0 0 0 0 0 d8 0 1 0 d9 0 26 0 0 0 0 0 0 0 0 27 f 0 0 0 0 0 0 0 0 0 0 1 d8 0 0 0 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "
+aduAnsver:  Device Address:  "1" Function Code:  "4" Byte Count:  "86"
+"0 10 0 0 0 0 0 c 14 4 14 8 1f 6 0 0 0 0 0 0 0 0 0 0 0 d9 0 1 0 d9 0 26 0 0 0 0 0 0 0 0 27 f 0 0 0 0 0 0 0 0 0 0 1 d8 0 0 0 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "
+
+
+
+
+
+aduAnsver:  Device Address:  "1" Function Code:  "4" Byte Count:  "194"
+"0  10 0  0  0  0  0  c  14 4  14 8  1f 6  0  0  0  0  0  0  0  0  0  0  0  da 0  1  0 
+ da 0  26 0  0  0  0  0  0  0  0  27 f  0  0  0  0  0  0  0  0  0  0  1  d8 0  0  0  4 
+ 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 
+ 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 
+ 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 
+ 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 
+ 0  0  0  0  0  0  14 4  17 10 4  30 0  0  1a e6 10 0  ff fa "
+
+ Index_NumPole      FLASH
+ Index_Wped_nom_min FLASH
+ Index_Wped_nom_cek
+ Index_MotorFnom    RAM
+
+
+ Index_KI_PWMFreq
+ Index_KI_PWMMode
+
+ https://www.youtube.com/watch?v=GdjcagKhhy0
+
+ modbus/modbus_rtu.h
+
+ ...........
+https://gogov.ru/firearms-licence/obninsk
+ 
+ http://profi-kaluga.ru/
+ http://dvorkaluga.ru/kontakty.html
+ http://status-kaluga.ru/index.php?page=svedeniya  - дозвонился
+
+ dd if=test_func20.dsk of=test_func20_aligned.dsk bs=3872 count=11
+
+
+ file:///home/lyzv/work/svn
+
+
+ v1.5.0
+ // Public functions of QuickLZ
+size_t qlz_size_decompressed(const char *source);
+size_t qlz_size_compressed(const char *source);
+size_t qlz_compress(const void *source, char *destination, size_t size, qlz_state_compress *state);
+size_t qlz_decompress(const char *source, void *destination, qlz_state_decompress *state);
+int qlz_get_setting(int setting);
+
+
+class WorkerThread : public QThread
+{
+    Q_OBJECT
+    void run() override {
+        QString result;
+        /* ... here is the expensive or blocking operation ... */
+        emit resultReady(result);
+    }
+signals:
+    void resultReady(const QString &s);
+};
+
+void MyObject::startWorkInAThread()
+{
+    WorkerThread *workerThread = new WorkerThread(this);
+    connect(workerThread, &WorkerThread::resultReady, this, &MyObject::handleResults);
+    connect(workerThread, &WorkerThread::finished, workerThread, &QObject::deleteLater);
+    workerThread->start();
+}
+
+QBlockingQueued
+
+
+3.3 Функциональные возможности
+– плавное торможение электродвигателя по предельному значению напряжения в звене
+постоянного тока;
+– работу в режиме компенсации скольжения при работе ПЭД на нагрузку с большим
+моментом инерции;
+– режим работы по программе (АПВ, КЭС, ПКВ);
+– после остановки по аппаратной защите (IGBT и др.) должна присутствовать функция
+самотестирования и запуска в автономном режиме;
+– возможность автоматического выбора уставки недогрузки;
+
+3.6 Требования к контроллеру ЧРП
+При закрытии программы для чтения архивов событий должны сохраняться последние
+настройки интерфейса.
+
+– по запросу пользователя отображать/скрывать значения тех или иных регистрируемых
+параметров;
+– отображение уставок защит на момент снятия архива, в продвинутом варианте
+возможность выбора даты и отображение уставок на определенную дату;
+
+Подключение ПК к контроллеру ЧРП должно осуществляться через USB, а также по
+беспроводному интерфейсу Bluetooth.
+
+Уставки по умолчанию, в обязательном порядке должны быть
+согласованы с ОГ.
+
+
+
+Modbus Slave 7.3.0.1402
+------------ Serial Keys ------------
+QJTHXPXVT5J1
+GBOYA5T5YVGP
+2BISMACMZA7W
+6NUD6LOOAYEQ
+VHNC59E6F3VJ
+-------------------------------------
+
+void nvms_save_a108(uns16_t value) { self_save_u16(SELF_A108_PAGE, value); }
+uns16_t nvms_load_a108(void) { return self_load_u16(SELF_A108_PAGE, 0x0004); }
+
+stty -echo -F /dev/ttymxc2
+/home/lyzv/.wine/drive_c/Program\ Files\ \(x86\)/HHD\ Software/Free\ Serial\ Port\ Monitor/Device\ Monitor.exe
+
+wine "/home/lyzv/.wine/drive_c/Program Files (x86)/HHD Software/Free Serial Port Monitor/Device Monitor.exe"
+
+
+You don't have required rights to launch the application. Ask your administrator to grant you corresponding rights.
+
+
+wine "/home/lyzv/.wine/drive_c/Program Files (x86)/WitteCom/Modbus Poll/mbpoll.exe"
+wine "/home/lyzv/.wine/drive_c/Program Files (x86)/WitteCom/Modbus Slave/mbslave.exe"
+
+snarlistic/jpnevulator
+
+jpnevulator
+
+sudo apt-cache search jpnevulator
+
+01 - Device Address
+2B - Function code - 43 
+0E - MEI type - 14 
+03 - Read Device ID code - request to get the extended device identification (stream access)
+83 - Object Id - 
+00 00 05 80 0C 49 4E 4D 2D 4B 53 55 2D 36 2E 30 35
+
+Byte Count
+Reference Type
+
+01 
+2B 
+0E 
+03 
+83 
+
+00 00 05 80 0C 49 4E 4D 2D 4B 53
+55 2D 36 2E 30 35 81 03 5A 41 4B 82 02 00 00 83
+02 00 00 84 02 00 00 63 9B
+
+
+////////////////////////////////////////
+2020-05-29 15:03:25.121962:
+01 
+2B 
+0E 
+03 
+83 80 
+00 70
+00 B7
+05 
+80 0C 49 4E 4D 2D 4B 53 55 2D 36 2E 30 35
+
+
+	Locals		
+		addr	1	uint8_t
+
+
+		aduReq	"\001+\016\003\200p·"	QByteArray
+				    	1    	0x01	char
+				'+' 	43    	0x2b	char
+				    	14    	0x0e	char
+				    	3    	0x03	char
+				'ﾀ' 	-128/128	0x80	char
+				'p' 	112    	0x70	char
+				'ﾷ' 	-73/183	    0xb7	char
+
+
+
+		hdlc	@0x7fffffffbd90	QModbusHDLC
+		pduAnsv	""	QByteArray &
+		pduReq	"+\016\003\200"	QByteArray &
+				'+' 	43    	0x2b	char
+				    	14    	0x0e	char
+				    	3    	0x03	char
+				'ﾀ' 	-128/128	0x80	char
+		rcvChunk	""	QByteArray
+		this	"MainWindow"	MainWindow
+		time	(invalid)	QTime
+		timeout	1000	int
+	Inspector		
+	Expressions		
+	Return Value		
+	Tooltip		
+
+///////////////////////////////////
+
+01 
+2B 
+0E 
+03 
+83 
+00 00 05 80 0C 49 4E 4D 2D 4B 53 55 2D 36 2E 30 35 81 03 5A 41 4B 82 02 00 00 83 02 00 00 84 02 00 00 63 9B
+
+01 
+2B Function code
+0E MEI Type
+03 Read Device ID code
+83 Conformity level
+00 More Follows
+00 Next Object Id
+05 Number of objects
+
+80 Object ID
+0C Object length - 12
+49 Object Value
+4E 
+4D 
+2D 
+4B 
+53 
+55 
+2D 
+36 
+2E 
+30 
+35
+
+
+
+
+socat /dev/ttyUSB1,raw,echo=0 \
+SYSTEM:'tee in.txt |socat - "PTY,link=/tmp/ttyV0,raw,echo=0,waitslave" |tee out.txt'
+
+strace -s9999 -o modbus-poll.strace -eread,write,ioctl ./modbus-poll
+
+geoffmeyers/interceptty
+
+
+
+
+01 Device Address
+2b Function code
+0e MEI Type
+03 Read Device ID code
+83 Conformity level
+00 More Follows
+00 Next Object Id
+05 Number of objects
+
+80 Object ID
+0c Object length - 12
+49 4e 4d 2d 4b 53 55 2d 36 2e 30 35   Object Value  
+
+81 Object ID
+03 Object length 
+5a 41 4b   Object Value
+
+82 Object ID
+02 Object length 
+d0 07   Object Value
+
+83 Object ID
+02 Object length
+90 07 
+
+84 Object ID
+02 Object length
+00 00 
+
+e9 92 CRC16 
+
+
+
+01 Device Address
+2b Function code
+0e MEI Type
+03 Read Device ID code
+83 Conformity level
+00 More Follows
+00 Next Object Id
+05 Number of objects
+
+80 
+0c 
+49 4e 4d 2d 4b 53 55 2d 36 2e 30 35 
+
+81
+03 
+5a 41 4b 
+
+82 
+02 
+00 00
+
+83 
+02 
+00 00 
+
+84 
+02 
+00 00 
+
+63 9b
+
+
+///////////////////////////////////////////////////
+
+minicom --device /dev/ttyUSB1 --baud 9600 --displayhex
+
+
+displayhex
+aduAnsver:  
+Device Address: "1" 
+Function Code:  "43" 
+Byte Count:  "14"
+3 
+83 
+0 
+0 
+5 
+
+80 
+c 49 4e 4d 2d 4b 53 55
+
+
+01 
+2B 
+0E 
+03 
+80 
+70 B7
+
+01 2B 0E 03 80 70 B7
+
+
+00000000 01 2B 0E 03 80 70 B7 01   2B 0E 03 83 00 00 05 80  .+...p..+.......
+00000010 0C 49 4E 4D 2D 4B 53 55   2D 36 2E 30 35 81 03 5A  .INM-KSU-6.05..Z
+00000020 41 4B 82 02 00 00 83 02   00 00 84 02 00 00 63 9B  AK............c.
+
+//Прослушка COM-порта:
+https://unix.stackexchange.com/questions/12359/how-can-i-monitor-serial-port-traffic
+
+
+00000000 01 2B 0E 03 80 70 B7 01   2B 0E 03 83 00 00 05 80  .+...p..+.......
+00000010 0C 49 4E 4D 2D 4B 53 55   2D 36 2E 30 35 81 03 5A  .INM-KSU-6.05..Z
+00000020 41 4B 82 02 00 00 83 02   00 00 84 02 00 00 63 9B  AK............c.
+
+Запрос
+01 
+2B 
+0E 
+03 
+80 70 B7 
+
+Ответ:
+01 
+2B 
+0E 
+03 
+83 
+00 
+00 
+05 
+
+80
+0C 
+49 4E 4D 2D 4B 53 55 2D 36 2E 30 35 
+
+81 
+03 
+5A 41 4B 
+
+82 
+02 
+00 00 
+
+83 
+02 00 00 
+
+84 
+02 00 00 
+
+63 9B
+
+....................
+
+01 2B 0E 03 80 70 B7 01 2B 0E 03 83 00 00 05 80
+0C 49 4E 4D 2D 4B 53 55 2D 36 2E 30 35 81 03 5A
+41 4B 
+
+82 
+02 
+D0 07 - 2000
+
+83 
+02 
+90 07 - 1936
+
+84 
+02 
+BF 00 - 191
+
+99 A2
+
+
+1:0:8bd:0:0:0:0:0:0:1:1:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0
+
+
+stty -F /dev/ttyS1 ispeed 9600 ospeed 9600 -ignpar cs8 -cstopb -echo
+stty -F /dev/ttyUSB1 raw speed 9600
+
+lyzv@lyzv-pc:~$ stty -F /dev/ttyUSB1 -a
+speed 9600 baud; rows 0; columns 0; line = 0;
+intr = ^C; quit = ^\; erase = ^?; kill = ^U; eof = ^D; eol = <undef>; eol2 = <undef>; swtch = <undef>; start = ^Q; stop = ^S; susp = ^Z; rprnt = ^R; werase = ^W; lnext = ^V; discard = ^O;
+min = 1; time = 0;
+-parenb -parodd -cmspar cs8 hupcl -cstopb cread clocal -crtscts
+-ignbrk -brkint -ignpar -parmrk -inpck -istrip -inlcr -igncr -icrnl -ixon -ixoff -iuclc -ixany -imaxbel -iutf8
+-opost -olcuc -ocrnl onlcr -onocr -onlret -ofill -ofdel nl0 cr0 tab0 bs0 vt0 ff0
+-isig -icanon iexten -echo echoe echok -echonl -noflsh -xcase -tostop -echoprt echoctl echoke -flusho -extproc
+lyzv@lyzv-pc:~$ 
+
+Как программировать UART в linux:
+https://blog.mbedded.ninja/programming/operating-systems/linux/linux-serial-ports-using-c-cpp/
+
+stty -F /dev/ttyUSB1 raw speed 9600 -parenb -cstopb cs8 -echo cread clocal \
+					 -icanon -echo -echoe -echol \
+					 -ixon -ixoff -ixany \
+					 -ignbrk -grkint -parmrk -istrip -inlcr -igncr -icrnl \
+					 -opost -onlcr
+
+
+
+https://www.gosuslugi.ru/16587/1
+
+https://atombit.ru/p399864785-kabel-adapter-usb.html?_openstat=bWFya2V0LnlhbmRleC5ydTvQmtCw0LHQtdC70Ywt0LDQtNCw0L_RgtC10YAgVVNCID4gUlMyMzIgREI5IDEsNSDQvCBDYWJsZXhwZXJ0IFVBUy1EQjlNLTAyIFtQTDIzMDNUQV07b0dGeDF6V3liUC0xdm90dVNZRnJ5UTs&ymclid=15910216572759939732000001
+
+
+git clone https://github.com/stephane/libmodbus.git
+
+Ком порт
+https://www.dns-shop.ru/product/7ec8d5177e593330/perehodnik-orient-usb-20-a---comrs232-9m/
+
+Index_UART1_BaudRate
+
+motorcontrol.ru/courses/courses_mc01
+https://www.youtube.com/watch?list=PLlCGBQ6UMJidAwNSAXdtasKv2Sw5yiuvv&v=FmrlZA4tkOQ&feature=emb_logo
+
+
+////////////////////////////////////////////////////////////////////
+
+
+13:45:56
+13:45:56  >><<--------------------------------------------------------------------------->><<
+13:45:56
+13:45:56  Начало процесса ReadDeviceIdentification - чтение идентификационной информации устройства.
+13:45:56
+13:45:56  Ожидается получение следюущих объектов от устройства:
+13:45:56  0x00 (ASCII)
+13:45:56
+13:45:56  Обращение к устройству.
+13:45:56
+13:45:56  Обращение к устройству, попытка=1
+13:45:56
+13:45:56  Попытка подключения к устройству с IP-адресом=192.168.3.11, таймаут=3000мс.
+13:45:56  Попытка подключения, результат=True
+13:45:56
+13:45:56  Попытка опроса устройства командой=43 (0x2B), таймаут Request=3000мс., таймаут Response=3000мс.
+13:45:56
+13:45:56  Итоговый результат попытки обращения к устройству:
+13:45:56  Запрос:
+13:45:56  >>> 00.00.00.00.00.06.01.2B.0E.01.00 (Request 11 байт, Timestamp 13:45:56.427/637274799564277343)
+13:45:56  Ответ:
+13:45:56  <<<  (Response 0 байт, Timestamp 13:45:56.429/637274799564296875)
+13:45:56  Результат: Successful=False, NumberTry=1, Stage=CheckResponse, CustomError=ZeroCountBytesResponse
+13:45:56  Попытка опроса устройства командой=43 (0x2B) завершилась неуспешно.
+13:45:56  Ожидание следующей попытки=1000мс.
+13:45:57
+13:45:57  Обращение к устройству, попытка=2
+13:45:57
+13:45:57  Попытка опроса устройства командой=43 (0x2B), таймаут Request=3000мс., таймаут Response=3000мс.
+13:45:57
+13:45:57  Итоговый результат попытки обращения к устройству:
+13:45:57  Запрос:
+13:45:57  >>> 00.00.00.00.00.06.01.2B.0E.01.00 (Request 11 байт, Timestamp 13:45:57.435/637274799574355468)
+13:45:57  Ответ:
+13:45:57  <<<  (Response 0 байт, Timestamp 13:45:57.435/637274799574355468)
+13:45:57  Результат: Successful=False, NumberTry=2, Stage=CheckResponse, CustomError=ZeroCountBytesResponse
+13:45:57  Попытка опроса устройства командой=43 (0x2B) завершилась неуспешно.
+13:45:57  Ожидание следующей попытки=1000мс.
+13:45:58
+13:45:58  Обращение к устройству, попытка=3
+13:45:58
+13:45:58  Попытка опроса устройства командой=43 (0x2B), таймаут Request=3000мс., таймаут Response=3000мс.
+13:45:58
+13:45:58  Итоговый результат попытки обращения к устройству:
+13:45:58  Запрос:
+13:45:58  >>> 00.00.00.00.00.06.01.2B.0E.01.00 (Request 11 байт, Timestamp 13:45:58.435/637274799584355468)
+13:45:58  Ответ:
+13:45:58  <<< EMPTY (Response)
+13:45:58  Результат: Successful=False, NumberTry=3, Stage=StartRequest, ExceptionRequest=Программа на вашем хост-компьютере разорвала установленное подключение, SocketError=ConnectionAborted
+13:45:58  Попытка опроса устройства командой=43 (0x2B) завершилась неуспешно.
+13:45:58  Ожидание следующей попытки=1000мс.
+13:45:59  Превышен лимит попыток обращения к устройству=3
+13:45:59
+13:45:59  Обращение к устройству завершено.
+13:45:59
+13:45:59  Значения полученных объектов:
+13:45:59  ControllerSoftVersion=
+13:45:59
+13:45:59  За весь процесс было совершено неудачных попыток обращений к устройству=3
+13:45:59  Процесс ReadDeviceIdentification - чтение идентификационной информации устройства завершен, затрачено=3,01 секунд.
+
+
+
+
+TCP
+00.00 - Transaction identification
+00.00 - MODBUS
+00.06 - Length
+01    - Unit Identifier
+
+2B    - Function Code
+0E    - MEI14
+01    - Read Device ID Code
+00    - Object ID
+
+RTU
+01 - Device Address
+2B - Function Code
+0E - MEI14
+01 - Read Device ID Code
+00 - Object ID
+70.77 - CRC16
+
+
+///////////////////////
+Попробовал обмен через MODBUS/TCP.
+Запросил прочесть объект №0 "Версию ПО". Запрос не выполняется из-за ошибочного поля Length. Вы установили 6, а по факту там 5. Смотрите в документации на MODBUS/TCP:
+"Length - The length field is a byte count of the following fields, including the Unit
+Identifier and data fields."
+Длина - поле длины есть количество в байтах последующих полей, включая поля Unit Identifier и поле данных.
+У вас в запросе:
+00.00 - Transaction identification
+00.00 - MODBUS protocol
+00.06 - Length
+01    - Unit Identifier
+2B    - Function Code
+0E    - MEI14
+01    - Read Device ID Code
+00    - Object ID
+
+Поле Length должно быть 5. 
+Решил прослушать обмен по факту. Может на экран выводите с ошибкой а в интерфейс правильно? Установил программу Wireshark (прослушка всяких сетевых интерфейсов). В логе прослушки тоже 6 (смотри внизу картинки выделено синим). 
+
+Результаты логов прилагаю.
+Прошу помочь решить проблему с обменом.
+
+
+ulasdikme.com/projects/raspberry/Qt_for_raspberrypi.php
+
+
+sudo ip addr add 192.168.1.12/255.255.255.0 broadcast 192.168.1.255 dev enp2s0
+sudo ip link set enp2s0 down
+sudo ip link set enp2s0 up
+
+apt-get install build-essential libfontconfig1-dev libdbus-1-dev libfreetype6-dev libicu-dev libinput-dev libxkbcommon-dev libsqlite3-dev libssl-dev libpng-dev libjpeg-dev libglib2.0-dev libraspberrypi-dev
+
+sudo sshfs -o allow_other,transform_symlinks lyzv@192.168.0.20:/  /home/lyzv/work/programs/raspbian-Qt5/sysroot
+
+
+sudo mount -o loop,offset=62914560 2020-02-13-raspbian-buster.img /mnt/rasp-pi-rootfs
+
+sudo mount -t vfat -o loop,offset=62914560 2020-02-13-raspbian-buster.img /mnt/rasp-pi-rootfs
+
+qt-everywhere-src-5.15.0
+make install DESTDIR=../qt-everywhere-src-5.15.0
+
+//////////////////////////////////
+https://www.tal.org/tutorials/building-qt-512-raspberry-pi
+
+dd bs=1M if=/home/lyzv/Downloads/2020-02-13-raspbian-buster.img of=/dev/sdc
+/home/lyzv/Downloads/2020-02-13-raspbian-buster.img
+
+sudo arp-scan --interface=wlan0 --localnet
+
+Disk identifier: 0xb0358c95
+
+                               Device Boot      Start         End         Blocks     Id  System
+/home/elesar/pi_cross/raspberry-embed.iso1      8192          137215      64512      c   W95 FAT32 (LBA)
+/home/elesar/pi_cross/raspberry-embed.iso2      137216        31291391    15577088   83  Linux
+
+272629760
+
+sudo mount -o loop,offset=272629760 ~/work/prj/raspberrypi/2020-02-13-raspbian-buster.img ~/work/prj/raspberrypi/raspbian-booster-rootfs
+
+/home/lyzv/opt/
+/home/lyzv/opt/rpi-rootfs
+
+~/opt/2020-02-13-raspbian-buster.img
+
+./configure -opengl es2 -device linux-rasp-pi-g++ -device-option CROSS_COMPILE=~/opt/gcc-linaro-7.5.0-2019.12-i686_arm-linux-gnueabihf/bin/arm-linux-gnueabihf- -sysroot ~/opt/rpi-rootfs/ -opensource -confirm-license -optimized-qmake -reduce-exports -release -make libs -prefix /usr/local/qt5pi -hostprefix /usr/local/qt5pi
+
+~/opt/gcc-linaro-7.5.0-2019.12-i686_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-
+~/opt/rpi-rootfs/
+
+
+!!! Для отладки в QtCreator-е
+ubuntu-host# sudo apt-get install gdb-multiarch
