@@ -1,0 +1,17 @@
+Как просканировать локальную сеть
+
+1. Установить программу ARP-сканирования:
+$ sudo apt-get install arp-scan
+2. Сканировать:
+$ sudo arp-scan --interface=enp3s0 --localnet
+
+3. По адресу получить HOST-имя:
+$ nbtscan 10.223.31.95
+
+Подробно:
+$ sudo nmap 10.223.31.84 -sV
+$ nmap -PS 10.223.31.65/26    
+$ nmap -PA 10.223.31.65/26 - вот это подробно
+
+
+https://nmap.org/man/ru/man-host-discovery.html
