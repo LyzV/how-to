@@ -1,0 +1,11 @@
+0. Оба компьютера должны быть в одной подсети
+1. Сгенерировать свой ключ
+$ ssh-keygen -t rsa
+
+2. Скопировать ключ на сервер:
+$ ssh-copy-id -i ~/.ssh/id_rsa.pub lyzv@raspberry-ubuntu
+
+Здесь lizv - имя пользователя на сервере, raspberry-ubuntu - host-имя сервера.
+
+3. Подключиться к серверу:
+$ ssh lyzv@raspberry-ubuntu
