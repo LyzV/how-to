@@ -3,6 +3,11 @@
 пароль: IntelCoreI28
 пароль: IntelCoreI29
 пароль: IntelCoreI30
+пароль: IntelCoreI31
+
+///////////////////////////////////////////////////////////////
+Алексей Хомутов
+Антон Ильин
 ///////////////////////////////////////////////////////////////
 
 Отчёт за 2-6 сентября 2019г
@@ -21,6 +26,18 @@
    изменения частоты.
 5. Ручной режим. При срабатывании защиты не входит в блокировку. Нужно в ручной режим подставить состояние ПЭД.
 
+
+////////////////////////////////////////////////////////////////////////////////////////////
+КИ
+
+.\hex2000.exe --w olength 8 -o .\Output\Release.dat .\Output\Release\Release.out 
+.\hex2000.exe --intel --swapbytes --romwidth=16 --outfile=.\Output\Release\Release.hex .\Output\Release\Release.out 
+
+--w
+--intel           Select Intel.               Выбор Intel формата: IntelMSC Object Format 
+--swapbytes
+--romwidth=value  Specify the ROM device width (default depends on format used). Указывает ширину шины данных ROM-устройства.
+--outfile -o      Specify an output filename. Указывает имя выходного файла.
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -912,55 +929,426 @@ _PARAM_(Index_NumPole,     0),
 6.      Поправить работу с индексом перевода часов на летнее время.
 7.      Тип контроллера убрать.
 8.      Исправить работу с версией железа.
-9. 
+9.      Не отображаются а) заводской номер б) версия ПО блока КИ.
+
+10. Заменил индекс IndexKiSerialVersion на Index_KI_SN
 
 
-_PARAM_(Index_FiltOverh    , 0),
 
 /////////////////////////////////////////////////////////////////////////////////////////
+Index_ContactorB2
 
-Удалённые:
+   DefenceCFG  CfgDef      ;//Авария неизвестной конфигурации
+   DefenceKIS  KisDef      ;//Авария не соответствия ПО КИ конфигурации СУ
+   DefencePT   PedTypeDef  ;//Авария не соответствия типа ПЭД конфигурации СУ
 
-IndexUFreqNom
-NT_IndexLenCable
-IndexDI4
-IndexKTM_DI4
-FN_IndexOverIBypassDelay_forML
-FN_IndexOverIOffDelay_forML
-FN_IndexOverUEnable_forML
-FN_IndexOverUOffDelay_forML
-FN_IndexUnderUEnable_forML
-FN_IndexUnderUOffDelay_forML
-FN_IndexUnbUEnable_forML
-FN_IndexUnbUBypassDelay_forML
-FN_IndexFreqUEnable_forML
-IndexUbat
-IndexTOil
-IndexPSht
-IndexProtectContactEnable
-FN_IndexTMotorProtectEnable_forML
-FN_IndexTMotorOffDelay_forML
-FN_IndexPPumpProtectEnable_forML
-FN_IndexPPumpOffDelay_forML
-FN_IndexVibrProtectEnable_forML1
-FN_IndexVibrProtectEnable_forML2
-FN_IndexVibrOffDelay_forML1
-FN_IndexVibrOffDelay_forML2
-FN_IndexVibrBypassDelay_forML1
-IndexMaxIOffDelay
-IndexKSUAbort
-IndexGrafikStartTime
-FN_IndexTimeOn
-IndexIBypassDelay
-IndexUBypassDelay
-IndexAnalogBypassDelay
+STOP_CFG    
+STOP_KISOFT 
+STOP_PEDTYPE
 
-Index_StkStart...
+ALARM_CFG    
+ALARM_KISOFT 
+ALARM_PEDTYPE
+
+IndexCurrWorkTime
+
+2.4.13. Название файла журнала система АСУТП формирует согласно ЕТТ 
+(считывание параметров работы из архива событий контроллера СУ должно 
+  осуществляться одним файлом с названием, состоящего из номера скважины, 
+  даты снятия информации или интервала времени, за который считана информация. 
+  Например: 111_01.01.2014 или 111_01.01.2014_15.01.2014)
+
+.\hex2000.exe -w olength 8 -o .\Output\Release.dat .\Output\Release\Release.out 
+.\hex2000.exe -intel --swapbytes --romwidth=16 --outfile=.\Output\Release\Release.hex .\Output\Release\Release.out 
 
 
-IndexContrastGki
 
-_ContrastGki
+///////////////////////////////////////////////////////////////////////
+_IOverCtrl      IndexOverIEnable                CProtEna
+_IUnderCtrl     IndexUnderIPercentNomSetpoint
 
-IndexUinTran
-IndexUoutTran
+Mode0_Y.CtrlParams.IprotEna
+
+Index_EnaSpec
+
+FN_IndexOverIEnable_forAD
+
+
+FRM_STATIONSET
+FRM_DRIVE
+  FRM_FC_GRAB_START
+  FRM_FC_SHAKE_MODE
+  FRM_FC_ANTIGAS_MODE
+
+
+Index_IUnderCtrl    FN_Index_IUnderCtrl   prg.IUnderCtrl
+IndexUnderIEnable
+IndexStoreUnderIEnable
+
+_OnChangeState
+
+PRG_EVENT_DEFOFF
+PRG_EVENT_DEFRESTORE
+
+Index_ShakeIprotEna
+Index_AntiGasIprotEna
+
+//////////////////////////////////////////////////////////////////////////////////////
+Были затронуты следующие подсистемы:
+1) Режим по программе.
+2) Защита по перегрузу.
+3) Защита по недогрузу.
+4) Заменил подсистему регистрации отключения/подключения блока КИ, подсистему регистрации обновления ПО.
+6) Переделал механизм определения времени отключения питания СУ.
+7) Изменил механизмы управления разрешения защитами по перегрузу и недогрузу в режимах:
+  - по программе;
+  - пуск с подхватом;
+  - встряхивание;
+  - дегазации;
+  - спец.алгоритм по перегрузу. 
+
+
+////////////////////////////////////////////////////////////////////////
+  _StartStopBkg. EventCode= "40971"
+
+
+power:  "1024"
+[  118.669536] Archive (283): drop_caches: 3
+Stop PED. Code= "0" Who= "1" Num= "4"
+KI in blocked state. reasons= "4"
+spm. _reasons= "4" monitor.AlarmReason= "4"
+_StartStopBkg. EventCode= "45476"
+[  119.594992] PowerMonitor (271): drop_caches: 3
+[  120.780670] PowerMonitor (271): drop_caches: 3
+[  121.838215] PowerMonitor (271): drop_caches: 3
+CAN_ERR_CRTL
+_frame_recv. Can't read from socket: Timeout
+_frame_recv. Can't read from socket: Timeout
+_frame_recv. Can't read from socket: Timeout
+_frame_recv. Can't read from socket: Timeout
+CAN_ERR_BUSOFF
+
+
+power:  "1029"
+Stop PED. Code= "0" Who= "1" Num= "4"
+[  110.427219] Archive (278): drop_caches: 3
+KI in blocked state. reasons= "4"
+spm. _reasons= "4" monitor.AlarmReason= "4"
+_StartStopBkg. EventCode= "45476"
+[  111.337317] PowerMonitor (266): drop_caches: 3
+_frame_recv. Can't read from socket: Timeout
+[  112.357276] PowerMonitor (266): drop_caches: 3
+[  113.347332] PowerMonitor (266): drop_caches: 3
+_frame_recv. Can't read from socket: Timeout
+_frame_recv. Can't read from socket: Timeout
+CAN_ERR_CRTL
+_frame_recv. Can't read from socket: Timeout
+_frame_recv. Can't read from socket: Timeout
+_frame_recv. Can't read from socket: Timeout
+_frame_recv. Can't read from socket: Timeout
+[  114.384586] PowerMonitor (266): drop_caches: 3
+_frame_recv. Can't read from socket: Timeout
+CAN_ERR_BUSOFF
+
+//////////////////////////////////////////////////////////
+printLogbook
+
+type=CT_SINGLE label= "1566816992" time= "1566816992" event= "a002" dataQnty= "0"//Включение питания СУ
+
+type=CT_FIRST label=  "1566817003" time= "1566817003" event= "a170" dataQnty= "4"//Обновлено ПО КСУ
+type=CT_LAST dataQnty= "10"
+
+type=CT_FIRST label=  "1566817003" time= "1566817003" event= "b103" dataQnty= "4"////ПЛАТА ДИ-2 ПО ФАЗЕ W НЕ ГОТОВА
+
+type=CT_SINGLE label= "1566817181" time= "1566817181" event= "a002" dataQnty= "0"//Включение питания СУ
+
+type=CT_FIRST label=  "1566817192" time= "1566817192" event= "b1b6" dataQnty= "4"//СБОЙ БЛОКА КИ
+type=CT_LAST dataQnty= "4"
+
+type=CT_SINGLE label= "1566817947" time= "1566817947" event= "a034" dataQnty= "0"//Очистка архива
+type=CT_SINGLE label= "1566817955" time= "1566817955" event= "a001" dataQnty= "0"//Отключение питания СУ
+type=CT_SINGLE label= "1566817988" time= "1566817988" event= "a002" dataQnty= "0"//Включение питания СУ
+
+type=CT_FIRST label=  "1566817999" time= "1566817999" event= "b1b6" dataQnty= "4"//СБОЙ БЛОКА КИ
+
+type=CT_SINGLE label= "1566818031" time= "1566818031" event= "a001" dataQnty= "0"//Отключение питания СУ
+type=CT_SINGLE label= "1566818031" time= "1566818031" event= "a001" dataQnty= "0"//Отключение питания СУ
+
+
+
+type=CT_SINGLE label="1566817945" time= "1566817945" event= "a001" dataQnty= "0"//Отключение питания СУ
+type=CT_SINGLE label="1566819254" time= "1566819254" event= "a002" dataQnty= "0"//Включение питания СУ
+type=CT_FIRST label= "1566819264" time= "1566819264" event= "a170" dataQnty= "4"//Обновлено ПО КСУ
+type=CT_FIRST label= "1566819265" time= "1566819265" event= "b1b6" dataQnty= "4"//СБОЙ БЛОКА КИ
+
+
+type=CT_SINGLE label= "1566816979" time= "1566816979" event= "a002" dataQnty= "0"//Включение питания СУ
+type=CT_SINGLE label= "1566819632" time= "1566819632" event= "a034" dataQnty= "0"//Очистка архива
+type=CT_FIRST label=  "1566819639" time= "1566819639" event= "b1a4" dataQnty= "4"//СТОП ПЭД.ПОНИЖЕНИЕ НАПРЯЖЕНИЯ СЕТИ
+type=CT_SINGLE label= "1566819643" time= "1566819643" event= "a001" dataQnty= "0"//Отключение питания СУ
+
+type=CT_SINGLE label= "1566816979" time= "1566816979" event= "a002" dataQnty= "0"
+type=CT_SINGLE label= "1566819632" time= "1566819632" event= "a034" dataQnty= "0"
+type=CT_FIRST label=  "1566819639" time= "1566819639" event= "b1a4" dataQnty= "4"
+type=CT_SINGLE label= "1566819643" time= "1566819643" event= "a001" dataQnty= "0"
+
+type=CT_SINGLE label= "1566816970" time= "1566816970" event= "a002" dataQnty= "0"//Включение питания СУ
+type=CT_SINGLE label= "1566816985" time= "1566816985" event= "a00e" dataQnty= "2"//Изменение режима СУ
+type=CT_SINGLE label= "1566817650" time= "1566817650" event= "a034" dataQnty= "0"//Очистка архива
+type=CT_FIRST  label= "1566817657" time= "1566817657" event= "b1a4" dataQnty= "4"//СТОП ПЭД.ПОНИЖЕНИЕ НАПРЯЖЕНИЯ СЕТИ
+type=CT_SINGLE label= "1566817661" time= "1566817661" event= "a001" dataQnty= "0"//Отключение питания СУ
+
+type=CT_SINGLE number= "3" label= "1566817049" event= "a002" dataQnty= "0"//Включение питания СУ
+type=CT_SINGLE number= "4" label= "1566817091" event= "a00e" dataQnty= "2"//Изменение режима СУ
+type=CT_SINGLE number= "0" label= "1566817776" event= "a034" dataQnty= "0"//Очистка архива
+type=CT_FIRST  number= "1" label= "1566817785" event= "b1a4" dataQnty= "4"//СТОП ПЭД.ПОНИЖЕНИЕ НАПРЯЖЕНИЯ СЕТИ
+type=CT_SINGLE number= "2" label= "1566817787" event= "a001" dataQnty= "0"//Отключение питания СУ
+
+
+
+type=CT_SINGLE number= "0" label= "1566817776" event= "a034" dataQnty= "0"//Очистка архива
+type=CT_SINGLE number= "2" label= "1566817787" event= "a001" dataQnty= "0"//Отключение питания СУ
+type=CT_SINGLE number= "3" label= "1566817049" event= "a002" dataQnty= "0"//Включение питания СУ
+type=CT_SINGLE number= "4" label= "1566817091" event= "a00e" dataQnty= "2"//Изменение режима СУ
+type=CT_FIRST  number= "1" label= "1566817785" event= "b1a4" dataQnty= "4"//СТОП ПЭД.ПОНИЖЕНИЕ НАПРЯЖЕНИЯ СЕТИ
+
+
+
+//#include <sched.h>
+//volatile int _vshed_code;
+
+//    qint64 pid=a.applicationPid();
+//    int shed_code=sched_getscheduler((pid_t)pid);
+//    _vshed_code=shed_code;
+
+//    int policy=SCHED_OTHER;
+//    int max = sched_get_priority_max(policy);
+//    _vshed_code=max;
+//    int min = sched_get_priority_min(policy);
+//    _vshed_code=min;
+
+//    struct sched_param sparam;
+//    sparam.__sched_priority=min;
+//    int set_code=sched_setscheduler((pid_t)pid, policy, &sparam);
+//    _vshed_code=set_code;
+
+_COMMAND_("ПЕЧАТЬ ЖРУРНАЛА", "ПЕЧАТЬ ЖРУРНАЛА", printLogbook),
+
+САЛН.00138-90.7z
+
+//////////////////////////////////////////////////////////////////////////////
+IndexMajorVersion
+IndexMinorVersion
+IndexRelease
+
+Index_DevList_KsuMajor
+Index_DevList_KsuMinor
+Index_DevList_KsuRelease
+
+/////////////////////////////////////////////
+Ярлыки на столе
+
+ksu-usb:
+/home/lyzv/bin/ksu_usb
+
+ksu-ssh:
+/home/lyzv/bin/ksu-ssh
+
+matlab:
+
+
+serial-ttyS4:
+/home/lyzv/bin/serial-ttyS4
+
+serial-ttyS5:
+/home/lyzv/bin/serial-ttyS5
+
+QtCreator:
+/home/lyzv/bin/creator
+
+PyCharm:
+/home/lyzv/bin/pycharm
+Launch PyCharm
+
+WinMerge:
+env WINEPREFIX="/home/lyzv/.wine" wine C:\\windows\\command\\start.exe /Unix /home/lyzv/.wine/dosdevices/c:/users/Public/Desktop/WinMerge.lnk
+
+
+Modbus Poll:
+env WINEPREFIX="/home/lyzv/.wine" wine C:\\windows\\command\\start.exe /Unix /home/lyzv/.wine/dosdevices/c:/users/Public/Desktop/Modbus\ Poll.lnk
+
+
+Modbus Slave:
+env WINEPREFIX="/home/lyzv/.wine" wine C:\\windows\\command\\start.exe /Unix /home/lyzv/.wine/dosdevices/c:/users/Public/Desktop/Modbus\ Slave.lnk
+
+dmitry@sent.com
+
+
+"Пункт 2.3.2. Пункт 2.3.2. Перед запросом данных файла журнала событий СУ система телемеханики
+запрашивает идентификационную информацию (ID 0x80 – 0x84). Если значение
+поля «ID 0x84» содержит информацию отличную от нуля, то файл журнала
+событий готов к считыванию системой телемеханики. При нулевом значении поля
+«ID 0x84» система телемеханики продолжает запрос идентификационной
+информации (ID 0x80 – 0x84) до изменения значения поля «ID 0x84»."
+
+
+
+>><<--------------------------------------------------------------------------->><<
+11:02:43  
+11:02:43  Начало процесса ReadDeviceIdentification - чтение идентификационной информации устройства.
+11:02:43  
+11:02:43  Ожидается получение следюущих объектов от устройства:
+11:02:43  0x00 (ASCII)
+11:02:43  
+11:02:43  Обращение к устройству.
+11:02:43  
+11:02:43  Обращение к устройству, попытка=1
+11:02:43  
+11:02:43  Попытка подключения к устройству с COM-портом=COM3,9600,8,None,One
+11:02:44  Попытка подключения, результат=True
+11:02:44  
+11:02:44  Попытка опроса устройства командой=43 (0x2B), таймаут Request=3000мс., таймаут Response=3000мс.
+11:02:44  
+11:02:44  Итоговый результат попытки обращения к устройству:
+11:02:44  Запрос:
+11:02:44  >>> 
+
+
+Запрос:
+01.
+2B.Function code
+0E.MEI Type
+01.Read Device ID code - request to get the basic device identification (stream access) Потоковый доступ!
+00.Object Id - потоковый доступ к базовым идентификационным объектам, начиная с объекта №0 (VendorName)
+
+70.77 CRC16 
+
+Ответ:
+01.
+2B.Function code
+0E.MEI Type
+01.Read Device ID code
+81.Conformity level
+00.More Follows
+00.Next Object Id
+03.Number of objects
+
+00.Object ID -   VendorName - "INM"
+03.Object length
+49. 'I'
+4E. 'N'
+4D. 'M'
+
+01.Object ID -   ProductCode - "INM-3"
+05.Object length
+49. 'I'
+4E. 'N'
+4D. 'M'
+2D. '-'
+33. '3'
+
+02.Object ID - MajorMinorRevision - "13.1.1911"
+09.Object length
+31. '1'
+33. '3'
+2E. '.'
+31. '1'
+2E. '.'
+31. '1'
+39. '9'
+31. '1'
+31. '1'
+
+00.7E CRC16 
+
+
+
+(Response 33 байт, Timestamp 11:02:44.315/637279885643158422)
+11:02:44  Результат: Successful=True, NumberTry=1, TicksRequestResponse=1406250
+11:02:44  Попытка опроса устройства командой=43 (0x2B) завершена успешно.
+11:02:44  В ответе обнаружено объектов=3
+11:02:44  Все ожидаемые объекты были обнаружены в ответе.
+11:02:44  
+11:02:44  Отключение от устройства с COM-портом=COM3
+11:02:44  
+11:02:44  Обращение к устройству завершено.
+11:02:44  
+11:02:44  Значения полученных объектов:
+11:02:44  ControllerSoftVersion=INMINM-313.1.1911
+11:02:44  
+11:02:44  За весь процесс было совершено неудачных попыток обращений к устройству=0
+11:02:44  Процесс ReadDeviceIdentification - чтение идентификационной информации устройства завершен, затрачено=0,51 секунд.
+
+
+extern IMBSHoldingRegister *MBS_GSuState                ;//0x00. Состояние СУ
+extern IMBSHoldingRegister *MBS_GReasonsForStart1       ;//0x01. Причины мешающие запуску СУ. Регистр 1
+extern IMBSHoldingRegister *MBS_GReasonsForStart2       ;//0x02. Причины мешающие запуску СУ. Регистр 2
+extern IMBSHoldingRegister *MBS_GReasonsForStart3       ;//0x03. Причины мешающие запуску СУ. Регистр 3
+extern IMBSHoldingRegister *MBS_GReasonsForStart4       ;//0x04. Причины мешающие запуску СУ. Регистр 4
+extern IMBSHoldingRegister *MBS_GUab                    ;//0x05. Напряжение сети AB
+extern IMBSHoldingRegister *MBS_GUbc                    ;//0x06. Напряжение сети BC
+extern IMBSHoldingRegister *MBS_GUca                    ;//0x07. Напряжение сети CA
+extern IMBSHoldingRegister *MBS_GUUnb                   ;//0x08. Дисбаланс напряжения сети
+extern IMBSHoldingRegister *MBS_GIa_motor               ;//0x09. Ток двигателя, фаза A
+extern IMBSHoldingRegister *MBS_GIb_motor               ;//0x0A. Ток двигателя, фаза B
+extern IMBSHoldingRegister *MBS_GIc_motor               ;//0x0B. Ток двигателя, фаза C
+extern IMBSHoldingRegister *MBS_GIUnb                   ;//0x0C. Дисбаланс тока двигателя
+extern IMBSHoldingRegister *MBS_GPwr                    ;//0x0D. Активная мощность
+extern IMBSHoldingRegister *MBS_GSPwr                   ;//0x0E. Полная мощность
+extern IMBSHoldingRegister *MBS_GCos                    ;//0x0F. Коэффициент мощности
+extern IMBSHoldingRegister *MBS_GMotorLoading           ;//0x10. Загрузка
+extern IMBSHoldingRegister *MBS_GRiz                    ;//0x11. Сопротивление изоляции
+
+extern IMBSHoldingRegister *MBS_GReversAvers            ;//0x50. Направление вращения
+extern IMBSHoldingRegister *MBS_GWpedRpm                ;//0x51. Частота вращения об/мин.
+extern IMBSHoldingRegister *MBS_GFout                   ;//0x52. Выходная частота ПЧ
+
+extern IMBSHoldingRegister *MBS_GWorkMode               ;//0x80. Режим работы: 0 - откл; 1 - ручной; 2 - автоматический
+extern IMBSHoldingRegister *MBS_GUPowerNom              ;//0x81. Номинальное напряжение сети
+
+
+01 Device Address 
+03 Function code
+24 Byte count
+
+50 00 
+00 00 
+00 00 
+00 00 
+00 00 
+00 D3 
+00 01 
+00 D3 
+00 25 
+00 00 
+00 00 
+00 00 
+00 00 
+00 00 
+00 00 
+00 00 
+00 00 
+00 00 - 36 байт 
+
+5A 15
+
+_SeqPhaseEnable
+
+Cross compile rasperrypi:
+https://www.raspberrypi.org/documentation/linux/kernel/building.md
+
+
+git clone git://code.qt.io/qt/qt5.git Qt57Sources
+
+ Заявление измени гл. бух на Козявину Т.П.
+Приложи чек
+Приложи банковскую выписку
+Всё это отправь ГБ, копия Гайнуллиной А.Р.
+
+Алексей Сергеевич, здравствуйте.
+
+
+Мой отпуск выпал на "период короновируса". Прошу согласовать перенос отпуска на сентябрь.
+
+make-ksu-firmware ksu -d 2 -v 13.1.18 -z 1 -f 200 -q 1000
+
